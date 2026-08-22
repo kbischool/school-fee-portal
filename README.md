@@ -10,6 +10,47 @@ Real accounts for parents and administrators, backed by Firebase — no more sha
 
 ---
 
+## 🔖 QUICK REFERENCE — what to run, and when
+
+Bookmark this section. Whenever you're not sure what command to type, come back here first.
+
+### "I added/removed/updated students in the Excel file"
+Run these two, in this exact order, in your terminal (in the project folder):
+```bash
+python3 update_data.py
+python3 migrate_to_firestore.py
+```
+- `update_data.py` reads `2026 - 2027 FEE.xlsx` and rewrites the JSON files + `code_registry.json` + `parent_codes.xlsx` on your computer.
+- `migrate_to_firestore.py` pushes those updated files into the live Firestore database, so the website shows the new data.
+- Safe to re-run any time. It will **not** un-claim any parent's account or reset their password status — it only adds new students and refreshes fee numbers. (See "Known bug that was fixed" below for why this matters.)
+- You do **not** need to run `firebase deploy` for this — student data lives in the database, not in the deployed website files.
+
+### "I changed a website file" (index.html, admin-dashboard.html, parent-dashboard.html, anything in css/ or js/, manifest.json, sw.js, assets/)
+Run:
+```bash
+firebase deploy
+```
+- This uploads the actual site files (pages, styling, scripts) to your live URL.
+- It does **not** touch student/fee data at all — `firebase.json` is set to ignore `.json`, `.xlsx`, and `.py` files during deploy.
+
+### "Some parents show 'Code not yet used' even though they already registered"
+This was a one-time bug (now fixed) — see "Known bug that was fixed" below. If you ever see it again, run:
+```bash
+python3 repair_claimed_codes.py
+```
+It will list exactly which codes look wrong and ask you to confirm (type `y`) before changing anything.
+
+### Simple summary table
+
+| What you did | What to run |
+|---|---|
+| Added/edited/removed students in the Excel file | `update_data.py` then `migrate_to_firestore.py` |
+| Changed a webpage, CSS, or JS file | `firebase deploy` |
+| Parents wrongly showing as "not registered" | `repair_claimed_codes.py` |
+| First-time project setup | Part 2 below, Steps 1–8 |
+
+---
+
 ## What's new in this version
 
 | File | Purpose |
@@ -22,16 +63,18 @@ Real accounts for parents and administrators, backed by Firebase — no more sha
 | `js/auth.js` | **New.** Shared login/signup/code-claim logic used by the pages above. |
 | `css/style.css` | **New.** Shared styling for the new pages. |
 | `firestore.rules` | **New.** The real access control — who can read/write what in the database. |
-| `migrate_to_firestore.py` | **New.** One-time script that imports your existing `code_registry.json` + `students_1st_term.json` into Firestore, matched exactly to their current format. |
+| `migrate_to_firestore.py` | **New.** Imports/refreshes `code_registry.json` + `students_*_term.json` into Firestore. Safe to re-run every time you add students — see Quick Reference above. |
+| `repair_claimed_codes.py` | **New.** One-off repair tool — only needed if a parent shows as "not registered" even though they already are. See Quick Reference above. |
 | `2026 - 2027 FEE.xlsx`, `update_data.py`, `code_registry.json`, `parent_codes.xlsx`, `requirements.txt` | **Unchanged.** You still edit the spreadsheet and run `update_data.py` exactly as before each term — see below. |
 
 ---
 
-## Part 1: Updating fee data each term (unchanged)
+## Part 1: Updating fee data each term
 
 ### One-time setup
 ```bash
 pip install -r requirements.txt
+pip install firebase-admin --break-system-packages
 ```
 
 ### Every time you update fees or add/remove students
@@ -45,12 +88,19 @@ pip install -r requirements.txt
    ```bash
    python3 update_data.py
    ```
-3. This regenerates `students_1st_term.json` (and 2nd/3rd once those sheets exist), `parent_codes.xlsx`, and `code_registry.json`.
-4. **New step:** run the migration script again to push the refreshed numbers into Firestore:
+   This regenerates `students_1st_term.json` (and 2nd/3rd once those sheets exist), `parent_codes.xlsx`, and `code_registry.json` on your computer.
+3. Then run:
    ```bash
    python3 migrate_to_firestore.py
    ```
-   Safe to re-run any time — existing codes and claimed accounts are untouched, only fee amounts and any brand-new students get written.
+   This pushes the refreshed data into the live Firestore database, so the website actually shows it.
+   Safe to re-run any time — existing codes and claimed accounts are left alone (see note below), only fee amounts and any brand-new students get written.
+4. No need to run `firebase deploy` for this — student data lives in the database, not in the deployed site files.
+
+### ⚠️ Known bug that was fixed (for reference)
+Earlier versions of `migrate_to_firestore.py` reset **every** code's `claimed` status back to `false` on every run — even for parents who had already registered — because it wrote `"claimed": False` unconditionally instead of only when a code was brand new. This made already-registered parents show as "Code not yet used" on the admin dashboard.
+
+This is now fixed: the script only sets `claimed: False` the first time a code appears in Firestore, and leaves it alone on every run after that. If you ever see already-registered parents wrongly marked as "not used" again, run `python3 repair_claimed_codes.py` — it finds and fixes exactly those codes (with a confirmation prompt before changing anything).
 
 ---
 

@@ -125,13 +125,25 @@ def main():
         # 'index' is carried over so the admin dashboard's "issue a new
         # code" feature can keep counting up from the same sequence
         # update_data.py uses, instead of risking a collision.
+        #
+        # IMPORTANT: this script gets re-run every time new students are
+        # added, not just once. Only set claimed/createdAt on a code's
+        # FIRST appearance in Firestore -- otherwise re-running would
+        # stomp "claimed: true" back to "claimed: false" for every parent
+        # who already registered, wiping out their account link.
         code_ref = db.collection("schoolCodes").document(code)
-        batch.set(code_ref, {
-            "studentId": code,
-            "index": index,
-            "claimed": False,
-            "createdAt": firestore.SERVER_TIMESTAMP,
-        }, merge=True)
+        existing_code_doc = code_ref.get()
+        if existing_code_doc.exists:
+            # Already in Firestore (possibly already claimed) -- only
+            # keep 'index' in sync, never touch claimed/createdAt/etc.
+            batch.set(code_ref, {"index": index}, merge=True)
+        else:
+            batch.set(code_ref, {
+                "studentId": code,
+                "index": index,
+                "claimed": False,
+                "createdAt": firestore.SERVER_TIMESTAMP,
+            }, merge=True)
         batch_count += 1
         commit_if_full()
 
