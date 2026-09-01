@@ -17,8 +17,8 @@ Bookmark this section. Whenever you're not sure what command to type, come back 
 ### "I added/removed/updated students in the Excel file"
 Run these two, in this exact order, in your terminal (in the project folder):
 ```bash
-python3 update_data.py
-python3 migrate_to_firestore.py
+python update_data.py
+python migrate_to_firestore.py
 ```
 - `update_data.py` reads `2026 - 2027 FEE.xlsx` and rewrites the JSON files + `code_registry.json` + `parent_codes.xlsx` on your computer.
 - `migrate_to_firestore.py` pushes those updated files into the live Firestore database, so the website shows the new data.

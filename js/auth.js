@@ -11,7 +11,9 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  confirmPasswordReset,
+  verifyPasswordResetCode
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore,
@@ -27,7 +29,6 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
-
 // -----------------------------------------------------------------
 // Role lookup — checks admins/{uid} first, then parents/{uid}.
 // Returns { role: 'admin' | 'parent' | null, data }
@@ -174,5 +175,29 @@ export async function logout() {
 // accounts since both are plain Firebase Auth email/password users.
 // -----------------------------------------------------------------
 export async function resetPassword(email) {
-  await sendPasswordResetEmail(auth, email);
+  // Points back to our own site as the "continue" link shown after Firebase's
+  // own hosted reset page finishes — doesn't require the Console-level
+  // "Customize action URL" setting to work, so it's reliable even when that
+  // setting won't save.
+  await sendPasswordResetEmail(auth, email, {
+    url: window.location.origin + '/index.html'
+  });
+}
+
+// -----------------------------------------------------------------
+// Completing a password reset — used by reset-password.html.
+// IMPORTANT: verifyPasswordResetCode/confirmPasswordReset must only be
+// called in direct response to the parent clicking "Set new password",
+// never automatically on page load. Some email providers (Outlook Safe
+// Links, corporate scanners) auto-open links to check them for safety,
+// which burns a one-time code before the real person clicks it — waiting
+// for an actual button click avoids that.
+// -----------------------------------------------------------------
+export async function checkResetCodeValid(oobCode) {
+  // Returns the account's email if valid, throws if expired/used/invalid.
+  return await verifyPasswordResetCode(auth, oobCode);
+}
+
+export async function completePasswordReset(oobCode, newPassword) {
+  await confirmPasswordReset(auth, oobCode, newPassword);
 }

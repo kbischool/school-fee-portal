@@ -155,18 +155,30 @@ forgotForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   clearMsg();
   const email = document.getElementById('forgotEmail').value.trim();
+  const forgotSubmitBtn = forgotForm.querySelector('button[type="submit"]');
+
+  // Guard against double-clicks / repeated requests, which invalidate
+  // the previous email's link — a common cause of "link already used"
+  // even when someone clicks it right away (they clicked an older email).
+  if (forgotSubmitBtn.disabled) return;
+  forgotSubmitBtn.disabled = true;
+  const originalLabel = forgotSubmitBtn.textContent;
+  forgotSubmitBtn.textContent = 'Sending…';
+
   try {
     await resetPassword(email);
-    showMsg("If an account exists for that email, a reset link is on its way — check your inbox (and spam folder).", 'ok');
+    showMsg("Reset link sent — check your inbox (and spam folder). If you request another one later, only the newest email's link will work, so use the latest one you receive.", 'ok');
   } catch (err) {
-    // Firebase deliberately doesn't reveal whether the email exists, to
-    // avoid leaking who has an account — so most errors here just show
-    // the same reassuring message rather than "email not found."
     if (String(err.message || '').includes('auth/invalid-email')) {
       showMsg("That doesn't look like a valid email address.");
     } else {
-      showMsg("If an account exists for that email, a reset link is on its way — check your inbox (and spam folder).", 'ok');
+      showMsg("Reset link sent — check your inbox (and spam folder). If you request another one later, only the newest email's link will work, so use the latest one you receive.", 'ok');
     }
+  } finally {
+    setTimeout(() => {
+      forgotSubmitBtn.disabled = false;
+      forgotSubmitBtn.textContent = originalLabel;
+    }, 15000); // brief cooldown, not an instant re-enable, to discourage rapid re-requests
   }
 });
 
