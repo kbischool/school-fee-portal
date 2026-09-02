@@ -3251,8 +3251,8 @@
     "name": "UDENSON ZION",
     "class": "PLAYGROUP 1",
     "total_fee": 36390.0,
-    "total_paid": 0.0,
-    "balance": 36390.0,
+    "total_paid": 7070.0,
+    "balance": 29320.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "19500.0",
@@ -3271,21 +3271,21 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "36390",
-      "TOTAL PAID": "0",
-      "BALANCE": "36390"
+      "TOTAL PAID": "7070",
+      "BALANCE": "29320"
     }
   },
   "UDETES1119": {
     "name": "UDENSON TESTIMONY",
     "class": "PLAYGROUP 2",
-    "total_fee": 44280.0,
-    "total_paid": 0.0,
-    "balance": 44280.0,
+    "total_fee": 42930.0,
+    "total_paid": 42930.0,
+    "balance": 0.0,
     "details": {
       " AD_FORM": "0.0",
-      "TUITION": "19500.0",
+      "TUITION": "18200.0",
       " PTA&EXAM": "4000.0",
-      " REPORT_CARD": "750.0",
+      " REPORT_CARD": "700.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "12480",
       "NB & STAT": "7550",
@@ -3298,9 +3298,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "44280",
-      "TOTAL PAID": "0",
-      "BALANCE": "44280"
+      "TOTAL FEE": "42930",
+      "TOTAL PAID": "42930",
+      "BALANCE": "0"
     }
   },
   "WAHFAI1120": {
