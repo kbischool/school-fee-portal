@@ -647,8 +647,8 @@
     "name": "ADENIYI SAMUEL DEMILADE",
     "class": "JUNIOR SECONDARY SCHOOL 2",
     "total_fee": 79830.0,
-    "total_paid": 0.0,
-    "balance": 79830.0,
+    "total_paid": 60000.0,
+    "balance": 19830.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "33000.0",
@@ -667,8 +667,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "79830",
-      "TOTAL PAID": "0",
-      "BALANCE": "79830"
+      "TOTAL PAID": "60000",
+      "BALANCE": "19830"
     }
   },
   "ADEHER1024": {
@@ -1290,15 +1290,15 @@
   "DAVJES1047": {
     "name": "DAVID JESUTOFUNMI DARA",
     "class": "PRIMARY 5",
-    "total_fee": 79020.0,
-    "total_paid": 0.0,
-    "balance": 79020.0,
+    "total_fee": 77370.0,
+    "total_paid": 79020.0,
+    "balance": -1650.0,
     "details": {
       " AD_FORM": "0.0",
-      "TUITION": "28000.0",
+      "TUITION": "26600.0",
       " PTA&EXAM": "4000.0",
       " REPORT_CARD": "0.0",
-      "PRACTICAL": "5000.0",
+      "PRACTICAL": "4750.0",
       "TEXTBOOKS": "28790",
       "NB & STAT": "13230",
       "UNIFORM": "0",
@@ -1310,17 +1310,17 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "79020",
-      "TOTAL PAID": "0",
-      "BALANCE": "79020"
+      "TOTAL FEE": "77370",
+      "TOTAL PAID": "79020",
+      "BALANCE": "-1650"
     }
   },
   "EDEZEN1048": {
     "name": "EDEM ZENITH AYOKUNNUMI",
     "class": "PRIMARY 1",
     "total_fee": 82800.0,
-    "total_paid": 0.0,
-    "balance": 82800.0,
+    "total_paid": 42350.0,
+    "balance": 40450.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "28000.0",
@@ -1339,8 +1339,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "82800",
-      "TOTAL PAID": "0",
-      "BALANCE": "82800"
+      "TOTAL PAID": "42350",
+      "BALANCE": "40450"
     }
   },
   "EMMRUT1049": {
@@ -2915,8 +2915,8 @@
     "name": "PETER FAVOUR ELIANA",
     "class": "NURSERY 2",
     "total_fee": 85900.0,
-    "total_paid": 0.0,
-    "balance": 85900.0,
+    "total_paid": 50000.0,
+    "balance": 35900.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "26000.0",
@@ -2935,8 +2935,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "14240",
       "TOTAL FEE": "85900",
-      "TOTAL PAID": "0",
-      "BALANCE": "85900"
+      "TOTAL PAID": "50000",
+      "BALANCE": "35900"
     }
   },
   "SAHSAL1107": {
