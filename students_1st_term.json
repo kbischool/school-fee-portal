@@ -2690,14 +2690,14 @@
   "OLUISR1096": {
     "name": "OLUWASEUN ISRAEL ANJOLAOLUWA",
     "class": "PLAYGROUP 1",
-    "total_fee": 33140.0,
-    "total_paid": 0.0,
-    "balance": 33140.0,
+    "total_fee": 31790.0,
+    "total_paid": 33140.0,
+    "balance": -1350.0,
     "details": {
       " AD_FORM": "0.0",
-      "TUITION": "26000.0",
+      "TUITION": "24700.0",
       " PTA&EXAM": "4000.0",
-      " REPORT_CARD": "1000.0",
+      " REPORT_CARD": "950.0",
       "PRACTICAL": "0",
       "TEXTBOOKS": "6840",
       "NB & STAT": "5300",
@@ -2710,9 +2710,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "-10000",
-      "TOTAL FEE": "33140",
-      "TOTAL PAID": "0",
-      "BALANCE": "33140"
+      "TOTAL FEE": "31790",
+      "TOTAL PAID": "33140",
+      "BALANCE": "-1350"
     }
   },
   "OLUMOR1097": {
