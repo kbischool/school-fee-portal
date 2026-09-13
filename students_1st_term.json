@@ -171,8 +171,8 @@
     "name": "ABIODUN DANIEL OBANIJESU",
     "class": "PLAYGROUP 2",
     "total_fee": 50190.0,
-    "total_paid": 0.0,
-    "balance": 50190.0,
+    "total_paid": 30000.0,
+    "balance": 20190.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "19500.0",
@@ -191,8 +191,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "-90",
       "TOTAL FEE": "50190",
-      "TOTAL PAID": "0",
-      "BALANCE": "50190"
+      "TOTAL PAID": "30000",
+      "BALANCE": "20190"
     }
   },
   "ABISHA1007": {
@@ -955,8 +955,8 @@
     "name": "AKINDURO GABRIELLA OLUWAFIREWAMIRI",
     "class": "PLAYGROUP 1",
     "total_fee": 43140.0,
-    "total_paid": 0.0,
-    "balance": 43140.0,
+    "total_paid": 28000.0,
+    "balance": 15140.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "26000.0",
@@ -975,8 +975,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "43140",
-      "TOTAL PAID": "0",
-      "BALANCE": "43140"
+      "TOTAL PAID": "28000",
+      "BALANCE": "15140"
     }
   },
   "AKIDAN1035": {
@@ -2295,6 +2295,62 @@
       "BALANCE": "55590"
     }
   },
+  "OGUOLU1124": {
+    "name": "OGUNSANYA OLUWAFERANMI BLESSED",
+    "class": "PLAYGROUP 2",
+    "total_fee": 81330.0,
+    "total_paid": 81330.0,
+    "balance": 0.0,
+    "details": {
+      " AD_FORM": "1400.0",
+      "TUITION": "18200.0",
+      " PTA&EXAM": "4000.0",
+      " REPORT_CARD": "700.0",
+      "PRACTICAL": "0",
+      "TEXTBOOKS": "12480",
+      "NB & STAT": "7550",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
+      " AFTERSCHOOL": "6000",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "81330",
+      "TOTAL PAID": "81330",
+      "BALANCE": "0"
+    }
+  },
+  "OGUOPE1125": {
+    "name": "OGUNSANYA OPETOSIMI GRACE",
+    "class": "",
+    "total_fee": 37000.0,
+    "total_paid": 13670.0,
+    "balance": 23330.0,
+    "details": {
+      " AD_FORM": "0.0",
+      "TUITION": "0.0",
+      " PTA&EXAM": "0.0",
+      " REPORT_CARD": "0.0",
+      "PRACTICAL": "0",
+      "TEXTBOOKS": "0",
+      "NB & STAT": "0",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
+      " AFTERSCHOOL": "6000",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "37000",
+      "TOTAL PAID": "13670",
+      "BALANCE": "23330"
+    }
+  },
   "OKEJUM1081": {
     "name": "OKERINDE JUMAIN BOLUWATIFE",
     "class": "SENIOR SECONDARY SCHOOL 3",
@@ -3111,8 +3167,8 @@
     "name": "SANUSI JOSIAH BRIGHT",
     "class": "PLAYGROUP 2",
     "total_fee": 51530.0,
-    "total_paid": 0.0,
-    "balance": 51530.0,
+    "total_paid": 10000.0,
+    "balance": 41530.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "19500.0",
@@ -3131,8 +3187,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "1250",
       "TOTAL FEE": "51530",
-      "TOTAL PAID": "0",
-      "BALANCE": "51530"
+      "TOTAL PAID": "10000",
+      "BALANCE": "41530"
     }
   },
   "SANDES1112": {
