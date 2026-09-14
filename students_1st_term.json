@@ -142,12 +142,12 @@
   "ABICHA1005": {
     "name": "ABIODUN CHARIS ADEEWA",
     "class": "NURSERY 1",
-    "total_fee": 43130.0,
-    "total_paid": 43130.0,
-    "balance": 0.0,
+    "total_fee": 44430.0,
+    "total_paid": 20000.0,
+    "balance": 24430.0,
     "details": {
       " AD_FORM": "0.0",
-      "TUITION": "18200.0",
+      "TUITION": "19500.0",
       " PTA&EXAM": "4000.0",
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
@@ -162,9 +162,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "43130",
-      "TOTAL PAID": "43130",
-      "BALANCE": "0"
+      "TOTAL FEE": "44430",
+      "TOTAL PAID": "20000",
+      "BALANCE": "24430"
     }
   },
   "ABIDAN1006": {
@@ -199,8 +199,8 @@
     "name": "ABIODUN SHARON ADELEWA",
     "class": "PLAYGROUP 2",
     "total_fee": 44280.0,
-    "total_paid": 16870.0,
-    "balance": 27410.0,
+    "total_paid": 20000.0,
+    "balance": 24280.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "19500.0",
@@ -219,16 +219,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "44280",
-      "TOTAL PAID": "16870",
-      "BALANCE": "27410"
+      "TOTAL PAID": "20000",
+      "BALANCE": "24280"
     }
   },
   "ABIIVA1008": {
     "name": "ABIODUN IVANA ADESEWA",
     "class": "PRIMARY 3",
     "total_fee": 69290.0,
-    "total_paid": 0.0,
-    "balance": 69290.0,
+    "total_paid": 20000.0,
+    "balance": 49290.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "21000.0",
@@ -247,8 +247,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "69290",
-      "TOTAL PAID": "0",
-      "BALANCE": "69290"
+      "TOTAL PAID": "20000",
+      "BALANCE": "49290"
     }
   },
   "ADEELI1009": {
@@ -478,15 +478,15 @@
   "ADEMOJ1017": {
     "name": "ADEDOJA MOJEREOLUWA PROSPER",
     "class": "PRIMARY 1",
-    "total_fee": 73925.0,
-    "total_paid": 51685.0,
-    "balance": 22240.0,
+    "total_fee": 72150.0,
+    "total_paid": 72150.0,
+    "balance": 0.0,
     "details": {
       " AD_FORM": "0.0",
-      "TUITION": "21000.0",
+      "TUITION": "19600.0",
       " PTA&EXAM": "4000.0",
-      " REPORT_CARD": "1875.0",
-      "PRACTICAL": "3750.0",
+      " REPORT_CARD": "1750.0",
+      "PRACTICAL": "3500.0",
       "TEXTBOOKS": "25970",
       "NB & STAT": "11330",
       "UNIFORM": "0",
@@ -498,17 +498,17 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "73925",
-      "TOTAL PAID": "51685",
-      "BALANCE": "22240"
+      "TOTAL FEE": "72150",
+      "TOTAL PAID": "72150",
+      "BALANCE": "0"
     }
   },
   "ADEPRA1018": {
     "name": "ADEDOJA PRAISE",
     "class": "PRIMARY 5",
     "total_fee": 76770.0,
-    "total_paid": 0.0,
-    "balance": 76770.0,
+    "total_paid": 9535.0,
+    "balance": 67235.0,
     "details": {
       " AD_FORM": "0.0",
       "TUITION": "21000.0",
@@ -527,8 +527,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "76770",
-      "TOTAL PAID": "0",
-      "BALANCE": "76770"
+      "TOTAL PAID": "9535",
+      "BALANCE": "67235"
     }
   },
   "ADEMUM1019": {
@@ -814,14 +814,14 @@
   "ADIAHN1029": {
     "name": "ADIGUN AHNAF ARAOLA",
     "class": "PLAYGROUP 1",
-    "total_fee": 43140.0,
-    "total_paid": 0.0,
-    "balance": 43140.0,
+    "total_fee": 41790.0,
+    "total_paid": 43140.0,
+    "balance": -1350.0,
     "details": {
       " AD_FORM": "0.0",
-      "TUITION": "26000.0",
+      "TUITION": "24700.0",
       " PTA&EXAM": "4000.0",
-      " REPORT_CARD": "1000.0",
+      " REPORT_CARD": "950.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "6840",
       "NB & STAT": "5300",
@@ -834,9 +834,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "43140",
-      "TOTAL PAID": "0",
-      "BALANCE": "43140"
+      "TOTAL FEE": "41790",
+      "TOTAL PAID": "43140",
+      "BALANCE": "-1350"
     }
   },
   "AKAMIC1031": {
