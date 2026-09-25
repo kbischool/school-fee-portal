@@ -21,7 +21,56 @@
   --shadow: 0 2px 8px rgba(15,27,45,0.05), 0 10px 30px rgba(15,27,45,0.06);
   --shadow-hover: 0 14px 34px rgba(15,27,45,0.11);
   --brand-gradient: linear-gradient(135deg, var(--sky) 0%, var(--purple) 60%, var(--magenta) 100%);
+  --skeleton-base: #eef2f7;
+  --skeleton-shine: #f8fafc;
 }
+
+/* ---------------------------------------------------------------
+   Dark theme — toggled via [data-theme="dark"] on <html>, persisted
+   in localStorage by js/pwa-install.js. Same tokens, new values, so
+   every existing component repaints automatically.
+--------------------------------------------------------------- */
+html[data-theme="dark"] {
+  --sky: #4dc3f5;
+  --sky-deep: #7fd4fa;
+  --sky-pale: rgba(77,195,245,0.1);
+  --purple: #9d7bff;
+  --magenta: #f472b6;
+  --bg: #0b1220;
+  --surface: #121b2d;
+  --surface-alt: #182338;
+  --border: #22314a;
+  --ink: #eef3fa;
+  --ink-soft: #93a3bc;
+  --good: #34d399;
+  --good-soft: rgba(52,211,153,0.12);
+  --due: #f87171;
+  --due-soft: rgba(248,113,113,0.12);
+  --shadow: 0 2px 10px rgba(0,0,0,0.25), 0 12px 32px rgba(0,0,0,0.35);
+  --shadow-hover: 0 16px 40px rgba(0,0,0,0.45);
+  --skeleton-base: #182338;
+  --skeleton-shine: #202e48;
+}
+html[data-theme="dark"] body { background: var(--bg); }
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .ledger-card,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] table.admin-table,
+html[data-theme="dark"] .modal-box,
+html[data-theme="dark"] .modal-head,
+html[data-theme="dark"] .btn-google,
+html[data-theme="dark"] .term-picker button,
+html[data-theme="dark"] .field input { background: var(--surface); color: var(--ink); }
+html[data-theme="dark"] .topbar { background: rgba(11,18,32,0.82); }
+html[data-theme="dark"] .field input { background: var(--surface-alt); }
+html[data-theme="dark"] table.admin-table th { background: var(--surface-alt); }
+html[data-theme="dark"] .tabs { background: var(--surface-alt); }
+html[data-theme="dark"] .tabs button.active { background: var(--sky); color: #0b1220; }
+html[data-theme="dark"] .term-picker button.active { background: var(--sky); color: #0b1220; border-color: var(--sky); }
+html[data-theme="dark"] .btn-primary { background: var(--sky); color: #0b1220; }
+html[data-theme="dark"] .add-child-form button { background: var(--sky); color: #0b1220; }
+html[data-theme="dark"] .topbar .actions button { background: var(--surface-alt); color: var(--ink); }
+html, body { transition: background-color 0.25s ease, color 0.25s ease; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
@@ -491,4 +540,149 @@ table.admin-table tr:last-child td { border-bottom: none; }
   .modal-body { padding: 18px 18px; }
   .modal-section { margin-bottom: 20px; }
   .detail-row { font-size: 13px; padding: 8px 0; }
+}
+
+/* ---------------------------------------------------------------
+   Theme toggle pill (bottom-left, mirrors the PWA install pill)
+--------------------------------------------------------------- */
+#themeTogglePill {
+  position: fixed; left: 18px; bottom: 18px; z-index: 60;
+  display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--ink); cursor: pointer;
+  box-shadow: var(--shadow); transition: all 0.2s ease;
+  animation: fadeUp 0.4s cubic-bezier(0.16,1,0.3,1) both;
+}
+#themeTogglePill:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+#themeTogglePill svg { width: 18px; height: 18px; }
+#themeTogglePill .icon-sun { display: none; }
+html[data-theme="dark"] #themeTogglePill .icon-moon { display: none; }
+html[data-theme="dark"] #themeTogglePill .icon-sun { display: block; }
+
+/* ---------------------------------------------------------------
+   Button loading state — spinner replaces label, click disabled
+--------------------------------------------------------------- */
+.btn-primary.is-loading, .btn-google.is-loading, .inline-form .btn-primary.is-loading, .add-child-form button.is-loading {
+  color: transparent !important; pointer-events: none; position: relative;
+}
+.btn-primary.is-loading::after, .btn-google.is-loading::after, .add-child-form button.is-loading::after {
+  content: ''; position: absolute; top: 50%; left: 50%; width: 17px; height: 17px;
+  margin: -9px 0 0 -9px; border-radius: 50%;
+  border: 2.5px solid rgba(255,255,255,0.35); border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+}
+html[data-theme="dark"] .btn-primary.is-loading::after { border-color: rgba(11,18,32,0.35); border-top-color: #0b1220; }
+.btn-google.is-loading::after { border-color: rgba(15,27,45,0.2); border-top-color: var(--ink); }
+
+/* ---------------------------------------------------------------
+   Password visibility toggle
+--------------------------------------------------------------- */
+.field.with-toggle .input-wrap { position: relative; }
+.field.with-toggle input { padding-right: 42px; }
+.pw-toggle {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer; color: var(--ink-soft);
+  border-radius: 8px; transition: all 0.15s ease;
+}
+.pw-toggle:hover { color: var(--sky-deep); background: var(--sky-pale); }
+.pw-toggle svg { width: 17px; height: 17px; }
+.pw-toggle .icon-eye-off { display: none; }
+.pw-toggle.showing .icon-eye { display: none; }
+.pw-toggle.showing .icon-eye-off { display: block; }
+
+/* ---------------------------------------------------------------
+   Skeleton loaders — shimmer placeholders while data streams in
+--------------------------------------------------------------- */
+@keyframes shimmer { 0% { background-position: -300px 0; } 100% { background-position: 300px 0; } }
+.skeleton-block {
+  background: linear-gradient(90deg, var(--skeleton-base) 25%, var(--skeleton-shine) 37%, var(--skeleton-base) 63%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 8px;
+}
+.skeleton-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); margin-bottom: 22px; padding: 24px 26px;
+}
+html[data-theme="dark"] .skeleton-card { background: var(--surface); }
+.skeleton-card .sk-row1 { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 22px; }
+.skeleton-card .sk-line { height: 14px; }
+.skeleton-card .sk-title { width: 55%; height: 18px; margin-bottom: 8px; }
+.skeleton-card .sk-sub { width: 30%; height: 12px; }
+.skeleton-card .sk-ring { width: 74px; height: 74px; border-radius: 50%; flex-shrink: 0; }
+.skeleton-card .sk-item { height: 13px; margin-bottom: 14px; }
+.skeleton-card .sk-item:nth-child(1) { width: 92%; }
+.skeleton-card .sk-item:nth-child(2) { width: 78%; }
+.skeleton-card .sk-item:nth-child(3) { width: 85%; }
+.skeleton-table-row td { padding: 16px 18px; }
+.skeleton-table-row .skeleton-block { height: 13px; width: 80%; }
+
+/* ---------------------------------------------------------------
+   Summary stat bar — aggregate totals atop the parent ledger
+--------------------------------------------------------------- */
+.stat-bar {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 18px 20px; position: relative; overflow: hidden;
+}
+.stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); margin-bottom: 8px; }
+.stat-card .stat-value { font-size: 21px; }
+.stat-card.accent-due .stat-value { color: var(--due); }
+.stat-card.accent-good .stat-value { color: var(--good); }
+.stat-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--brand-gradient);
+}
+@media (max-width: 560px) {
+  .stat-bar { grid-template-columns: 1fr 1fr; }
+  .stat-card { padding: 14px 16px; }
+  .stat-card .stat-value { font-size: 17px; }
+  .stat-bar .stat-card:nth-child(1) { grid-column: 1 / -1; }
+}
+
+/* ---------------------------------------------------------------
+   Copy-to-clipboard pill (admin: generated codes)
+--------------------------------------------------------------- */
+.copy-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--ink);
+  padding: 3px 10px 3px 12px; border-radius: 999px; font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px; font-weight: 600; cursor: pointer; transition: all 0.15s ease;
+}
+.copy-pill:hover { border-color: var(--sky); background: var(--sky-pale); }
+.copy-pill svg { width: 13px; height: 13px; flex-shrink: 0; }
+.copy-pill.copied { border-color: var(--good); color: var(--good); background: var(--good-soft); }
+
+/* ---------------------------------------------------------------
+   Small utility / secondary button
+--------------------------------------------------------------- */
+.btn-ghost {
+  background: var(--surface); border: 1px solid var(--border); color: var(--ink);
+  padding: 8px 15px; border-radius: 999px; font-size: 12.5px; font-weight: 600;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.18s ease;
+}
+.btn-ghost:hover { border-color: var(--sky); color: var(--sky-deep); background: var(--sky-pale); transform: translateY(-1px); }
+.btn-ghost svg { width: 14px; height: 14px; }
+.card-actions { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 26px; border-top: 1px dashed var(--border); }
+
+/* Input with a leading icon (auth forms). The icon lives in a wrapper
+   around just the input (not the label/hint), so it stays vertically
+   centered on the input regardless of label length or wrapping. */
+.field.with-icon .input-wrap { position: relative; }
+.field.with-icon .input-wrap svg {
+  position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; color: var(--ink-soft); pointer-events: none;
+}
+.field.with-icon input { padding-left: 38px; }
+
+@media print {
+  body * { visibility: hidden; }
+  .bg-atmosphere, .topbar, .term-picker, .add-child-box, #themeTogglePill, #pwaInstallPill { display: none !important; }
+  .print-target, .print-target * { visibility: visible; }
+  .print-target { position: absolute; top: 0; left: 0; width: 100%; box-shadow: none; border: none; }
+  .quote-strip { display: none; }
 }

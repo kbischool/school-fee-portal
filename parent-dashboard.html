@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('kbis-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KBIS Fee Portal — My Children</title>
 <meta name="theme-color" content="#22ade0">
@@ -38,8 +39,21 @@
     <button data-term="term3">3rd Term</button>
   </div>
 
+  <div id="statBar"></div>
+
   <div id="ledgerContainer">
-    <div class="loading">Loading your fee records…</div>
+    <div class="skeleton-card">
+      <div class="sk-row1">
+        <div>
+          <div class="skeleton-block sk-title"></div>
+          <div class="skeleton-block sk-sub"></div>
+        </div>
+        <div class="skeleton-block sk-ring"></div>
+      </div>
+      <div class="skeleton-block sk-item"></div>
+      <div class="skeleton-block sk-item"></div>
+      <div class="skeleton-block sk-item"></div>
+    </div>
   </div>
 
   <div class="add-child-box">
@@ -74,6 +88,8 @@ addChildForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   addChildMsg.innerHTML = '';
   const code = document.getElementById('addChildCode').value;
+  const btn = addChildForm.querySelector('button[type="submit"]');
+  btn.classList.add('is-loading'); btn.disabled = true;
   try {
     await linkAdditionalStudentCode(currentUid, code);
     addChildMsg.innerHTML = `<div class="msg ok">Added! Their fees now show below.</div>`;
@@ -83,6 +99,8 @@ addChildForm.addEventListener('submit', async (e) => {
     renderStudents();
   } catch (err) {
     addChildMsg.innerHTML = `<div class="msg error">${err.message}</div>`;
+  } finally {
+    btn.classList.remove('is-loading'); btn.disabled = false;
   }
 });
 
@@ -90,6 +108,7 @@ termPicker.addEventListener('click', (e) => {
   if (!e.target.dataset.term) return;
   currentTerm = e.target.dataset.term;
   [...termPicker.children].forEach(b => b.classList.toggle('active', b === e.target));
+  ledgerContainer.innerHTML = `<div class="skeleton-card"><div class="sk-row1"><div><div class="skeleton-block sk-title"></div><div class="skeleton-block sk-sub"></div></div><div class="skeleton-block sk-ring"></div></div><div class="skeleton-block sk-item"></div><div class="skeleton-block sk-item"></div><div class="skeleton-block sk-item"></div></div>`;
   renderStudents();
 });
 
@@ -154,19 +173,50 @@ function progressRingSvg(pctPaid, cleared, uniqueId) {
     </div>`;
 }
 
+const statBar = document.getElementById('statBar');
+const printIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>`;
+
+function renderStatBar(entries) {
+  let totalDue = 0, totalPaid = 0, totalOwed = 0;
+  entries.forEach(({ term }) => {
+    if (!term) return;
+    totalDue += term.totalDue || 0;
+    totalPaid += term.totalPaid || 0;
+    const balance = typeof term.balance === 'number' ? term.balance : (term.totalDue || 0) - (term.totalPaid || 0);
+    if (balance > 0) totalOwed += balance;
+  });
+  statBar.innerHTML = `
+    <div class="stat-bar fade-up">
+      <div class="stat-card"><div class="stat-label">Total fees, this term</div><div class="stat-value display money">${formatMoney(totalDue)}</div></div>
+      <div class="stat-card accent-good"><div class="stat-label">Paid so far</div><div class="stat-value display money">${formatMoney(totalPaid)}</div></div>
+      <div class="stat-card ${totalOwed > 0 ? 'accent-due' : 'accent-good'}"><div class="stat-label">${totalOwed > 0 ? 'Outstanding' : 'Balance'}</div><div class="stat-value display money">${formatMoney(totalOwed)}</div></div>
+    </div>`;
+}
+
+// Prints just one child's ledger card, cleanly, using the shared @media
+// print rules in css/style.css (everything else on the page is hidden).
+function printCard(card) {
+  document.querySelectorAll('.print-target').forEach(el => el.classList.remove('print-target'));
+  card.classList.add('print-target');
+  window.print();
+}
+
 async function renderStudents() {
   if (!linkedStudents.length) {
+    statBar.innerHTML = '';
     ledgerContainer.innerHTML = `<div class="empty-note">No student records are linked to your account yet. Contact the school office.</div>`;
     return;
   }
 
   ledgerContainer.innerHTML = '';
   let cardIndex = 0;
+  const statEntries = [];
   for (const studentId of linkedStudents) {
     const snap = await getDoc(doc(db, "students", studentId));
     if (!snap.exists()) continue;
     const student = snap.data();
     const term = student.terms && student.terms[currentTerm];
+    statEntries.push({ term });
 
     const card = document.createElement('div');
     card.className = 'ledger-card fade-up';
@@ -209,9 +259,14 @@ async function renderStudents() {
         <span>Total paid: <span class="money">${formatMoney(term.totalPaid)}</span> of <span class="money">${formatMoney(term.totalDue)}</span></span>
         <span class="amount money ${cleared ? 'cleared' : 'due'}">${formatMoney(Math.abs(balance))} ${cleared ? 'credit' : 'due'}</span>
       </div>
-      <div class="quote-strip"><span class="quote-mark">&ldquo;</span>${randomQuote()}</div>`;
+      <div class="quote-strip"><span class="quote-mark">&ldquo;</span>${randomQuote()}</div>
+      <div class="card-actions">
+        <button type="button" class="btn-ghost btn-print">${printIconSvg} Print statement</button>
+      </div>`;
+    card.querySelector('.btn-print').addEventListener('click', () => printCard(card));
     ledgerContainer.appendChild(card);
   }
+  renderStatBar(statEntries);
 }
 
 watchAuthState(async (user) => {

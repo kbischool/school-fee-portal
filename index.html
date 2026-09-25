@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('kbis-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KBIS Fee Portal — Sign In</title>
 <meta name="theme-color" content="#22ade0">
@@ -42,13 +43,23 @@
 
     <!-- LOGIN FORM -->
     <form id="loginForm">
-      <div class="field">
+      <div class="field with-icon">
         <label for="loginEmail">Email</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
         <input type="email" id="loginEmail" required autocomplete="username">
       </div>
-      <div class="field">
+      </div>
+      <div class="field with-icon with-toggle">
         <label for="loginPassword">Password</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <input type="password" id="loginPassword" required autocomplete="current-password">
+        <button type="button" class="pw-toggle" data-target="loginPassword" aria-label="Show password">
+          <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+        </button>
+      </div>
       </div>
       <button type="submit" class="btn-primary">Log in</button>
       <div style="text-align:right; margin-top:10px;">
@@ -58,9 +69,12 @@
 
     <!-- FORGOT PASSWORD FORM -->
     <form id="forgotForm" style="display:none;">
-      <div class="field">
+      <div class="field with-icon">
         <label for="forgotEmail">Enter your account email</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
         <input type="email" id="forgotEmail" required autocomplete="username">
+      </div>
         <div class="hint">We'll send a link to that email to set a new password.</div>
       </div>
       <button type="submit" class="btn-primary">Send reset link</button>
@@ -71,22 +85,38 @@
 
     <!-- CLAIM CODE FORM -->
     <form id="claimForm" style="display:none;">
-      <div class="field">
+      <div class="field with-icon">
         <label for="claimCode" id="claimCodeLabel">School code</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h.01M7 13h.01M11 9h6M11 13h6"/></svg>
         <input type="text" id="claimCode" required placeholder="e.g. ABDABD1000" style="text-transform:uppercase;">
+      </div>
         <div class="hint">This is the code the school gave you. You'll only need it this once.</div>
       </div>
-      <div class="field">
+      <div class="field with-icon">
         <label for="claimName">Your name</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <input type="text" id="claimName" required autocomplete="name">
       </div>
-      <div class="field">
+      </div>
+      <div class="field with-icon">
         <label for="claimEmail">Email</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
         <input type="email" id="claimEmail" required autocomplete="username">
       </div>
-      <div class="field">
+      </div>
+      <div class="field with-icon with-toggle">
         <label for="claimPassword">Choose a password</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <input type="password" id="claimPassword" required minlength="6" autocomplete="new-password">
+        <button type="button" class="pw-toggle" data-target="claimPassword" aria-label="Show password">
+          <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+        </button>
+      </div>
         <div class="hint">At least 6 characters. This becomes your login from now on.</div>
       </div>
       <button type="submit" class="btn-primary">Create my account</button>
@@ -100,6 +130,33 @@
 
     <div class="switch-row" id="switchHint">
       First time here? Switch to the "First time" tab above and use the code the school gave you.
+    </div>
+  </div>
+</div>
+
+<!-- Shown only the first time a Google account signs in and needs a code
+     to link it to a student/admin record. Replaces a plain browser prompt(). -->
+<div class="modal-overlay" id="googleCodeOverlay" style="display:none;">
+  <div class="modal-box" style="max-width:400px;">
+    <div class="modal-head">
+      <div>
+        <h2 style="font-size:17px;">Almost there</h2>
+        <div style="font-size:13px;color:var(--ink-soft);margin-top:4px;">First time with Google — enter your code to finish setting up your account.</div>
+      </div>
+      <button class="modal-close" id="googleCodeClose" type="button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="googleCodeForm">
+        <div class="field with-icon">
+          <label for="googleCodeInput" id="googleCodeLabel">School code</label>
+      <div class="input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h.01M7 13h.01M11 9h6M11 13h6"/></svg>
+          <input type="text" id="googleCodeInput" required placeholder="e.g. ABDABD1000" style="text-transform:uppercase;" autofocus>
+      </div>
+        </div>
+        <div id="googleCodeMsg"></div>
+        <button type="submit" class="btn-primary">Finish setup</button>
+      </form>
     </div>
   </div>
 </div>
@@ -120,9 +177,38 @@ const claimCodeLabel = document.getElementById('claimCodeLabel');
 const googleBtn = document.getElementById('googleBtn');
 const forgotLink = document.getElementById('forgotLink');
 const backToLoginLink = document.getElementById('backToLoginLink');
+const googleCodeOverlay = document.getElementById('googleCodeOverlay');
+const googleCodeForm = document.getElementById('googleCodeForm');
+const googleCodeClose = document.getElementById('googleCodeClose');
+const googleCodeMsg = document.getElementById('googleCodeMsg');
+const googleCodeLabel = document.getElementById('googleCodeLabel');
 
 let currentRole = 'parent';
 let currentMode = 'login';
+
+// Password show/hide toggles — works for any .pw-toggle button on the page.
+document.querySelectorAll('.pw-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = document.getElementById(btn.dataset.target);
+    const showing = input.type === 'password';
+    input.type = showing ? 'text' : 'password';
+    btn.classList.toggle('showing', showing);
+    btn.setAttribute('aria-label', showing ? 'Hide password' : 'Show password');
+  });
+});
+
+// Small helper: show a spinner in a submit button and disable it while an
+// async action runs, restoring its label afterwards either way.
+async function withButtonLoading(button, action) {
+  button.classList.add('is-loading');
+  button.disabled = true;
+  try {
+    return await action();
+  } finally {
+    button.classList.remove('is-loading');
+    button.disabled = false;
+  }
+}
 
 function setRole(role) {
   currentRole = role;
@@ -199,16 +285,19 @@ loginForm.addEventListener('submit', async (e) => {
   clearMsg();
   const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
-  try {
-    const uid = await loginEmail(email, password);
-    const { role } = await getUserRole(uid);
-    if (!role) { showMsg("This account isn't linked to a student or admin record yet. Contact the school office."); return; }
-    if (currentRole === 'admin' && role !== 'admin') { showMsg("This is a parent account — switch to the Parent tab to log in."); return; }
-    if (currentRole === 'parent' && role !== 'parent') { showMsg("This is an administrator account — switch to the Administrator tab to log in."); return; }
-    goToDashboard(role);
-  } catch (err) {
-    showMsg(friendlyError(err));
-  }
+  const btn = loginForm.querySelector('button[type="submit"]');
+  await withButtonLoading(btn, async () => {
+    try {
+      const uid = await loginEmail(email, password);
+      const { role } = await getUserRole(uid);
+      if (!role) { showMsg("This account isn't linked to a student or admin record yet. Contact the school office."); return; }
+      if (currentRole === 'admin' && role !== 'admin') { showMsg("This is a parent account — switch to the Parent tab to log in."); return; }
+      if (currentRole === 'parent' && role !== 'parent') { showMsg("This is an administrator account — switch to the Administrator tab to log in."); return; }
+      goToDashboard(role);
+    } catch (err) {
+      showMsg(friendlyError(err));
+    }
+  });
 });
 
 claimForm.addEventListener('submit', async (e) => {
@@ -218,38 +307,75 @@ claimForm.addEventListener('submit', async (e) => {
   const name = document.getElementById('claimName').value.trim();
   const email = document.getElementById('claimEmail').value.trim();
   const password = document.getElementById('claimPassword').value;
-  try {
-    if (currentRole === 'admin') {
-      await claimAdminCode(code, email, password, name);
-      goToDashboard('admin');
-    } else {
-      await claimParentCode(code, email, password, name);
-      goToDashboard('parent');
+  const btn = claimForm.querySelector('button[type="submit"]');
+  await withButtonLoading(btn, async () => {
+    try {
+      if (currentRole === 'admin') {
+        await claimAdminCode(code, email, password, name);
+        goToDashboard('admin');
+      } else {
+        await claimParentCode(code, email, password, name);
+        goToDashboard('parent');
+      }
+    } catch (err) {
+      showMsg(friendlyError(err));
     }
-  } catch (err) {
-    showMsg(friendlyError(err));
-  }
+  });
+});
+
+// Pending Google user waiting on a code, shown via the modal below instead
+// of a plain browser prompt().
+let pendingGoogleUser = null;
+
+function openGoogleCodeModal() {
+  googleCodeMsg.innerHTML = '';
+  googleCodeLabel.textContent = currentRole === 'admin' ? 'Admin code' : 'School code';
+  document.getElementById('googleCodeInput').value = '';
+  googleCodeOverlay.style.display = 'flex';
+  setTimeout(() => document.getElementById('googleCodeInput').focus(), 30);
+}
+function closeGoogleCodeModal() {
+  googleCodeOverlay.style.display = 'none';
+  pendingGoogleUser = null;
+}
+googleCodeClose.addEventListener('click', closeGoogleCodeModal);
+googleCodeOverlay.addEventListener('click', (e) => { if (e.target === googleCodeOverlay) closeGoogleCodeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && googleCodeOverlay.style.display === 'flex') closeGoogleCodeModal(); });
+
+googleCodeForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  googleCodeMsg.innerHTML = '';
+  const code = document.getElementById('googleCodeInput').value;
+  const btn = googleCodeForm.querySelector('button[type="submit"]');
+  await withButtonLoading(btn, async () => {
+    try {
+      await linkGoogleUserWithCode(
+        pendingGoogleUser.uid, pendingGoogleUser.email,
+        pendingGoogleUser.displayName || pendingGoogleUser.email, code, currentRole === 'admin'
+      );
+      closeGoogleCodeModal();
+      goToDashboard(currentRole);
+    } catch (err) {
+      googleCodeMsg.innerHTML = `<div class="msg error">${friendlyError(err)}</div>`;
+    }
+  });
 });
 
 googleBtn.addEventListener('click', async () => {
   clearMsg();
-  try {
-    const user = await loginGoogle();
-    const { role } = await getUserRole(user.uid);
-    if (role) { goToDashboard(role); return; }
+  await withButtonLoading(googleBtn, async () => {
+    try {
+      const user = await loginGoogle();
+      const { role } = await getUserRole(user.uid);
+      if (role) { goToDashboard(role); return; }
 
-    // First time this Google account has been seen — need a code to link it.
-    const code = prompt(
-      currentRole === 'admin'
-        ? "First time with Google — enter your admin code to finish setup:"
-        : "First time with Google — enter your school code to finish setup:"
-    );
-    if (!code) { showMsg("A code is needed to link your Google account the first time."); return; }
-    await linkGoogleUserWithCode(user.uid, user.email, user.displayName || user.email, code, currentRole === 'admin');
-    goToDashboard(currentRole);
-  } catch (err) {
-    showMsg(friendlyError(err));
-  }
+      // First time this Google account has been seen — need a code to link it.
+      pendingGoogleUser = user;
+      openGoogleCodeModal();
+    } catch (err) {
+      showMsg(friendlyError(err));
+    }
+  });
 });
 
 function friendlyError(err) {

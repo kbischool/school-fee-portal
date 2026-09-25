@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('kbis-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KBIS Fee Portal — Admin</title>
 <meta name="theme-color" content="#22ade0">
@@ -89,8 +90,14 @@
     <h2>Students &amp; codes</h2>
     <span class="count" id="studentCount"></span>
   </div>
-  <div class="field" style="max-width:340px;">
-    <input type="text" id="studentSearch" placeholder="Search by name, class, or code…">
+  <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap;">
+    <div class="field" style="max-width:340px; flex:1; margin-bottom:0;">
+      <input type="text" id="studentSearch" placeholder="Search by name, class, or code…">
+    </div>
+    <button type="button" class="btn-ghost" id="exportCsvBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Export CSV
+    </button>
   </div>
   <p style="font-size:12px;color:var(--ink-soft);margin:10px 0 10px;">Sorted alphabetically by last name. Click any row to see full fee details.</p>
   <div class="table-scroll">
@@ -99,7 +106,10 @@
       <tr><th>Student</th><th>Class</th><th>Code</th><th>Account status</th></tr>
     </thead>
     <tbody id="studentTableBody">
-      <tr><td colspan="4" class="loading">Loading…</td></tr>
+      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
     </tbody>
   </table>
   </div>
@@ -123,11 +133,75 @@ function formatMoney(n) {
   return '₦' + Number(n || 0).toLocaleString('en-NG', { minimumFractionDigits: 2 });
 }
 
+// Small helper: show a spinner in a submit button and disable it while an
+// async action runs, restoring its label afterwards either way.
+async function withButtonLoading(button, action) {
+  button.classList.add('is-loading');
+  button.disabled = true;
+  try {
+    return await action();
+  } finally {
+    button.classList.remove('is-loading');
+    button.disabled = false;
+  }
+}
+
+const copyIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+const checkIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+// Renders a click-to-copy pill for a generated code, with a brief
+// checkmark confirmation — used right after issuing a new code.
+function copyPillHtml(code) {
+  return `<button type="button" class="copy-pill" data-code="${code}">${copyIconSvg}<span class="copy-pill-label">${code}</span></button>`;
+}
+function wireCopyPills(container) {
+  container.querySelectorAll('.copy-pill').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.code);
+        const label = btn.querySelector('.copy-pill-label');
+        const original = label.textContent;
+        btn.classList.add('copied');
+        btn.innerHTML = `${checkIconSvg}<span class="copy-pill-label">Copied</span>`;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = `${copyIconSvg}<span class="copy-pill-label">${original}</span>`;
+        }, 1600);
+      } catch (e) { /* clipboard unavailable — the code is still visible in the pill */ }
+    });
+  });
+}
+
+// Exports the currently visible student list (respects the active search
+// filter) as a CSV file the admin can open in Excel/Sheets.
+function exportStudentsCsv(list) {
+  const header = ['Student', 'Class', 'Code', 'Account status', 'Parent linked (UID)'];
+  const rows = list.map(({ student, codeInfo }) => [
+    student.name || '', student.class || '', codeInfo ? codeInfo.code : '',
+    codeInfo ? (codeInfo.claimed ? 'Account created' : 'Code not yet used') : '—',
+    (codeInfo && codeInfo.claimedByUid) || ''
+  ]);
+  const escapeCell = (v) => `"${String(v).replace(/"/g, '""')}"`;
+  const csv = [header, ...rows].map(r => r.map(escapeCell).join(',')).join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `kbis-students-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
 const TERM_LABELS = { term1: '1st Term', term2: '2nd Term', term3: '3rd Term' };
 
 function closeModal() {
   document.getElementById('modalRoot').innerHTML = '';
 }
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('modalRoot').innerHTML.trim()) closeModal();
+});
 
 async function openStudentDetail(code, studentData, codeInfo) {
   let parentEmail = null;
@@ -171,7 +245,7 @@ async function openStudentDetail(code, studentData, codeInfo) {
         <div class="modal-body">
           <div class="modal-section">
             <h3>Account</h3>
-            <div class="detail-row"><span>Code</span><span class="money">${code}</span></div>
+            <div class="detail-row"><span>Code</span><span class="money">${copyPillHtml(code)}</span></div>
             <div class="detail-row"><span>Status</span><span>${codeInfo && codeInfo.claimed ? '<span class="badge claimed">Account created</span>' : '<span class="badge unclaimed">Code not yet used</span>'}</span></div>
             ${parentEmail ? `<div class="detail-row"><span>Parent email</span><span>${parentEmail}</span></div>` : ''}
           </div>
@@ -185,6 +259,7 @@ async function openStudentDetail(code, studentData, codeInfo) {
   document.getElementById('modalOverlay').addEventListener('click', (e) => {
     if (e.target.id === 'modalOverlay') closeModal();
   });
+  wireCopyPills(document.getElementById('modalRoot'));
 }
 
 // Mirrors update_data.py's clean_code_fragment(): strip to A-Z0-9, first 3 chars.
@@ -262,16 +337,28 @@ function renderStudentRows(list) {
     tr.innerHTML = `
       <td data-label="Student">${student.name}</td>
       <td data-label="Class">${student.class || '—'}</td>
-      <td data-label="Code" class="money">${codeInfo ? codeInfo.code : '—'}</td>
+      <td data-label="Code" class="money">${codeInfo ? copyPillHtml(codeInfo.code) : '—'}</td>
       <td data-label="Status">${codeInfo
         ? (codeInfo.claimed
             ? '<span class="badge claimed">Account created</span>'
             : '<span class="badge unclaimed">Code not yet used</span>')
         : '—'}</td>`;
-    tr.addEventListener('click', () => openStudentDetail(id, student, codeInfo));
+    tr.addEventListener('click', (e) => { if (e.target.closest('.copy-pill')) return; openStudentDetail(id, student, codeInfo); });
     tbody.appendChild(tr);
   });
+  wireCopyPills(tbody);
 }
+
+document.getElementById('exportCsvBtn').addEventListener('click', () => {
+  const q = document.getElementById('studentSearch').value.trim().toLowerCase();
+  const list = q
+    ? allStudentsCache.filter(({ student, codeInfo }) =>
+        (student.name || '').toLowerCase().includes(q) ||
+        (student.class || '').toLowerCase().includes(q) ||
+        (codeInfo && codeInfo.code || '').toLowerCase().includes(q))
+    : allStudentsCache;
+  exportStudentsCsv(list);
+});
 
 document.getElementById('studentSearch').addEventListener('input', (e) => {
   const q = e.target.value.trim().toLowerCase();
@@ -289,37 +376,45 @@ document.getElementById('newCodeForm').addEventListener('submit', async (e) => {
   const name = document.getElementById('newStudentName').value.trim();
   const cls = document.getElementById('newStudentClass').value.trim();
   const msgEl = document.getElementById('newCodeMsg');
+  const btn = e.target.querySelector('button[type="submit"]');
   msgEl.innerHTML = '';
-  try {
-    const existing = await getDocs(collection(db, 'schoolCodes'));
-    const nextIndex = await getNextIndex(existing);
-    const code = generateCode(name, nextIndex);
-    const studentId = code; // stable id tied to the code, same spirit as the original code_registry.json
+  await withButtonLoading(btn, async () => {
+    try {
+      const existing = await getDocs(collection(db, 'schoolCodes'));
+      const nextIndex = await getNextIndex(existing);
+      const code = generateCode(name, nextIndex);
+      const studentId = code; // stable id tied to the code, same spirit as the original code_registry.json
 
-    await setDoc(doc(db, 'students', studentId), { name, class: cls, terms: {} }, { merge: true });
-    await setDoc(doc(db, 'schoolCodes', code), { studentId, index: nextIndex, claimed: false, createdAt: new Date().toISOString() });
+      await setDoc(doc(db, 'students', studentId), { name, class: cls, terms: {} }, { merge: true });
+      await setDoc(doc(db, 'schoolCodes', code), { studentId, index: nextIndex, claimed: false, createdAt: new Date().toISOString() });
 
-    msgEl.innerHTML = `<div class="msg ok">Code generated: <strong>${code}</strong> — give this to the parent for their first login.</div>`;
-    e.target.reset();
-    loadStudentsTable();
-  } catch (err) {
-    msgEl.innerHTML = `<div class="msg error">${err.message}</div>`;
-  }
+      msgEl.innerHTML = `<div class="msg ok">Code generated: ${copyPillHtml(code)} — give this to the parent for their first login.</div>`;
+      wireCopyPills(msgEl);
+      e.target.reset();
+      loadStudentsTable();
+    } catch (err) {
+      msgEl.innerHTML = `<div class="msg error">${err.message}</div>`;
+    }
+  });
 });
 
 document.getElementById('newAdminCodeForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const label = document.getElementById('newAdminLabel').value.trim();
   const msgEl = document.getElementById('newAdminCodeMsg');
+  const btn = e.target.querySelector('button[type="submit"]');
   msgEl.innerHTML = '';
-  try {
-    const code = 'ADM' + Math.random().toString(36).substring(2, 8).toUpperCase();
-    await setDoc(doc(db, 'adminCodes', code), { label, claimed: false, createdAt: new Date().toISOString() });
-    msgEl.innerHTML = `<div class="msg ok">Admin code generated: <strong>${code}</strong> — share this with the new administrator for their first login.</div>`;
-    e.target.reset();
-  } catch (err) {
-    msgEl.innerHTML = `<div class="msg error">${err.message}</div>`;
-  }
+  await withButtonLoading(btn, async () => {
+    try {
+      const code = 'ADM' + Math.random().toString(36).substring(2, 8).toUpperCase();
+      await setDoc(doc(db, 'adminCodes', code), { label, claimed: false, createdAt: new Date().toISOString() });
+      msgEl.innerHTML = `<div class="msg ok">Admin code generated: ${copyPillHtml(code)} — share this with the new administrator for their first login.</div>`;
+      wireCopyPills(msgEl);
+      e.target.reset();
+    } catch (err) {
+      msgEl.innerHTML = `<div class="msg error">${err.message}</div>`;
+    }
+  });
 });
 
 document.getElementById('linkExistingForm').addEventListener('submit', async (e) => {
@@ -327,37 +422,40 @@ document.getElementById('linkExistingForm').addEventListener('submit', async (e)
   const email = document.getElementById('linkParentEmail').value.trim();
   const code = document.getElementById('linkChildCode').value.trim().toUpperCase();
   const msgEl = document.getElementById('linkExistingMsg');
+  const btn = e.target.querySelector('button[type="submit"]');
   msgEl.innerHTML = '';
-  try {
-    const parentsQuery = query(collection(db, 'parents'), where('email', '==', email));
-    const parentsSnap = await getDocs(parentsQuery);
-    if (parentsSnap.empty) {
-      msgEl.innerHTML = `<div class="msg error">No parent account found with that email. They need to create an account first (using any one of their children's codes) before you can link a second child.</div>`;
-      return;
-    }
-    const parentDoc = parentsSnap.docs[0];
+  await withButtonLoading(btn, async () => {
+    try {
+      const parentsQuery = query(collection(db, 'parents'), where('email', '==', email));
+      const parentsSnap = await getDocs(parentsQuery);
+      if (parentsSnap.empty) {
+        msgEl.innerHTML = `<div class="msg error">No parent account found with that email. They need to create an account first (using any one of their children's codes) before you can link a second child.</div>`;
+        return;
+      }
+      const parentDoc = parentsSnap.docs[0];
 
-    const codeRef = doc(db, 'schoolCodes', code);
-    const codeSnap = await getDoc(codeRef);
-    if (!codeSnap.exists()) {
-      msgEl.innerHTML = `<div class="msg error">That code wasn't recognized.</div>`;
-      return;
-    }
-    const codeData = codeSnap.data();
-    if (codeData.claimed) {
-      msgEl.innerHTML = `<div class="msg error">This code has already been used elsewhere.</div>`;
-      return;
-    }
+      const codeRef = doc(db, 'schoolCodes', code);
+      const codeSnap = await getDoc(codeRef);
+      if (!codeSnap.exists()) {
+        msgEl.innerHTML = `<div class="msg error">That code wasn't recognized.</div>`;
+        return;
+      }
+      const codeData = codeSnap.data();
+      if (codeData.claimed) {
+        msgEl.innerHTML = `<div class="msg error">This code has already been used elsewhere.</div>`;
+        return;
+      }
 
-    await updateDoc(doc(db, 'parents', parentDoc.id), { linkedStudents: arrayUnion(codeData.studentId) });
-    await updateDoc(codeRef, { claimed: true, claimedByUid: parentDoc.id, claimedAt: new Date().toISOString() });
+      await updateDoc(doc(db, 'parents', parentDoc.id), { linkedStudents: arrayUnion(codeData.studentId) });
+      await updateDoc(codeRef, { claimed: true, claimedByUid: parentDoc.id, claimedAt: new Date().toISOString() });
 
-    msgEl.innerHTML = `<div class="msg ok">Linked — ${email} will now see this child too, next time they log in.</div>`;
-    e.target.reset();
-    loadStudentsTable();
-  } catch (err) {
-    msgEl.innerHTML = `<div class="msg error">${err.message}</div>`;
-  }
+      msgEl.innerHTML = `<div class="msg ok">Linked — ${email} will now see this child too, next time they log in.</div>`;
+      e.target.reset();
+      loadStudentsTable();
+    } catch (err) {
+      msgEl.innerHTML = `<div class="msg error">${err.message}</div>`;
+    }
+  });
 });
 
 watchAuthState(async (user) => {

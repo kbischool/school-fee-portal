@@ -9,7 +9,7 @@
 //    the app feel instant.
 //  - Firestore/Auth/Google traffic: NEVER cached, always live.
 
-const CACHE_NAME = 'kbis-fee-portal-shell-v3'; // bumped to pick up reset-password.html
+const CACHE_NAME = 'kbis-fee-portal-shell-v4'; // bumped for the premium UI refresh (theme toggle, skeleton loaders, modals)
 
 const SHELL_FILES = [
   'index.html',
