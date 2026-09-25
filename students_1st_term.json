@@ -1091,6 +1091,34 @@
       "BALANCE": "56930"
     }
   },
+  "AKPFRA1138": {
+    "name": "AKPAN FRANCIS",
+    "class": "NURSERY 1",
+    "total_fee": 84930.0,
+    "total_paid": 50000.0,
+    "balance": 34930.0,
+    "details": {
+      " AD_FORM": "2000",
+      "TUITION": "26000.0",
+      " PTA&EXAM": "4000",
+      " REPORT_CARD": "1000.0",
+      "PRACTICAL": "0.0",
+      "TEXTBOOKS": "13380",
+      "NB & STAT": "7550",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
+      " AFTERSCHOOL": "0",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "84930",
+      "TOTAL PAID": "50000",
+      "BALANCE": "34930"
+    }
+  },
   "ALAADE1036": {
     "name": "ALABI ADEKUNLE",
     "class": "CRECHE",
@@ -1123,8 +1151,8 @@
     "name": "ALADESAYE AFOLAHANMI VINCENT",
     "class": "PLAYGROUP 1",
     "total_fee": 43140.0,
-    "total_paid": 0.0,
-    "balance": 43140.0,
+    "total_paid": 30000.0,
+    "balance": 13140.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1143,8 +1171,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "43140",
-      "TOTAL PAID": "0",
-      "BALANCE": "43140"
+      "TOTAL PAID": "30000",
+      "BALANCE": "13140"
     }
   },
   "ALIBOL1038": {
@@ -1515,8 +1543,8 @@
     "name": "EMORDI JULIAN KOLADE",
     "class": "PRIMARY 2",
     "total_fee": 94335.0,
-    "total_paid": 20000.0,
-    "balance": 74335.0,
+    "total_paid": 64000.0,
+    "balance": 30335.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1535,16 +1563,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "22105",
       "TOTAL FEE": "94335",
-      "TOTAL PAID": "20000",
-      "BALANCE": "74335"
+      "TOTAL PAID": "64000",
+      "BALANCE": "30335"
     }
   },
   "EMOJAP1051": {
     "name": "EMORDI JAPHETH ENIOLA",
     "class": "PRIMARY 5",
     "total_fee": 101165.0,
-    "total_paid": 20000.0,
-    "balance": 81165.0,
+    "total_paid": 64000.0,
+    "balance": 37165.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1563,8 +1591,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "24395",
       "TOTAL FEE": "101165",
-      "TOTAL PAID": "20000",
-      "BALANCE": "81165"
+      "TOTAL PAID": "64000",
+      "BALANCE": "37165"
     }
   },
   "ERIOLU1052": {
@@ -1738,9 +1766,9 @@
   "GANJOS1056": {
     "name": "GANFO JOSHUA OLAMIDE",
     "class": "NURSERY 1",
-    "total_fee": 45330.0,
+    "total_fee": 40830.0,
     "total_paid": 0.0,
-    "balance": 45330.0,
+    "balance": 40830.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -1748,7 +1776,7 @@
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "13380",
-      "NB & STAT": "8450",
+      "NB & STAT": "3950",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -1758,9 +1786,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "45330",
+      "TOTAL FEE": "40830",
       "TOTAL PAID": "0",
-      "BALANCE": "45330"
+      "BALANCE": "40830"
     }
   },
   "GANFAR1121": {
@@ -1851,8 +1879,8 @@
     "name": "IGE OLUWAFERANMI BRIDGET",
     "class": "JUNIOR SECONDARY SCHOOL 3",
     "total_fee": 62230.0,
-    "total_paid": 0.0,
-    "balance": 62230.0,
+    "total_paid": 50000.0,
+    "balance": 12230.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -1871,16 +1899,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "62230",
-      "TOTAL PAID": "0",
-      "BALANCE": "62230"
+      "TOTAL PAID": "50000",
+      "BALANCE": "12230"
     }
   },
   "IGEOLU1061": {
     "name": "IGE OLUWAFEMI BRIGHT",
     "class": "PRIMARY 4",
     "total_fee": 69310.0,
-    "total_paid": 0.0,
-    "balance": 69310.0,
+    "total_paid": 50000.0,
+    "balance": 19310.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1899,36 +1927,36 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "69310",
-      "TOTAL PAID": "0",
-      "BALANCE": "69310"
+      "TOTAL PAID": "50000",
+      "BALANCE": "19310"
     }
   },
   "ISAEYI1137": {
     "name": "ISAAC EYINJUOLUWA HERITAGE",
-    "class": "",
-    "total_fee": 0.0,
+    "class": "PRINARY 2",
+    "total_fee": 100605.0,
     "total_paid": 30000.0,
-    "balance": -30000.0,
+    "balance": 70605.0,
     "details": {
-      " AD_FORM": "0",
-      "TUITION": "0.0",
-      " PTA&EXAM": "0",
-      " REPORT_CARD": "0.0",
-      "PRACTICAL": "0.0",
-      "TEXTBOOKS": "0",
-      "NB & STAT": "0",
-      "UNIFORM": "0",
-      "HOODY": "0",
-      "SPORTSWEAR": "0",
+      " AD_FORM": "1500",
+      "TUITION": "21000.0",
+      " PTA&EXAM": "4000",
+      " REPORT_CARD": "1875.0",
+      "PRACTICAL": "3750.0",
+      "TEXTBOOKS": "26150",
+      "NB & STAT": "11330",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
       " AFTERSCHOOL": "0",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "0",
+      "TOTAL FEE": "100605",
       "TOTAL PAID": "30000",
-      "BALANCE": "-30000"
+      "BALANCE": "70605"
     }
   },
   "ISMMAB1133": {
@@ -2242,9 +2270,9 @@
   "KONUMA1072": {
     "name": "KONNEH UMAR IREBAMI",
     "class": "NURSERY 1",
-    "total_fee": 52230.0,
+    "total_fee": 47730.0,
     "total_paid": 25000.0,
-    "balance": 27230.0,
+    "balance": 22730.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2252,7 +2280,7 @@
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "13380",
-      "NB & STAT": "9350",
+      "NB & STAT": "4850",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -2262,9 +2290,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "52230",
+      "TOTAL FEE": "47730",
       "TOTAL PAID": "25000",
-      "BALANCE": "27230"
+      "BALANCE": "22730"
     }
   },
   "KONAYI1073": {
@@ -2323,12 +2351,40 @@
       "BALANCE": "-20"
     }
   },
+  "MORTES1139": {
+    "name": "MORAKINYO TESTIMONY AYANFE",
+    "class": "PRIMARY 5",
+    "total_fee": 105145.0,
+    "total_paid": 0.0,
+    "balance": 105145.0,
+    "details": {
+      " AD_FORM": "1500",
+      "TUITION": "21000.0",
+      " PTA&EXAM": "4000",
+      " REPORT_CARD": "1875.0",
+      "PRACTICAL": "3750.0",
+      "TEXTBOOKS": "28790",
+      "NB & STAT": "13230",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
+      " AFTERSCHOOL": "0",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "105145",
+      "TOTAL PAID": "0",
+      "BALANCE": "105145"
+    }
+  },
   "MOSHEP1074": {
     "name": "MOSES HEPHZIBAH TOLUWALASE",
     "class": "NURSERY 1",
     "total_fee": 64930.0,
-    "total_paid": 0.0,
-    "balance": 64930.0,
+    "total_paid": 22000.0,
+    "balance": 42930.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2347,8 +2403,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "14000",
       "TOTAL FEE": "64930",
-      "TOTAL PAID": "0",
-      "BALANCE": "64930"
+      "TOTAL PAID": "22000",
+      "BALANCE": "42930"
     }
   },
   "MUTIBR1075": {
@@ -2715,6 +2771,34 @@
       "BALANCE": "20000"
     }
   },
+  "OLAABD1140": {
+    "name": "OLADOSU ABDULLAHI OLUWASEYI",
+    "class": "NURSERY 1",
+    "total_fee": 84930.0,
+    "total_paid": 0.0,
+    "balance": 84930.0,
+    "details": {
+      " AD_FORM": "2000",
+      "TUITION": "26000.0",
+      " PTA&EXAM": "4000",
+      " REPORT_CARD": "1000.0",
+      "PRACTICAL": "0.0",
+      "TEXTBOOKS": "13380",
+      "NB & STAT": "7550",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
+      " AFTERSCHOOL": "0",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "84930",
+      "TOTAL PAID": "0",
+      "BALANCE": "84930"
+    }
+  },
   "OLAADE1086": {
     "name": "OLALEMI ADEMIDE SAMUEL",
     "class": "PLAYGROUP 1",
@@ -2746,9 +2830,9 @@
   "OLAFAI1087": {
     "name": "OLATUNDE FAITHFULNESS SAMUEL",
     "class": "NURSERY 1",
-    "total_fee": 58730.0,
+    "total_fee": 54230.0,
     "total_paid": 44700.0,
-    "balance": 14030.0,
+    "balance": 9530.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2756,7 +2840,7 @@
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "13380",
-      "NB & STAT": "9350",
+      "NB & STAT": "4850",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -2766,9 +2850,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "58730",
+      "TOTAL FEE": "54230",
       "TOTAL PAID": "44700",
-      "BALANCE": "14030"
+      "BALANCE": "9530"
     }
   },
   "OLAGRE1088": {
@@ -2915,8 +2999,8 @@
     "name": "OLUWAFEMI JOY TOLUWANI",
     "class": "PLAYGROUP 2",
     "total_fee": 50345.0,
-    "total_paid": 0.0,
-    "balance": 50345.0,
+    "total_paid": 50345.0,
+    "balance": 0.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2935,16 +3019,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "65",
       "TOTAL FEE": "50345",
-      "TOTAL PAID": "0",
-      "BALANCE": "50345"
+      "TOTAL PAID": "50345",
+      "BALANCE": "0"
     }
   },
   "OLUEMM1094": {
     "name": "OLUWAFEMI EMMANUEL OBALOLUWA",
     "class": "PRIMARY 1",
     "total_fee": 73925.0,
-    "total_paid": 0.0,
-    "balance": 73925.0,
+    "total_paid": 73925.0,
+    "balance": 0.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2963,8 +3047,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "73925",
-      "TOTAL PAID": "0",
-      "BALANCE": "73925"
+      "TOTAL PAID": "73925",
+      "BALANCE": "0"
     }
   },
   "OLUEMM1095": {
@@ -3079,6 +3163,34 @@
       "BALANCE": "57980"
     }
   },
+  "ONIAAR1141": {
+    "name": "ONI AARON OLUWADEMILADE",
+    "class": "NURSERY 2",
+    "total_fee": 99660.0,
+    "total_paid": 80000.0,
+    "balance": 19660.0,
+    "details": {
+      " AD_FORM": "2000",
+      "TUITION": "26000.0",
+      " PTA&EXAM": "4000",
+      " REPORT_CARD": "1000.0",
+      "PRACTICAL": "0.0",
+      "TEXTBOOKS": "24930",
+      "NB & STAT": "10730",
+      "UNIFORM": "16000",
+      "HOODY": "8000",
+      "SPORTSWEAR": "7000",
+      " AFTERSCHOOL": "0",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "99660",
+      "TOTAL PAID": "80000",
+      "BALANCE": "19660"
+    }
+  },
   "ONOMIR1099": {
     "name": "ONOJA MIRACLE",
     "class": "JUNIOR SECONDARY SCHOOL 3",
@@ -3110,9 +3222,9 @@
   "OSIUGO1100": {
     "name": "OSIGWE UGOCHUKWU DOMINION",
     "class": "NURSERY 1",
-    "total_fee": 54680.0,
+    "total_fee": 50180.0,
     "total_paid": 0.0,
-    "balance": 54680.0,
+    "balance": 50180.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3120,7 +3232,7 @@
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "13380",
-      "NB & STAT": "9800",
+      "NB & STAT": "5300",
       "UNIFORM": "8000",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -3130,9 +3242,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "54680",
+      "TOTAL FEE": "50180",
       "TOTAL PAID": "0",
-      "BALANCE": "54680"
+      "BALANCE": "50180"
     }
   },
   "OSIOSI1101": {
@@ -3698,9 +3810,9 @@
   "WAHFAI1120": {
     "name": "WAHAB FAIZA ALVES",
     "class": "NURSERY 1",
-    "total_fee": 51380.0,
+    "total_fee": 46880.0,
     "total_paid": 30000.0,
-    "balance": 21380.0,
+    "balance": 16880.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -3708,7 +3820,7 @@
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "13380",
-      "NB & STAT": "8000",
+      "NB & STAT": "3500",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -3718,9 +3830,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "51380",
+      "TOTAL FEE": "46880",
       "TOTAL PAID": "30000",
-      "BALANCE": "21380"
+      "BALANCE": "16880"
     }
   }
 }
