@@ -1933,7 +1933,7 @@
   },
   "ISAEYI1137": {
     "name": "ISAAC EYINJUOLUWA HERITAGE",
-    "class": "PRINARY 2",
+    "class": "PRIMARY 2",
     "total_fee": 100605.0,
     "total_paid": 30000.0,
     "balance": 70605.0,
@@ -3223,8 +3223,8 @@
     "name": "OSIGWE UGOCHUKWU DOMINION",
     "class": "NURSERY 1",
     "total_fee": 50180.0,
-    "total_paid": 0.0,
-    "balance": 50180.0,
+    "total_paid": 27120.0,
+    "balance": 23060.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3243,16 +3243,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "50180",
-      "TOTAL PAID": "0",
-      "BALANCE": "50180"
+      "TOTAL PAID": "27120",
+      "BALANCE": "23060"
     }
   },
   "OSIOSI1101": {
     "name": "OSIGWE OSINACHI KINGDAVID",
     "class": "PRIMARY 3",
     "total_fee": 72310.0,
-    "total_paid": 0.0,
-    "balance": 72310.0,
+    "total_paid": 27120.0,
+    "balance": 45190.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3271,8 +3271,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "72310",
-      "TOTAL PAID": "0",
-      "BALANCE": "72310"
+      "TOTAL PAID": "27120",
+      "BALANCE": "45190"
     }
   },
   "OSUMAX1102": {
@@ -3811,8 +3811,8 @@
     "name": "WAHAB FAIZA ALVES",
     "class": "NURSERY 1",
     "total_fee": 46880.0,
-    "total_paid": 30000.0,
-    "balance": 16880.0,
+    "total_paid": 46880.0,
+    "balance": 0.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -3831,8 +3831,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "46880",
-      "TOTAL PAID": "30000",
-      "BALANCE": "16880"
+      "TOTAL PAID": "46880",
+      "BALANCE": "0"
     }
   }
 }
