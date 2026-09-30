@@ -1459,8 +1459,8 @@
     "name": "EMIOLA OBALOLUWA MUHAMMED",
     "class": "NURSERY 1",
     "total_fee": 77680.0,
-    "total_paid": 0.0,
-    "balance": 77680.0,
+    "total_paid": 50000.0,
+    "balance": 27680.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "19500.0",
@@ -1479,16 +1479,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "77680",
-      "TOTAL PAID": "0",
-      "BALANCE": "77680"
+      "TOTAL PAID": "50000",
+      "BALANCE": "27680"
     }
   },
   "EMIMAR1130": {
     "name": "EMIOLA MARVELLOUS QUADRI",
     "class": "PLAYGROUP 1",
     "total_fee": 68890.0,
-    "total_paid": 0.0,
-    "balance": 68890.0,
+    "total_paid": 50000.0,
+    "balance": 18890.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "19500.0",
@@ -1507,8 +1507,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "68890",
-      "TOTAL PAID": "0",
-      "BALANCE": "68890"
+      "TOTAL PAID": "50000",
+      "BALANCE": "18890"
     }
   },
   "EMMRUT1049": {
@@ -1935,8 +1935,8 @@
     "name": "ISAAC EYINJUOLUWA HERITAGE",
     "class": "PRIMARY 2",
     "total_fee": 100605.0,
-    "total_paid": 30000.0,
-    "balance": 70605.0,
+    "total_paid": 70000.0,
+    "balance": 30605.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "21000.0",
@@ -1955,16 +1955,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "100605",
-      "TOTAL PAID": "30000",
-      "BALANCE": "70605"
+      "TOTAL PAID": "70000",
+      "BALANCE": "30605"
     }
   },
   "ISMMAB1133": {
     "name": "ISMAIL MABUB",
     "class": "CRECHE",
     "total_fee": 33050.0,
-    "total_paid": 0.0,
-    "balance": 33050.0,
+    "total_paid": 20000.0,
+    "balance": 13050.0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -1983,8 +1983,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "33050",
-      "TOTAL PAID": "0",
-      "BALANCE": "33050"
+      "TOTAL PAID": "20000",
+      "BALANCE": "13050"
     }
   },
   "ISSIMO1062": {
@@ -2355,8 +2355,8 @@
     "name": "MORAKINYO TESTIMONY AYANFE",
     "class": "PRIMARY 5",
     "total_fee": 105145.0,
-    "total_paid": 0.0,
-    "balance": 105145.0,
+    "total_paid": 40000.0,
+    "balance": 65145.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "21000.0",
@@ -2375,16 +2375,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "105145",
-      "TOTAL PAID": "0",
-      "BALANCE": "105145"
+      "TOTAL PAID": "40000",
+      "BALANCE": "65145"
     }
   },
   "MOSHEP1074": {
     "name": "MOSES HEPHZIBAH TOLUWALASE",
     "class": "NURSERY 1",
     "total_fee": 64930.0,
-    "total_paid": 22000.0,
-    "balance": 42930.0,
+    "total_paid": 87000.0,
+    "balance": -22070.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2403,8 +2403,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "14000",
       "TOTAL FEE": "64930",
-      "TOTAL PAID": "22000",
-      "BALANCE": "42930"
+      "TOTAL PAID": "87000",
+      "BALANCE": "-22070"
     }
   },
   "MUTIBR1075": {
@@ -2803,8 +2803,8 @@
     "name": "OLADOSU ABDULLAHI OLUWASEYI",
     "class": "NURSERY 1",
     "total_fee": 84930.0,
-    "total_paid": 0.0,
-    "balance": 84930.0,
+    "total_paid": 40000.0,
+    "balance": 44930.0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -2823,8 +2823,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "84930",
-      "TOTAL PAID": "0",
-      "BALANCE": "84930"
+      "TOTAL PAID": "40000",
+      "BALANCE": "44930"
     }
   },
   "OLAADE1086": {
@@ -2887,8 +2887,8 @@
     "name": "OLATUNJI GREAT MOYINOLUWA",
     "class": "NURSERY 1",
     "total_fee": 50430.0,
-    "total_paid": 0.0,
-    "balance": 50430.0,
+    "total_paid": 50430.0,
+    "balance": 0.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2907,16 +2907,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "50430",
-      "TOTAL PAID": "0",
-      "BALANCE": "50430"
+      "TOTAL PAID": "50430",
+      "BALANCE": "0"
     }
   },
   "OLAJEM1089": {
     "name": "OLATUNJI JEMIMAH OLAMIDE",
     "class": "PRIMARY 1",
     "total_fee": 73925.0,
-    "total_paid": 0.0,
-    "balance": 73925.0,
+    "total_paid": 40000.0,
+    "balance": 33925.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2935,16 +2935,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "73925",
-      "TOTAL PAID": "0",
-      "BALANCE": "73925"
+      "TOTAL PAID": "40000",
+      "BALANCE": "33925"
     }
   },
   "OLAINI1090": {
     "name": "OLATUNJI INIOLUWA BRIGHT",
     "class": "PRIMARY 3",
     "total_fee": 75290.0,
-    "total_paid": 0.0,
-    "balance": 75290.0,
+    "total_paid": 49570.0,
+    "balance": 25720.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2963,8 +2963,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "75290",
-      "TOTAL PAID": "0",
-      "BALANCE": "75290"
+      "TOTAL PAID": "49570",
+      "BALANCE": "25720"
     }
   },
   "OLOPRA1091": {
@@ -3419,8 +3419,8 @@
     "name": "OYINLOLA IBUKUNOLUWA VICTOR",
     "class": "CRECHE",
     "total_fee": 33050.0,
-    "total_paid": 0.0,
-    "balance": 33050.0,
+    "total_paid": 36050.0,
+    "balance": -3000.0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -3439,8 +3439,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "33050",
-      "TOTAL PAID": "0",
-      "BALANCE": "33050"
+      "TOTAL PAID": "36050",
+      "BALANCE": "-3000"
     }
   },
   "PETFAV1106": {
