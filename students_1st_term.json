@@ -563,8 +563,8 @@
     "name": "ADEDOJA PRAISE",
     "class": "PRIMARY 5",
     "total_fee": 76770.0,
-    "total_paid": 37535.0,
-    "balance": 39235.0,
+    "total_paid": 85535.0,
+    "balance": -8765.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -583,8 +583,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "76770",
-      "TOTAL PAID": "37535",
-      "BALANCE": "39235"
+      "TOTAL PAID": "85535",
+      "BALANCE": "-8765"
     }
   },
   "ADEMUM1019": {
@@ -1991,8 +1991,8 @@
     "name": "ISSAH IMOLE",
     "class": "JUNIOR SECONDARY SCHOOL 2",
     "total_fee": 79830.0,
-    "total_paid": 0.0,
-    "balance": 79830.0,
+    "total_paid": 40000.0,
+    "balance": 39830.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "33000.0",
@@ -2011,8 +2011,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "79830",
-      "TOTAL PAID": "0",
-      "BALANCE": "79830"
+      "TOTAL PAID": "40000",
+      "BALANCE": "39830"
     }
   },
   "JAMFAI1063": {
@@ -3139,8 +3139,8 @@
     "name": "OLUWASHOLA MORIRE ESTHER",
     "class": "NURSERY 1",
     "total_fee": 45930.0,
-    "total_paid": 0.0,
-    "balance": 45930.0,
+    "total_paid": 20000.0,
+    "balance": 25930.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "13000.0",
@@ -3159,16 +3159,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "8000",
       "TOTAL FEE": "45930",
-      "TOTAL PAID": "0",
-      "BALANCE": "45930"
+      "TOTAL PAID": "20000",
+      "BALANCE": "25930"
     }
   },
   "OLUTEM1098": {
     "name": "OLUWASHOLA TEMILOLUWA ELIZABETH",
     "class": "PRIMARY 2",
     "total_fee": 57980.0,
-    "total_paid": 0.0,
-    "balance": 57980.0,
+    "total_paid": 25000.0,
+    "balance": 32980.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "14000.0",
@@ -3187,8 +3187,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "57980",
-      "TOTAL PAID": "0",
-      "BALANCE": "57980"
+      "TOTAL PAID": "25000",
+      "BALANCE": "32980"
     }
   },
   "ONIAAR1141": {
