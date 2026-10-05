@@ -49,6 +49,11 @@ It will list exactly which codes look wrong and ask you to confirm (type `y`) be
 | Parents wrongly showing as "not registered" | `repair_claimed_codes.py` |
 | First-time project setup | Part 2 below, Steps 1–8 |
 
+
+### Admin fee summary (new)
+`admin-dashboard.html` now opens with a **Fee summary**: stat cards (expected / collected / outstanding, paid vs part-paid vs unpaid, parent accounts, arrears, discounts), collection-by-class bars, payment-status split, fee breakdown by item and a per-class table. Filters (term, section, class, payment status, parent account) drive the summary, the Students list below, the **Export CSV** (now with fee figures) and **Print / save as PDF**.
+To populate the *Discounts given* card, run `python update_data.py` then `python migrate_to_firestore.py` once (they now carry the discount). Then `firebase deploy` for the page itself.
+
 ---
 
 ## What's new in this version

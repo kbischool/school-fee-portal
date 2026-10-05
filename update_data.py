@@ -163,6 +163,10 @@ def process_term_sheet(sheet_name, workbook_path, registry, next_index, seen_thi
             'total_fee': safe_float(row.get('TOTAL FEE', 0)),
             'total_paid': safe_float(row.get('TOTAL PAID', 0)),
             'balance': safe_float(row.get('BALANCE', 0)),
+            # Discount (used by the admin summary): rate from the DISCOUNT column
+            # and the naira value = FULL TUITION - discounted TUITION.
+            'discount_rate': safe_float(row.get('DISCOUNT', 0)),
+            'discount_amount': max(0, round(safe_float(row.get('FULL TUITION', 0)) - safe_float(row.get('TUITION', 0)), 2)),
             'details': details,
         }
         data[code] = student

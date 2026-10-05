@@ -5,6 +5,8 @@
     "total_fee": 51180.0,
     "total_paid": 30000.0,
     "balance": 21180.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -33,6 +35,8 @@
     "total_fee": 72355.0,
     "total_paid": 30000.0,
     "balance": 42355.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -61,6 +65,8 @@
     "total_fee": 81210.0,
     "total_paid": 0.0,
     "balance": 81210.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "40000.0",
@@ -89,6 +95,8 @@
     "total_fee": 59160.0,
     "total_paid": 0.0,
     "balance": 59160.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -117,6 +125,8 @@
     "total_fee": 44280.0,
     "total_paid": 0.0,
     "balance": 44280.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -145,6 +155,8 @@
     "total_fee": 44430.0,
     "total_paid": 20000.0,
     "balance": 24430.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -173,6 +185,8 @@
     "total_fee": 50190.0,
     "total_paid": 30000.0,
     "balance": 20190.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -201,6 +215,8 @@
     "total_fee": 44280.0,
     "total_paid": 20000.0,
     "balance": 24280.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -229,6 +245,8 @@
     "total_fee": 69290.0,
     "total_paid": 20000.0,
     "balance": 49290.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -257,6 +275,8 @@
     "total_fee": 119040.0,
     "total_paid": 119000.0,
     "balance": 40.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "28000.0",
@@ -285,6 +305,8 @@
     "total_fee": 78330.0,
     "total_paid": 35000.0,
     "balance": 43330.0,
+    "discount_rate": 0.25,
+    "discount_amount": 8250.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "24750.0",
@@ -313,6 +335,8 @@
     "total_fee": 97250.0,
     "total_paid": 35000.0,
     "balance": 62250.0,
+    "discount_rate": 0.25,
+    "discount_amount": 10000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "30000.0",
@@ -341,6 +365,8 @@
     "total_fee": 52660.0,
     "total_paid": 0.0,
     "balance": 52660.0,
+    "discount_rate": 0.5,
+    "discount_amount": 13000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "13000.0",
@@ -369,6 +395,8 @@
     "total_fee": 60510.0,
     "total_paid": 0.0,
     "balance": 60510.0,
+    "discount_rate": 0.5,
+    "discount_amount": 14000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "14000.0",
@@ -397,6 +425,8 @@
     "total_fee": 40790.0,
     "total_paid": 42140.0,
     "balance": -1350.0,
+    "discount_rate": 0.05,
+    "discount_amount": 1300.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "24700.0",
@@ -425,6 +455,8 @@
     "total_fee": 59160.0,
     "total_paid": 40000.0,
     "balance": 19160.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -453,6 +485,8 @@
     "total_fee": 66800.0,
     "total_paid": 40000.0,
     "balance": 26800.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -481,6 +515,8 @@
     "total_fee": 120210.0,
     "total_paid": 120210.0,
     "balance": 0.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "3000",
       "TUITION": "40000.0",
@@ -509,6 +545,8 @@
     "total_fee": 48930.0,
     "total_paid": 42930.0,
     "balance": 6000.0,
+    "discount_rate": 0.3,
+    "discount_amount": 7800.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "18200.0",
@@ -537,6 +575,8 @@
     "total_fee": 72150.0,
     "total_paid": 72150.0,
     "balance": 0.0,
+    "discount_rate": 0.3,
+    "discount_amount": 8400.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19600.0",
@@ -565,6 +605,8 @@
     "total_fee": 76770.0,
     "total_paid": 85535.0,
     "balance": -8765.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -593,6 +635,8 @@
     "total_fee": 62230.0,
     "total_paid": 0.0,
     "balance": 62230.0,
+    "discount_rate": 0.5,
+    "discount_amount": 16500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -621,6 +665,8 @@
     "total_fee": 67530.0,
     "total_paid": 0.0,
     "balance": 67530.0,
+    "discount_rate": 0.3,
+    "discount_amount": 9900.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "23100.0",
@@ -649,6 +695,8 @@
     "total_fee": 66230.0,
     "total_paid": 0.0,
     "balance": 66230.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -677,6 +725,8 @@
     "total_fee": 66230.0,
     "total_paid": 0.0,
     "balance": 66230.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -705,6 +755,8 @@
     "total_fee": 79830.0,
     "total_paid": 60000.0,
     "balance": 19830.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "33000.0",
@@ -733,6 +785,8 @@
     "total_fee": 60180.0,
     "total_paid": 62230.0,
     "balance": -2050.0,
+    "discount_rate": 0.55,
+    "discount_amount": 18150.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "14849.999999999998",
@@ -761,6 +815,8 @@
     "total_fee": 50630.0,
     "total_paid": 0.0,
     "balance": 50630.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -789,6 +845,8 @@
     "total_fee": 59140.0,
     "total_paid": 43140.0,
     "balance": 16000.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -817,6 +875,8 @@
     "total_fee": 62030.0,
     "total_paid": 0.0,
     "balance": 62030.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -845,6 +905,8 @@
     "total_fee": 81210.0,
     "total_paid": 40000.0,
     "balance": 41210.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "40000.0",
@@ -873,6 +935,8 @@
     "total_fee": 41790.0,
     "total_paid": 43140.0,
     "balance": -1350.0,
+    "discount_rate": 0.05,
+    "discount_amount": 1300.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "24700.0",
@@ -901,6 +965,8 @@
     "total_fee": 112510.0,
     "total_paid": 60000.0,
     "balance": 52510.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "3000",
       "TUITION": "33000.0",
@@ -929,6 +995,8 @@
     "total_fee": 24550.0,
     "total_paid": 1300.0,
     "balance": 23250.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -957,6 +1025,8 @@
     "total_fee": 49130.0,
     "total_paid": 49130.0,
     "balance": 0.0,
+    "discount_rate": 0.3,
+    "discount_amount": 7800.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "18200.0",
@@ -985,6 +1055,8 @@
     "total_fee": 65160.0,
     "total_paid": 35000.0,
     "balance": 30160.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -1013,6 +1085,8 @@
     "total_fee": 72480.0,
     "total_paid": 35000.0,
     "balance": 37480.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1041,6 +1115,8 @@
     "total_fee": 43140.0,
     "total_paid": 43140.0,
     "balance": 0.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1069,6 +1145,8 @@
     "total_fee": 56930.0,
     "total_paid": 0.0,
     "balance": 56930.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1097,6 +1175,8 @@
     "total_fee": 90930.0,
     "total_paid": 50000.0,
     "balance": 40930.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -1125,6 +1205,8 @@
     "total_fee": 31050.0,
     "total_paid": 0.0,
     "balance": 31050.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1153,6 +1235,8 @@
     "total_fee": 43140.0,
     "total_paid": 30000.0,
     "balance": 13140.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1181,6 +1265,8 @@
     "total_fee": 70200.0,
     "total_paid": 25000.0,
     "balance": 45200.0,
+    "discount_rate": 0.5,
+    "discount_amount": 16500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -1209,6 +1295,8 @@
     "total_fee": 73760.0,
     "total_paid": 0.0,
     "balance": 73760.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "33000.0",
@@ -1237,6 +1325,8 @@
     "total_fee": 81330.0,
     "total_paid": 50000.0,
     "balance": 31330.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "40000.0",
@@ -1265,6 +1355,8 @@
     "total_fee": 62710.0,
     "total_paid": 0.0,
     "balance": 62710.0,
+    "discount_rate": 0.5,
+    "discount_amount": 16500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -1293,6 +1385,8 @@
     "total_fee": 72480.0,
     "total_paid": 0.0,
     "balance": 72480.0,
+    "discount_rate": 0.25,
+    "discount_amount": 8250.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "24750.0",
@@ -1321,6 +1415,8 @@
     "total_fee": 68710.0,
     "total_paid": 0.0,
     "balance": 68710.0,
+    "discount_rate": 0.25,
+    "discount_amount": 10000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "30000.0",
@@ -1349,6 +1445,8 @@
     "total_fee": 43140.0,
     "total_paid": 0.0,
     "balance": 43140.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1377,6 +1475,8 @@
     "total_fee": 83660.0,
     "total_paid": 83180.0,
     "balance": 480.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -1405,6 +1505,8 @@
     "total_fee": 77370.0,
     "total_paid": 79020.0,
     "balance": -1650.0,
+    "discount_rate": 0.05,
+    "discount_amount": 1400.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26600.0",
@@ -1433,6 +1535,8 @@
     "total_fee": 82800.0,
     "total_paid": 82350.0,
     "balance": 450.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "28000.0",
@@ -1461,6 +1565,8 @@
     "total_fee": 77680.0,
     "total_paid": 50000.0,
     "balance": 27680.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "19500.0",
@@ -1489,6 +1595,8 @@
     "total_fee": 68890.0,
     "total_paid": 50000.0,
     "balance": 18890.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "19500.0",
@@ -1517,6 +1625,8 @@
     "total_fee": 62730.0,
     "total_paid": 0.0,
     "balance": 62730.0,
+    "discount_rate": 0.5,
+    "discount_amount": 16500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -1545,6 +1655,8 @@
     "total_fee": 88335.0,
     "total_paid": 64000.0,
     "balance": 24335.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1573,6 +1685,8 @@
     "total_fee": 95165.0,
     "total_paid": 64000.0,
     "balance": 31165.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1601,6 +1715,8 @@
     "total_fee": 51030.0,
     "total_paid": 0.0,
     "balance": 51030.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1629,6 +1745,8 @@
     "total_fee": 45140.0,
     "total_paid": 50440.0,
     "balance": -5300.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1657,6 +1775,8 @@
     "total_fee": 114130.0,
     "total_paid": 100000.0,
     "balance": 14130.0,
+    "discount_rate": 0.25,
+    "discount_amount": 8250.0,
     "details": {
       " AD_FORM": "2250",
       "TUITION": "24750.0",
@@ -1685,6 +1805,8 @@
     "total_fee": 106960.0,
     "total_paid": 100000.0,
     "balance": 6960.0,
+    "discount_rate": 0.25,
+    "discount_amount": 10000.0,
     "details": {
       " AD_FORM": "2250",
       "TUITION": "30000.0",
@@ -1713,6 +1835,8 @@
     "total_fee": 56930.0,
     "total_paid": 56930.0,
     "balance": 0.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -1741,6 +1865,8 @@
     "total_fee": 76800.0,
     "total_paid": 50000.0,
     "balance": 26800.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "28000.0",
@@ -1769,6 +1895,8 @@
     "total_fee": 40830.0,
     "total_paid": 30000.0,
     "balance": 10830.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -1797,6 +1925,8 @@
     "total_fee": 50630.0,
     "total_paid": 51930.0,
     "balance": -1300.0,
+    "discount_rate": 0.05,
+    "discount_amount": 1300.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "24700.0",
@@ -1825,6 +1955,8 @@
     "total_fee": 77350.0,
     "total_paid": 25000.0,
     "balance": 52350.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "28000.0",
@@ -1853,6 +1985,8 @@
     "total_fee": 93540.0,
     "total_paid": 50000.0,
     "balance": 43540.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "28000.0",
@@ -1881,6 +2015,8 @@
     "total_fee": 62230.0,
     "total_paid": 50000.0,
     "balance": 12230.0,
+    "discount_rate": 0.5,
+    "discount_amount": 16500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -1909,6 +2045,8 @@
     "total_fee": 81310.0,
     "total_paid": 50000.0,
     "balance": 31310.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -1937,6 +2075,8 @@
     "total_fee": 106605.0,
     "total_paid": 70000.0,
     "balance": 36605.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "21000.0",
@@ -1965,6 +2105,8 @@
     "total_fee": 33050.0,
     "total_paid": 20000.0,
     "balance": 13050.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -1993,6 +2135,8 @@
     "total_fee": 79830.0,
     "total_paid": 40000.0,
     "balance": 39830.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "33000.0",
@@ -2021,6 +2165,8 @@
     "total_fee": 28290.0,
     "total_paid": 29640.0,
     "balance": -1350.0,
+    "discount_rate": 0.55,
+    "discount_amount": 14300.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "11699.999999999998",
@@ -2049,6 +2195,8 @@
     "total_fee": 45930.0,
     "total_paid": 15000.0,
     "balance": 30930.0,
+    "discount_rate": 0.5,
+    "discount_amount": 13000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "13000.0",
@@ -2077,6 +2225,8 @@
     "total_fee": 45930.0,
     "total_paid": 15000.0,
     "balance": 30930.0,
+    "discount_rate": 0.5,
+    "discount_amount": 13000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "13000.0",
@@ -2105,6 +2255,8 @@
     "total_fee": 69140.0,
     "total_paid": 20000.0,
     "balance": 49140.0,
+    "discount_rate": 0.5,
+    "discount_amount": 14000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "14000.0",
@@ -2133,6 +2285,8 @@
     "total_fee": 43140.0,
     "total_paid": 0.0,
     "balance": 43140.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2161,6 +2315,8 @@
     "total_fee": 65160.0,
     "total_paid": 65160.0,
     "balance": 0.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2189,6 +2345,8 @@
     "total_fee": 35890.0,
     "total_paid": 35890.0,
     "balance": 0.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2217,6 +2375,8 @@
     "total_fee": 66430.0,
     "total_paid": 15000.0,
     "balance": 51430.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2245,6 +2405,8 @@
     "total_fee": 36390.0,
     "total_paid": 15000.0,
     "balance": 21390.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2273,6 +2435,8 @@
     "total_fee": 41730.0,
     "total_paid": 25000.0,
     "balance": 16730.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2301,6 +2465,8 @@
     "total_fee": 68595.0,
     "total_paid": 25000.0,
     "balance": 43595.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2329,6 +2495,8 @@
     "total_fee": 115980.0,
     "total_paid": 116000.0,
     "balance": -20.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "28000.0",
@@ -2357,6 +2525,8 @@
     "total_fee": 111145.0,
     "total_paid": 40000.0,
     "balance": 71145.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "21000.0",
@@ -2385,6 +2555,8 @@
     "total_fee": 64930.0,
     "total_paid": 87000.0,
     "balance": -22070.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2413,6 +2585,8 @@
     "total_fee": 67530.0,
     "total_paid": 30000.0,
     "balance": 37530.0,
+    "discount_rate": 0.3,
+    "discount_amount": 9900.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "23100.0",
@@ -2441,6 +2615,8 @@
     "total_fee": 67250.0,
     "total_paid": 38790.0,
     "balance": 28460.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2469,6 +2645,8 @@
     "total_fee": 31210.0,
     "total_paid": 31210.0,
     "balance": 0.0,
+    "discount_rate": 1.0,
+    "discount_amount": 40000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "0.0",
@@ -2497,6 +2675,8 @@
     "total_fee": 65930.0,
     "total_paid": 50000.0,
     "balance": 15930.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2525,6 +2705,8 @@
     "total_fee": 112510.0,
     "total_paid": 90000.0,
     "balance": 22510.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "3000",
       "TUITION": "33000.0",
@@ -2553,6 +2735,8 @@
     "total_fee": 55590.0,
     "total_paid": 25000.0,
     "balance": 30590.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2581,6 +2765,8 @@
     "total_fee": 55590.0,
     "total_paid": 25000.0,
     "balance": 30590.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2609,6 +2795,8 @@
     "total_fee": 84930.0,
     "total_paid": 40000.0,
     "balance": 44930.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -2637,6 +2825,8 @@
     "total_fee": 92410.0,
     "total_paid": 13670.0,
     "balance": 78740.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "19500.0",
@@ -2665,6 +2855,8 @@
     "total_fee": 68890.0,
     "total_paid": 81330.0,
     "balance": -12440.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "1500",
       "TUITION": "19500.0",
@@ -2693,6 +2885,8 @@
     "total_fee": 87040.0,
     "total_paid": 0.0,
     "balance": 87040.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "40000.0",
@@ -2721,6 +2915,8 @@
     "total_fee": 60390.0,
     "total_paid": 40000.0,
     "balance": 20390.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2749,6 +2945,8 @@
     "total_fee": 83925.0,
     "total_paid": 40000.0,
     "balance": 43925.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2777,6 +2975,8 @@
     "total_fee": 47900.0,
     "total_paid": 27900.0,
     "balance": 20000.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2805,6 +3005,8 @@
     "total_fee": 90930.0,
     "total_paid": 40000.0,
     "balance": 50930.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -2833,6 +3035,8 @@
     "total_fee": 39890.0,
     "total_paid": 0.0,
     "balance": 39890.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2861,6 +3065,8 @@
     "total_fee": 54230.0,
     "total_paid": 44700.0,
     "balance": 9530.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -2889,6 +3095,8 @@
     "total_fee": 50430.0,
     "total_paid": 50430.0,
     "balance": 0.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -2917,6 +3125,8 @@
     "total_fee": 73925.0,
     "total_paid": 40000.0,
     "balance": 33925.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2945,6 +3155,8 @@
     "total_fee": 75290.0,
     "total_paid": 49570.0,
     "balance": 25720.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -2973,6 +3185,8 @@
     "total_fee": 76800.0,
     "total_paid": 0.0,
     "balance": 76800.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "28000.0",
@@ -3001,6 +3215,8 @@
     "total_fee": 50560.0,
     "total_paid": 30000.0,
     "balance": 20560.0,
+    "discount_rate": 1.0,
+    "discount_amount": 28000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "0.0",
@@ -3029,6 +3245,8 @@
     "total_fee": 50345.0,
     "total_paid": 50345.0,
     "balance": 0.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3057,6 +3275,8 @@
     "total_fee": 73925.0,
     "total_paid": 73925.0,
     "balance": 0.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3085,6 +3305,8 @@
     "total_fee": 70430.0,
     "total_paid": 0.0,
     "balance": 70430.0,
+    "discount_rate": 0.3,
+    "discount_amount": 9900.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "23100.0",
@@ -3113,6 +3335,8 @@
     "total_fee": 35790.0,
     "total_paid": 33140.0,
     "balance": 2650.0,
+    "discount_rate": 0.05,
+    "discount_amount": 1300.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "24700.0",
@@ -3141,6 +3365,8 @@
     "total_fee": 45930.0,
     "total_paid": 20000.0,
     "balance": 25930.0,
+    "discount_rate": 0.5,
+    "discount_amount": 13000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "13000.0",
@@ -3169,6 +3395,8 @@
     "total_fee": 57980.0,
     "total_paid": 25000.0,
     "balance": 32980.0,
+    "discount_rate": 0.5,
+    "discount_amount": 14000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "14000.0",
@@ -3197,6 +3425,8 @@
     "total_fee": 105660.0,
     "total_paid": 80000.0,
     "balance": 25660.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -3225,6 +3455,8 @@
     "total_fee": 67085.0,
     "total_paid": 30000.0,
     "balance": 37085.0,
+    "discount_rate": 0.5,
+    "discount_amount": 16500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "16500.0",
@@ -3253,6 +3485,8 @@
     "total_fee": 50180.0,
     "total_paid": 27120.0,
     "balance": 23060.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3281,6 +3515,8 @@
     "total_fee": 72310.0,
     "total_paid": 27120.0,
     "balance": 45190.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3309,6 +3545,8 @@
     "total_fee": 65160.0,
     "total_paid": 0.0,
     "balance": 65160.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3337,6 +3575,8 @@
     "total_fee": 75290.0,
     "total_paid": 0.0,
     "balance": 75290.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3365,6 +3605,8 @@
     "total_fee": 24550.0,
     "total_paid": 0.0,
     "balance": 24550.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3393,6 +3635,8 @@
     "total_fee": 81160.0,
     "total_paid": 0.0,
     "balance": 81160.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3421,6 +3665,8 @@
     "total_fee": 33050.0,
     "total_paid": 36050.0,
     "balance": -3000.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "2000",
       "TUITION": "26000.0",
@@ -3449,6 +3695,8 @@
     "total_fee": 85900.0,
     "total_paid": 50000.0,
     "balance": 35900.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -3477,6 +3725,8 @@
     "total_fee": 50430.0,
     "total_paid": 44430.0,
     "balance": 6000.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3505,6 +3755,8 @@
     "total_fee": 72230.0,
     "total_paid": 55570.0,
     "balance": 16660.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3533,6 +3785,8 @@
     "total_fee": 76770.0,
     "total_paid": 25000.0,
     "balance": 51770.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3561,6 +3815,8 @@
     "total_fee": 79370.0,
     "total_paid": 25000.0,
     "balance": 54370.0,
+    "discount_rate": 0.25,
+    "discount_amount": 10000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "30000.0",
@@ -3589,6 +3845,8 @@
     "total_fee": 51530.0,
     "total_paid": 10000.0,
     "balance": 41530.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3617,6 +3875,8 @@
     "total_fee": 83425.0,
     "total_paid": 0.0,
     "balance": 83425.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3645,6 +3905,8 @@
     "total_fee": 75310.0,
     "total_paid": 0.0,
     "balance": 75310.0,
+    "discount_rate": 0.25,
+    "discount_amount": 7000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "21000.0",
@@ -3673,6 +3935,8 @@
     "total_fee": 44140.0,
     "total_paid": 44140.0,
     "balance": 0.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",
@@ -3701,6 +3965,8 @@
     "total_fee": 78430.0,
     "total_paid": 0.0,
     "balance": 78430.0,
+    "discount_rate": 0.3,
+    "discount_amount": 9900.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "23100.0",
@@ -3729,6 +3995,8 @@
     "total_fee": 68710.0,
     "total_paid": 0.0,
     "balance": 68710.0,
+    "discount_rate": 0.25,
+    "discount_amount": 10000.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "30000.0",
@@ -3757,6 +4025,8 @@
     "total_fee": 78500.0,
     "total_paid": 50000.0,
     "balance": 28500.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "28000.0",
@@ -3785,6 +4055,8 @@
     "total_fee": 36390.0,
     "total_paid": 7070.0,
     "balance": 29320.0,
+    "discount_rate": 0.25,
+    "discount_amount": 6500.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "19500.0",
@@ -3813,6 +4085,8 @@
     "total_fee": 42930.0,
     "total_paid": 42930.0,
     "balance": 0.0,
+    "discount_rate": 0.3,
+    "discount_amount": 7800.0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "18200.0",
@@ -3841,6 +4115,8 @@
     "total_fee": 52880.0,
     "total_paid": 46880.0,
     "balance": 6000.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
       "TUITION": "26000.0",

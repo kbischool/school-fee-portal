@@ -686,3 +686,109 @@ html[data-theme="dark"] .skeleton-card { background: var(--surface); }
   .print-target { position: absolute; top: 0; left: 0; width: 100%; box-shadow: none; border: none; }
   .quote-strip { display: none; }
 }
+
+
+/* =====================================================================
+   Admin fee summary (admin-dashboard.html)
+   ===================================================================== */
+.shell.wide { max-width: 1120px; }
+
+.field select {
+  width: 100%; padding: 11px 12px; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); background: #fff; color: var(--ink);
+  font: inherit; font-size: 14px;
+}
+.field select:focus { outline: none; border-color: var(--sky); box-shadow: 0 0 0 3px var(--sky-pale); }
+html[data-theme="dark"] .field select { background: var(--surface-alt); color: var(--ink); }
+
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.filter-grid .field { margin-bottom: 0; }
+.filter-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 16px 0; }
+.stat {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px 18px;
+}
+html[data-theme="dark"] .stat { background: var(--surface); }
+.stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); font-weight: 600; }
+.stat .value { font-size: 24px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.stat .note { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+.stat.good .value { color: var(--good); }
+.stat.due .value { color: var(--due); }
+.progress { height: 8px; border-radius: 999px; background: var(--surface-alt); overflow: hidden; margin-top: 10px; }
+.progress > span { display: block; height: 100%; background: var(--good); border-radius: 999px; }
+
+.summary-cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
+.summary-stack { display: grid; gap: 16px; }
+.summary-card h3 { font-size: 15px; margin: 0 0 14px; }
+.summary-card .empty { font-size: 13px; color: var(--ink-soft); }
+
+.bar-row { display: grid; grid-template-columns: 130px 1fr 190px; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 13px; }
+.bar-row .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-row .amt { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar-track { height: 12px; border-radius: 999px; background: var(--due-soft); overflow: hidden; }
+.bar-track > span { display: block; height: 100%; background: var(--good); }
+.bar-track.plain { background: var(--surface-alt); }
+.bar-track.plain > span { background: var(--sky); }
+
+.seg-bar { display: flex; height: 16px; border-radius: 999px; overflow: hidden; background: var(--surface-alt); }
+.seg-bar span { display: block; height: 100%; }
+.seg-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-top: 14px; font-size: 13px; }
+.seg-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; }
+.seg-legend b { font-variant-numeric: tabular-nums; }
+.c-paid { background: var(--good); }
+.c-part { background: #f59e0b; }
+.c-unpaid { background: var(--due); }
+.c-over { background: var(--sky); }
+.c-nofee { background: var(--ink-soft); }
+
+.badge.paid { background: var(--good-soft); color: var(--good); }
+.badge.part { background: #fef3e2; color: #b7791f; }
+.badge.unpaid { background: var(--due-soft); color: var(--due); }
+.badge.over { background: var(--sky-pale); color: var(--sky-deep); }
+.badge.nofee { background: var(--surface-alt); color: var(--ink-soft); }
+
+table.summary-table th.num, table.summary-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.summary-table tr.total-row td { font-weight: 700; background: var(--surface); }
+table.summary-table tr.is-selected td { background: var(--sky-pale); }
+table.summary-table tbody tr[data-cls] { cursor: pointer; }
+table.summary-table tbody tr[data-cls]:hover td { background: var(--surface); }
+.bal-cell { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.bal-cell .amt { font-variant-numeric: tabular-nums; }
+
+.print-only { display: none; }
+
+@media (max-width: 860px) {
+  .summary-cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .bar-row { grid-template-columns: 1fr auto; }
+  .filter-grid { grid-template-columns: 1fr 1fr; }
+  .bar-row .bar-track { grid-column: 1 / -1; order: 3; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .stat .value { font-size: 20px; }
+  table.summary-table td.num { text-align: right; }
+}
+
+@media print {
+  html, html[data-theme="dark"] {
+    --bg: #fff; --surface: #f6f9fc; --surface-alt: #eef4fa; --border: #d5dde6;
+    --ink: #0f1b2d; --ink-soft: #55657a; --good: #16a34a; --due: #dc2626;
+    --good-soft: #e8f8ee; --due-soft: #fdeeee; --sky-pale: #eaf7fd;
+  }
+  body { background: #fff !important; color: var(--ink); }
+  .no-print, .topbar, .bg-atmosphere, #modalRoot, .actions { display: none !important; }
+  .print-only { display: block; margin: 0 0 12px; }
+  .print-head h2 { font-size: 20px; margin: 0 0 4px; }
+  .print-head p { margin: 0; font-size: 12px; color: var(--ink-soft); }
+  .shell, .shell.wide { max-width: none; padding: 0; }
+  .fade-up { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .card, .stat, .table-scroll, html[data-theme="dark"] .card, html[data-theme="dark"] .stat,
+  html[data-theme="dark"] table.admin-table { background: #fff !important; box-shadow: none !important; }
+  .card, .stat, .summary-table tr { break-inside: avoid; }
+  .summary-cols { grid-template-columns: 1fr 1fr; }
+  .copy-pill { border: none; background: none; padding: 0; }
+  .copy-pill svg { display: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

@@ -182,6 +182,8 @@ def main():
                         "totalDue": to_float(entry.get("total_fee", 0)),
                         "totalPaid": to_float(entry.get("total_paid", 0)),
                         "balance": to_float(entry.get("balance", 0)),
+                        "discountRate": to_float(entry.get("discount_rate", 0)),
+                        "discountAmount": to_float(entry.get("discount_amount", 0)),
                         "items": items,
                     }
                 }

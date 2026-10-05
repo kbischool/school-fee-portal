@@ -32,9 +32,85 @@
   </div>
 </div>
 
-<div class="shell">
+<div class="shell wide">
 
-  <div class="card fade-up">
+  <section id="summarySection">
+    <div class="section-head" style="margin-top:0;">
+      <h2>Fee summary</h2>
+      <span class="count" id="summaryScope"></span>
+    </div>
+
+    <div class="card filter-card no-print">
+      <div class="filter-grid">
+        <div class="field"><label for="fTerm">Term</label><select id="fTerm"></select></div>
+        <div class="field"><label for="fSection">Section</label><select id="fSection"></select></div>
+        <div class="field"><label for="fClass">Class</label><select id="fClass"></select></div>
+        <div class="field"><label for="fPay">Payment status</label>
+          <select id="fPay">
+            <option value="">All students</option>
+            <option value="owing">Owing (part-paid + not paid)</option>
+            <option value="paid">Fully paid</option>
+            <option value="part">Part-paid</option>
+            <option value="unpaid">Not paid at all</option>
+            <option value="over">Overpaid (credit)</option>
+            <option value="nofee">No fee data yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="fAcct">Parent account</label>
+          <select id="fAcct">
+            <option value="">All</option>
+            <option value="registered">Account created</option>
+            <option value="pending">Code not yet used</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button type="button" class="btn-ghost" id="resetFiltersBtn">Reset filters</button>
+        <button type="button" class="btn-ghost" id="printBtn">Print / save as PDF</button>
+      </div>
+    </div>
+
+    <div class="print-only print-head">
+      <h2>KBIS — Fee summary report</h2>
+      <p id="printScope"></p>
+    </div>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="summary-cols">
+      <div class="card summary-card">
+        <h3>Collection by class</h3>
+        <div id="classBars"></div>
+      </div>
+      <div class="summary-stack">
+        <div class="card summary-card">
+          <h3>Payment status</h3>
+          <div id="statusBar"></div>
+        </div>
+        <div class="card summary-card">
+          <h3>Fee breakdown by item</h3>
+          <div id="itemBars"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Summary by class</h2>
+      <span class="count no-print">Click a class to filter by it</span>
+    </div>
+    <div class="table-scroll">
+      <table class="admin-table summary-table">
+        <thead>
+          <tr><th>Class</th><th class="num">Students</th><th class="num">Expected</th><th class="num">Collected</th><th class="num">Outstanding</th><th class="num">Collected %</th><th class="num">Fully paid</th><th class="num">Not paid</th></tr>
+        </thead>
+        <tbody id="classTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+
+
+  <div class="card fade-up no-print">
     <div class="section-head" style="margin-top:0;">
       <h2>Issue a new parent code</h2>
     </div>
@@ -53,7 +129,7 @@
     <p style="font-size:12px;color:var(--ink-soft);margin:12px 0 0;">For bulk changes (a new term, several new students), prefer editing the spreadsheet and re-running <code>update_data.py</code> + <code>migrate_to_firestore.py</code> — use this box for one-off additions between terms.</p>
   </div>
 
-  <div class="card fade-up" style="margin-top:16px; animation-delay:0.08s;">
+  <div class="card fade-up no-print" style="margin-top:16px; animation-delay:0.08s;">
     <div class="section-head" style="margin-top:0;">
       <h2>Issue a new admin code</h2>
     </div>
@@ -67,7 +143,7 @@
     <div id="newAdminCodeMsg"></div>
   </div>
 
-  <div class="card fade-up" style="margin-top:16px; animation-delay:0.16s;">
+  <div class="card fade-up no-print" style="margin-top:16px; animation-delay:0.16s;">
     <div class="section-head" style="margin-top:0;">
       <h2>Link a code to an existing parent account</h2>
     </div>
@@ -87,10 +163,10 @@
   </div>
 
   <div class="section-head">
-    <h2>Students &amp; codes</h2>
+    <h2>Students</h2>
     <span class="count" id="studentCount"></span>
   </div>
-  <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap;">
+  <div class="no-print" style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap;">
     <div class="field" style="max-width:340px; flex:1; margin-bottom:0;">
       <input type="text" id="studentSearch" placeholder="Search by name, class, or code…">
     </div>
@@ -99,17 +175,17 @@
       Export CSV
     </button>
   </div>
-  <p style="font-size:12px;color:var(--ink-soft);margin:10px 0 10px;">Sorted alphabetically by last name. Click any row to see full fee details.</p>
+  <p style="font-size:12px;color:var(--ink-soft);margin:10px 0 10px;">Sorted alphabetically by last name and following the filters above. Click any row to see full fee details.</p>
   <div class="table-scroll">
   <table class="admin-table">
     <thead>
-      <tr><th>Student</th><th>Class</th><th>Code</th><th>Account status</th></tr>
+      <tr><th>Student</th><th>Class</th><th>Code</th><th>Account status</th><th>Balance</th></tr>
     </thead>
     <tbody id="studentTableBody">
-      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
-      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
-      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
-      <tr class="skeleton-table-row"><td colspan="4"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="5"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="5"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="5"><div class="skeleton-block"></div></td></tr>
+      <tr class="skeleton-table-row"><td colspan="5"><div class="skeleton-block"></div></td></tr>
     </tbody>
   </table>
   </div>
@@ -172,22 +248,35 @@ function wireCopyPills(container) {
   });
 }
 
-// Exports the currently visible student list (respects the active search
-// filter) as a CSV file the admin can open in Excel/Sheets.
+// Exports the students currently listed (summary filters + search) as a CSV
+// the admin can open in Excel/Sheets, now including each student's fee figures.
 function exportStudentsCsv(list) {
-  const header = ['Student', 'Class', 'Code', 'Account status', 'Parent linked (UID)'];
-  const rows = list.map(({ student, codeInfo }) => [
-    student.name || '', student.class || '', codeInfo ? codeInfo.code : '',
+  const header = ['Student', 'Class', 'Section', 'Term', 'Code', 'Account status',
+    'Total fee (NGN)', 'Paid (NGN)', 'Balance (NGN)', '% paid', 'Payment status',
+    'Arrears carried over (NGN)', 'Discount (NGN)', 'Parent linked (UID)'];
+  const termLabel = TERM_LABELS[filters.term] || filters.term;
+  const rows = list.map(({ student, codeInfo, m, section }) => [
+    student.name || '', student.class || '', section || '', termLabel,
+    codeInfo ? codeInfo.code : '',
     codeInfo ? (codeInfo.claimed ? 'Account created' : 'Code not yet used') : '—',
+    m && m.has ? m.due : '', m && m.has ? m.paid : '', m && m.has ? m.balance : '',
+    m && m.has && m.due > 0 ? pctOf(m.paid, m.due) : '',
+    m ? STATUS_LABELS[m.status] : '',
+    m && m.has ? m.arrears : '', m && m.discount !== null ? m.discount : '',
     (codeInfo && codeInfo.claimedByUid) || ''
   ]);
-  const escapeCell = (v) => `"${String(v).replace(/"/g, '""')}"`;
-  const csv = [header, ...rows].map(r => r.map(escapeCell).join(',')).join('\r\n');
+  // Quote every cell; neutralise text that a spreadsheet could read as a formula.
+  const escapeCell = (v) => {
+    let s = String(v);
+    if (typeof v === 'string' && /^[=+\-@\t\r]/.test(s) && s !== '—') s = "'" + s;
+    return `"${s.replace(/"/g, '""')}"`;
+  };
+  const csv = '﻿' + [header, ...rows].map(r => r.map(escapeCell).join(',')).join('\r\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `kbis-students-${new Date().toISOString().slice(0, 10)}.csv`;
+  a.download = `kbis-students-${filters.term}-${new Date().toISOString().slice(0, 10)}.csv`;
   document.body.appendChild(a);
   a.click();
   a.remove();
@@ -288,6 +377,7 @@ async function getNextIndex(existingCodesSnap) {
 }
 
 let allStudentsCache = []; // [{id, student, codeInfo}], refreshed by loadStudentsTable()
+let currentTableList = []; // rows currently shown in the Students table (filters + search)
 
 // Last name = first word of the stored name, matching the format used
 // everywhere else in this project (code_registry.json, generateCode(), etc).
@@ -295,8 +385,270 @@ function lastNameOf(fullName) {
   return (fullName || '').trim().split(/\s+/)[0] || '';
 }
 
+/* =====================================================================
+   FEE SUMMARY — filters, aggregation and rendering
+   Everything is computed in the browser from the `students` collection
+   the dashboard already loads, so no extra reads or data changes are
+   needed (except the optional discount figure — see README).
+   ===================================================================== */
+const fmt0 = (n) => '₦' + Math.round(Number(n) || 0).toLocaleString('en-NG');
+const pctOf = (a, b) => (b > 0 ? Math.round((a / b) * 1000) / 10 : 0);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const round2 = (n) => Math.round(n * 100) / 100;
+
+const SECTIONS = ['Creche & Playgroup', 'Nursery', 'Primary', 'Junior Secondary', 'Senior Secondary'];
+const STATUS_LABELS = { paid: 'Fully paid', part: 'Part-paid', unpaid: 'Not paid', over: 'Overpaid', nofee: 'No fee data' };
+
+function sectionOf(cls) {
+  const c = (cls || '').toUpperCase();
+  if (/CRECHE|PLAY\s?GROUP/.test(c)) return SECTIONS[0];
+  if (/NURSERY/.test(c)) return SECTIONS[1];
+  if (/PRIMARY/.test(c)) return SECTIONS[2];
+  if (/JUNIOR|\bJSS/.test(c)) return SECTIONS[3];
+  if (/SENIOR|\bSSS|\bSS\s?\d/.test(c)) return SECTIONS[4];
+  return 'Other';
+}
+// Orders classes Creche → Playgroup → Nursery → Primary 1…6 → JSS → SSS.
+function classRank(cls) {
+  const i = SECTIONS.indexOf(sectionOf(cls));
+  const m = (cls || '').match(/\d+/);
+  return (i < 0 ? 99 : i) * 100 + (m ? parseInt(m[0], 10) : 0);
+}
+
+// One student's numbers for one term.
+function metricsFor(entry, termKey) {
+  const t = (entry.student.terms || {})[termKey];
+  if (!t) return { has: false, due: 0, paid: 0, balance: 0, status: 'nofee', arrears: 0, discount: null, items: [] };
+  const due = round2(Number(t.totalDue) || 0);
+  const paid = round2(Number(t.totalPaid) || 0);
+  const balance = round2(due - paid);
+  const items = Array.isArray(t.items) ? t.items : [];
+  let status;
+  if (due <= 0 && paid <= 0) status = 'nofee';
+  else if (balance < 0) status = 'over';
+  else if (balance === 0) status = 'paid';
+  else if (paid <= 0) status = 'unpaid';
+  else status = 'part';
+  const arrears = items
+    .filter((i) => String(i.label).trim().toLowerCase() === 'outstanding')
+    .reduce((s, i) => s + (Number(i.amount) || 0), 0);
+  const discount = typeof t.discountAmount === 'number' ? t.discountAmount : null;
+  return { has: true, due, paid, balance, status, arrears, discount, items };
+}
+
+const filters = { term: 'term1', section: '', cls: '', pay: '', acct: '' };
+
+function buildRows() {
+  return allStudentsCache.map((e) => ({ ...e, m: metricsFor(e, filters.term), section: sectionOf(e.student.class) }));
+}
+
+function passesFilters(r) {
+  if (filters.section && r.section !== filters.section) return false;
+  if (filters.cls && (r.student.class || '') !== filters.cls) return false;
+  if (filters.pay === 'owing') {
+    if (r.m.status !== 'part' && r.m.status !== 'unpaid') return false;
+  } else if (filters.pay && r.m.status !== filters.pay) return false;
+  const registered = !!(r.codeInfo && r.codeInfo.claimed);
+  if (filters.acct === 'registered' && !registered) return false;
+  if (filters.acct === 'pending' && registered) return false;
+  return true;
+}
+
+function summarize(rows) {
+  const s = {
+    students: rows.length, due: 0, paid: 0, owed: 0, credit: 0, arrears: 0, arrearsN: 0,
+    discount: 0, discountN: 0, hasDiscountData: false, registered: 0,
+    status: { paid: 0, part: 0, unpaid: 0, over: 0, nofee: 0 }, items: {}
+  };
+  rows.forEach((r) => {
+    const m = r.m;
+    s.status[m.status]++;
+    if (r.codeInfo && r.codeInfo.claimed) s.registered++;
+    if (!m.has) return;
+    s.due += m.due; s.paid += m.paid;
+    if (m.balance > 0) s.owed += m.balance; else s.credit += -m.balance;
+    s.arrears += m.arrears;
+    if (m.arrears > 0) s.arrearsN++;
+    if (m.discount !== null) {
+      s.hasDiscountData = true;
+      if (m.discount > 0) { s.discount += m.discount; s.discountN++; }
+    }
+    m.items.forEach((i) => {
+      if (String(i.label).trim().toLowerCase() === 'outstanding') return; // shown as its own card
+      s.items[i.label] = (s.items[i.label] || 0) + (Number(i.amount) || 0);
+    });
+  });
+  return s;
+}
+
+function groupByClass(rows) {
+  const map = new Map();
+  rows.forEach((r) => {
+    const k = r.student.class || 'Unassigned';
+    if (!map.has(k)) map.set(k, []);
+    map.get(k).push(r);
+  });
+  return [...map.entries()]
+    .sort((a, b) => classRank(a[0]) - classRank(b[0]) || a[0].localeCompare(b[0]))
+    .map(([cls, rs]) => ({ cls, s: summarize(rs) }));
+}
+
+function describeFilters() {
+  const parts = [TERM_LABELS[filters.term] || filters.term];
+  parts.push(filters.cls || filters.section || 'All classes');
+  const payOpt = document.querySelector(`#fPay option[value="${filters.pay}"]`);
+  if (filters.pay && payOpt) parts.push(payOpt.textContent);
+  const acctOpt = document.querySelector(`#fAcct option[value="${filters.acct}"]`);
+  if (filters.acct && acctOpt) parts.push(acctOpt.textContent);
+  return parts.join(' · ');
+}
+
+function statCard(label, value, note, extra = '', cls = '') {
+  return `<div class="stat ${cls}"><div class="label">${label}</div><div class="value">${value}</div>${note ? `<div class="note">${note}</div>` : ''}${extra}</div>`;
+}
+
+function renderSummary(rows) {
+  const s = summarize(rows);
+  const collectedPct = pctOf(s.paid, s.due);
+  const registeredPct = pctOf(s.registered, s.students);
+  const scope = describeFilters();
+  document.getElementById('summaryScope').textContent = `${scope} · ${s.students} student${s.students === 1 ? '' : 's'}`;
+  document.getElementById('printScope').textContent =
+    `${scope} · ${s.students} student${s.students === 1 ? '' : 's'} · Generated ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+
+  // ---- stat cards ----
+  const discountCard = s.hasDiscountData
+    ? statCard('Discounts given', fmt0(s.discount), `${s.discountN} student${s.discountN === 1 ? '' : 's'} on discount`)
+    : statCard('Discounts given', '—', 'Re-run update_data.py + migrate_to_firestore.py to load discount data');
+  document.getElementById('statGrid').innerHTML = [
+    statCard('Students', s.students, `${s.students - s.status.nofee} with fee data`),
+    statCard('Expected', fmt0(s.due), 'Total fees billed'),
+    statCard('Collected', fmt0(s.paid), `${collectedPct}% of expected`, `<div class="progress" role="img" aria-label="${collectedPct}% collected"><span style="width:${Math.min(collectedPct, 100)}%"></span></div>`, 'good'),
+    statCard('Outstanding', fmt0(s.owed), s.credit > 0 ? `plus ${fmt0(s.credit)} in credit balances` : 'Still to be paid', '', 'due'),
+    statCard('Fully paid', s.status.paid + s.status.over, `${pctOf(s.status.paid + s.status.over, s.students)}% of students`),
+    statCard('Part-paid', s.status.part, `${pctOf(s.status.part, s.students)}% of students`),
+    statCard('Not paid at all', s.status.unpaid, `${pctOf(s.status.unpaid, s.students)}% of students`),
+    statCard('Parent accounts', `${s.registered}/${s.students}`, `${registeredPct}% have created a login`),
+    statCard('Arrears carried over', fmt0(s.arrears), `${s.arrearsN} student${s.arrearsN === 1 ? '' : 's'} with an “Outstanding” line`),
+    discountCard
+  ].join('');
+
+  // ---- collection by class ----
+  const groups = groupByClass(rows);
+  document.getElementById('classBars').innerHTML = groups.length
+    ? groups.map(({ cls, s: g }) => {
+        const p = pctOf(g.paid, g.due);
+        return `<div class="bar-row"><span class="name" title="${esc(cls)}">${esc(cls)}</span>
+          <div class="bar-track" role="img" aria-label="${esc(cls)}: ${p}% collected"><span style="width:${Math.min(p, 100)}%"></span></div>
+          <span class="amt">${p}% · ${fmt0(g.paid)} / ${fmt0(g.due)}</span></div>`;
+      }).join('')
+    : '<p class="empty">No students match these filters.</p>';
+
+  // ---- payment status ----
+  const order = ['paid', 'part', 'unpaid', 'over', 'nofee'];
+  document.getElementById('statusBar').innerHTML = s.students
+    ? `<div class="seg-bar" role="img" aria-label="Payment status split">${order.map((k) => s.status[k] ? `<span class="c-${k}" style="width:${pctOf(s.status[k], s.students)}%"></span>` : '').join('')}</div>
+       <div class="seg-legend">${order.map((k) => `<div><span class="dot c-${k}"></span>${STATUS_LABELS[k]} <b>${s.status[k]}</b></div>`).join('')}</div>`
+    : '<p class="empty">No students match these filters.</p>';
+
+  // ---- fee breakdown by item ----
+  const items = Object.entries(s.items).sort((a, b) => b[1] - a[1]);
+  const maxItem = items.length ? items[0][1] : 0;
+  document.getElementById('itemBars').innerHTML = items.length
+    ? items.map(([label, amt]) => `<div class="bar-row"><span class="name" title="${esc(label)}">${esc(label)}</span>
+        <div class="bar-track plain"><span style="width:${pctOf(amt, maxItem)}%"></span></div>
+        <span class="amt">${fmt0(amt)}</span></div>`).join('')
+    : '<p class="empty">No itemised charges for these filters.</p>';
+
+  // ---- class table ----
+  const tbody = document.getElementById('classTableBody');
+  if (!groups.length) {
+    tbody.innerHTML = '<tr><td colspan="8" class="loading">No students match these filters.</td></tr>';
+  } else {
+    tbody.innerHTML = groups.map(({ cls, s: g }) => `
+      <tr data-cls="${esc(cls)}" class="${filters.cls === cls ? 'is-selected' : ''}">
+        <td data-label="Class">${esc(cls)}</td>
+        <td class="num" data-label="Students">${g.students}</td>
+        <td class="num" data-label="Expected">${fmt0(g.due)}</td>
+        <td class="num" data-label="Collected">${fmt0(g.paid)}</td>
+        <td class="num" data-label="Outstanding">${fmt0(g.owed)}</td>
+        <td class="num" data-label="Collected %">${pctOf(g.paid, g.due)}%</td>
+        <td class="num" data-label="Fully paid">${g.status.paid + g.status.over}</td>
+        <td class="num" data-label="Not paid">${g.status.unpaid}</td>
+      </tr>`).join('') + `
+      <tr class="total-row">
+        <td data-label="Class">Total</td>
+        <td class="num" data-label="Students">${s.students}</td>
+        <td class="num" data-label="Expected">${fmt0(s.due)}</td>
+        <td class="num" data-label="Collected">${fmt0(s.paid)}</td>
+        <td class="num" data-label="Outstanding">${fmt0(s.owed)}</td>
+        <td class="num" data-label="Collected %">${collectedPct}%</td>
+        <td class="num" data-label="Fully paid">${s.status.paid + s.status.over}</td>
+        <td class="num" data-label="Not paid">${s.status.unpaid}</td>
+      </tr>`;
+  }
+}
+
+// ---- filter controls ----
+function fillSelect(id, options, selected) {
+  const el = document.getElementById(id);
+  el.innerHTML = options.map(([v, l]) => `<option value="${esc(v)}"${v === selected ? ' selected' : ''}>${esc(l)}</option>`).join('');
+}
+
+function populateFilterControls() {
+  const termKeys = new Set();
+  let latestWithData = null;
+  allStudentsCache.forEach(({ student }) => {
+    Object.entries(student.terms || {}).forEach(([k, t]) => {
+      termKeys.add(k);
+      if ((Number(t.totalDue) || 0) > 0 && (!latestWithData || k > latestWithData)) latestWithData = k;
+    });
+  });
+  if (!termKeys.size) termKeys.add('term1');
+  const sortedTerms = [...termKeys].sort();
+  if (!termKeys.has(filters.term) || (latestWithData && filters.term === 'term1' && !filters.touchedTerm)) {
+    filters.term = latestWithData || sortedTerms[0];
+  }
+  fillSelect('fTerm', sortedTerms.map((k) => [k, TERM_LABELS[k] || k]), filters.term);
+
+  const present = new Set(allStudentsCache.map(({ student }) => sectionOf(student.class)));
+  const sections = [...SECTIONS.filter((x) => present.has(x)), ...(present.has('Other') ? ['Other'] : [])];
+  fillSelect('fSection', [['', 'All sections'], ...sections.map((x) => [x, x])], filters.section);
+  populateClassSelect();
+}
+
+function populateClassSelect() {
+  const classes = [...new Set(allStudentsCache
+    .filter(({ student }) => !filters.section || sectionOf(student.class) === filters.section)
+    .map(({ student }) => student.class || ''))]
+    .filter(Boolean)
+    .sort((a, b) => classRank(a) - classRank(b) || a.localeCompare(b));
+  if (filters.cls && !classes.includes(filters.cls)) filters.cls = '';
+  fillSelect('fClass', [['', 'All classes'], ...classes.map((c) => [c, c])], filters.cls);
+}
+
+function syncControlsFromState() {
+  document.getElementById('fTerm').value = filters.term;
+  document.getElementById('fSection').value = filters.section;
+  populateClassSelect();
+  document.getElementById('fPay').value = filters.pay;
+  document.getElementById('fAcct').value = filters.acct;
+}
+
+function refresh() {
+  const rows = buildRows().filter(passesFilters);
+  renderSummary(rows);
+  const q = document.getElementById('studentSearch').value.trim().toLowerCase();
+  currentTableList = q
+    ? rows.filter(({ student, codeInfo }) =>
+        (student.name || '').toLowerCase().includes(q)
+        || (student.class || '').toLowerCase().includes(q)
+        || (codeInfo && codeInfo.code || '').toLowerCase().includes(q))
+    : rows;
+  renderStudentRows(currentTableList);
+}
+
 async function loadStudentsTable() {
-  const tbody = document.getElementById('studentTableBody');
   const [studentsSnap, codesSnap] = await Promise.all([
     getDocs(collection(db, 'students')),
     getDocs(collection(db, 'schoolCodes'))
@@ -318,7 +670,8 @@ async function loadStudentsTable() {
     return (a.student.name || '').localeCompare(b.student.name || '');
   });
 
-  renderStudentRows(allStudentsCache);
+  populateFilterControls();
+  refresh();
 }
 
 function renderStudentRows(list) {
@@ -326,50 +679,63 @@ function renderStudentRows(list) {
   document.getElementById('studentCount').textContent = `${list.length} student${list.length === 1 ? '' : 's'}`;
 
   if (!list.length) {
-    tbody.innerHTML = `<tr><td colspan="4" class="loading">${allStudentsCache.length ? 'No students match your search.' : 'No students yet — issue a code above to add the first one.'}</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" class="loading">${allStudentsCache.length ? 'No students match your filters or search.' : 'No students yet — issue a code above to add the first one.'}</td></tr>`;
     return;
   }
 
   tbody.innerHTML = '';
-  list.forEach(({ id, student, codeInfo }) => {
+  list.forEach(({ id, student, codeInfo, m }) => {
     const tr = document.createElement('tr');
     tr.className = 'clickable-row';
     tr.innerHTML = `
-      <td data-label="Student">${student.name}</td>
-      <td data-label="Class">${student.class || '—'}</td>
+      <td data-label="Student">${esc(student.name)}</td>
+      <td data-label="Class">${esc(student.class) || '—'}</td>
       <td data-label="Code" class="money">${codeInfo ? copyPillHtml(codeInfo.code) : '—'}</td>
-      <td data-label="Status">${codeInfo
+      <td data-label="Account">${codeInfo
         ? (codeInfo.claimed
             ? '<span class="badge claimed">Account created</span>'
             : '<span class="badge unclaimed">Code not yet used</span>')
-        : '—'}</td>`;
+        : '—'}</td>
+      <td data-label="Balance"><div class="bal-cell">${m && m.has
+        ? `<span class="amt">${fmt0(m.balance)}</span><span class="badge ${m.status}">${STATUS_LABELS[m.status]}</span>`
+        : `<span class="badge nofee">${STATUS_LABELS.nofee}</span>`}</div></td>`;
     tr.addEventListener('click', (e) => { if (e.target.closest('.copy-pill')) return; openStudentDetail(id, student, codeInfo); });
     tbody.appendChild(tr);
   });
   wireCopyPills(tbody);
 }
 
-document.getElementById('exportCsvBtn').addEventListener('click', () => {
-  const q = document.getElementById('studentSearch').value.trim().toLowerCase();
-  const list = q
-    ? allStudentsCache.filter(({ student, codeInfo }) =>
-        (student.name || '').toLowerCase().includes(q) ||
-        (student.class || '').toLowerCase().includes(q) ||
-        (codeInfo && codeInfo.code || '').toLowerCase().includes(q))
-    : allStudentsCache;
-  exportStudentsCsv(list);
+// ---- wiring ----
+[['fTerm', 'term'], ['fSection', 'section'], ['fClass', 'cls'], ['fPay', 'pay'], ['fAcct', 'acct']].forEach(([id, key]) => {
+  document.getElementById(id).addEventListener('change', (e) => {
+    filters[key] = e.target.value;
+    if (key === 'term') filters.touchedTerm = true;
+    if (key === 'section') { filters.cls = ''; populateClassSelect(); }
+    refresh();
+  });
 });
 
-document.getElementById('studentSearch').addEventListener('input', (e) => {
-  const q = e.target.value.trim().toLowerCase();
-  if (!q) { renderStudentRows(allStudentsCache); return; }
-  const filtered = allStudentsCache.filter(({ student, codeInfo }) => {
-    return (student.name || '').toLowerCase().includes(q)
-      || (student.class || '').toLowerCase().includes(q)
-      || (codeInfo && codeInfo.code || '').toLowerCase().includes(q);
-  });
-  renderStudentRows(filtered);
+document.getElementById('resetFiltersBtn').addEventListener('click', () => {
+  Object.assign(filters, { section: '', cls: '', pay: '', acct: '' });
+  document.getElementById('studentSearch').value = '';
+  syncControlsFromState();
+  refresh();
 });
+
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+// Click a class row in the summary table to filter everything to that class (click again to clear).
+document.getElementById('classTableBody').addEventListener('click', (e) => {
+  const tr = e.target.closest('tr[data-cls]');
+  if (!tr) return;
+  const cls = tr.dataset.cls;
+  filters.cls = filters.cls === cls ? '' : cls;
+  syncControlsFromState();
+  refresh();
+});
+
+document.getElementById('exportCsvBtn').addEventListener('click', () => exportStudentsCsv(currentTableList));
+document.getElementById('studentSearch').addEventListener('input', refresh);
 
 document.getElementById('newCodeForm').addEventListener('submit', async (e) => {
   e.preventDefault();
