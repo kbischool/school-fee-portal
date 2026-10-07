@@ -63,8 +63,8 @@
     "name": "ABDULLATEEF MUHAMMED",
     "class": "SENIOR SECONDARY SCHOOL 2",
     "total_fee": 81210.0,
-    "total_paid": 0.0,
-    "balance": 81210.0,
+    "total_paid": 40000.0,
+    "balance": 41210.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -85,8 +85,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "81210",
-      "TOTAL PAID": "0",
-      "BALANCE": "81210"
+      "TOTAL PAID": "40000",
+      "BALANCE": "41210"
     }
   },
   "ABIALA1003": {
@@ -633,8 +633,8 @@
     "name": "ADEKUNLE MUMINAT ADEBOLA",
     "class": "JUNIOR SECONDARY SCHOOL 3",
     "total_fee": 62230.0,
-    "total_paid": 0.0,
-    "balance": 62230.0,
+    "total_paid": 20000.0,
+    "balance": 42230.0,
     "discount_rate": 0.5,
     "discount_amount": 16500.0,
     "details": {
@@ -655,8 +655,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "62230",
-      "TOTAL PAID": "0",
-      "BALANCE": "62230"
+      "TOTAL PAID": "20000",
+      "BALANCE": "42230"
     }
   },
   "ADEPRO1020": {
@@ -993,8 +993,8 @@
     "name": "AKANDE MICHELLE OREOFE",
     "class": "CRECHE",
     "total_fee": 24550.0,
-    "total_paid": 1300.0,
-    "balance": 23250.0,
+    "total_paid": 11300.0,
+    "balance": 13250.0,
     "discount_rate": 0.25,
     "discount_amount": 6500.0,
     "details": {
@@ -1015,8 +1015,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "24550",
-      "TOTAL PAID": "1300",
-      "BALANCE": "23250"
+      "TOTAL PAID": "11300",
+      "BALANCE": "13250"
     }
   },
   "AKAZIO1030": {
@@ -1203,8 +1203,8 @@
     "name": "ALABI ADEKUNLE",
     "class": "CRECHE",
     "total_fee": 31050.0,
-    "total_paid": 0.0,
-    "balance": 31050.0,
+    "total_paid": 20000.0,
+    "balance": 11050.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -1225,8 +1225,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "31050",
-      "TOTAL PAID": "0",
-      "BALANCE": "31050"
+      "TOTAL PAID": "20000",
+      "BALANCE": "11050"
     }
   },
   "ALAAFO1037": {
@@ -1443,8 +1443,8 @@
     "name": "BENJAMIN GRANT",
     "class": "PLAYGROUP 1",
     "total_fee": 43140.0,
-    "total_paid": 0.0,
-    "balance": 43140.0,
+    "total_paid": 30000.0,
+    "balance": 13140.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -1465,8 +1465,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "43140",
-      "TOTAL PAID": "0",
-      "BALANCE": "43140"
+      "TOTAL PAID": "30000",
+      "BALANCE": "13140"
     }
   },
   "DAVOLU1046": {
@@ -2909,6 +2909,36 @@
       "BALANCE": "87040"
     }
   },
+  "OLATIA1143": {
+    "name": "OLABIYI TIARAOLUWA ESTHER",
+    "class": "CRECHE",
+    "total_fee": 33050.0,
+    "total_paid": 0.0,
+    "balance": 33050.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
+    "details": {
+      " AD_FORM": "2000",
+      "TUITION": "26000.0",
+      " PTA&EXAM": "2000",
+      " REPORT_CARD": "0.0",
+      "PRACTICAL": "0.0",
+      "TEXTBOOKS": "0",
+      "NB & STAT": "3050",
+      "UNIFORM": "0",
+      "HOODY": "0",
+      "SPORTSWEAR": "0",
+      " AFTERSCHOOL": "0",
+      "EXCURSION": "0",
+      "EXTERNAL EXAMINATION": "0",
+      "GRADUATION/ SPORTS/PARTY": "0",
+      "HOLIDAY LESSON": "0",
+      "OUTSTANDING": "0",
+      "TOTAL FEE": "33050",
+      "TOTAL PAID": "0",
+      "BALANCE": "33050"
+    }
+  },
   "OLAJEM1083": {
     "name": "OLADAPO JEMIMA OLAOLUWAKITAN",
     "class": "PLAYGROUP 1",
@@ -3783,8 +3813,8 @@
     "name": "SAHEED IBRAHIM",
     "class": "PRIMARY 5",
     "total_fee": 76770.0,
-    "total_paid": 25000.0,
-    "balance": 51770.0,
+    "total_paid": 35000.0,
+    "balance": 41770.0,
     "discount_rate": 0.25,
     "discount_amount": 7000.0,
     "details": {
@@ -3805,16 +3835,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "76770",
-      "TOTAL PAID": "25000",
-      "BALANCE": "51770"
+      "TOTAL PAID": "35000",
+      "BALANCE": "41770"
     }
   },
   "SAHFAR1110": {
     "name": "SAHEED FARIDAT ABISOLA",
     "class": "SENIOR SECONDARY SCHOOL 2",
     "total_fee": 79370.0,
-    "total_paid": 25000.0,
-    "balance": 54370.0,
+    "total_paid": 35000.0,
+    "balance": 44370.0,
     "discount_rate": 0.25,
     "discount_amount": 10000.0,
     "details": {
@@ -3835,8 +3865,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "2660",
       "TOTAL FEE": "79370",
-      "TOTAL PAID": "25000",
-      "BALANCE": "54370"
+      "TOTAL PAID": "35000",
+      "BALANCE": "44370"
     }
   },
   "SANJOS1111": {
@@ -3873,8 +3903,8 @@
     "name": "SANUSI DESIRE",
     "class": "PRIMARY 1",
     "total_fee": 83425.0,
-    "total_paid": 0.0,
-    "balance": 83425.0,
+    "total_paid": 20000.0,
+    "balance": 63425.0,
     "discount_rate": 0.25,
     "discount_amount": 7000.0,
     "details": {
@@ -3895,16 +3925,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "9500",
       "TOTAL FEE": "83425",
-      "TOTAL PAID": "0",
-      "BALANCE": "83425"
+      "TOTAL PAID": "20000",
+      "BALANCE": "63425"
     }
   },
   "SANBLE1113": {
     "name": "SANUSI BLESSING",
     "class": "PRIMARY 4",
     "total_fee": 75310.0,
-    "total_paid": 0.0,
-    "balance": 75310.0,
+    "total_paid": 20000.0,
+    "balance": 55310.0,
     "discount_rate": 0.25,
     "discount_amount": 7000.0,
     "details": {
@@ -3925,8 +3955,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "75310",
-      "TOTAL PAID": "0",
-      "BALANCE": "75310"
+      "TOTAL PAID": "20000",
+      "BALANCE": "55310"
     }
   },
   "SOLIMA1114": {
