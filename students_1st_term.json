@@ -62,9 +62,9 @@
   "ABDMUH1002": {
     "name": "ABDULLATEEF MUHAMMED",
     "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 81210.0,
+    "total_fee": 63630.0,
     "total_paid": 40000.0,
-    "balance": 41210.0,
+    "balance": 23630.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -73,8 +73,8 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "2000.0",
       "PRACTICAL": "8000.0",
-      "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "TEXTBOOKS": "5700",
+      "NB & STAT": "2930",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -84,9 +84,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "81210",
+      "TOTAL FEE": "63630",
       "TOTAL PAID": "40000",
-      "BALANCE": "41210"
+      "BALANCE": "23630"
     }
   },
   "ABIALA1003": {
@@ -302,9 +302,9 @@
   "ADEELI1009": {
     "name": "ADEBOYE ELIZABETH",
     "class": "JUNIOR SECONDARY SCHOOL 2",
-    "total_fee": 78330.0,
+    "total_fee": 61470.0,
     "total_paid": 35000.0,
-    "balance": 43330.0,
+    "balance": 26470.0,
     "discount_rate": 0.25,
     "discount_amount": 8250.0,
     "details": {
@@ -313,8 +313,8 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "1500.0",
       "PRACTICAL": "4500.0",
-      "TEXTBOOKS": "19500",
-      "NB & STAT": "14330",
+      "TEXTBOOKS": "8340",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -324,17 +324,17 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "750",
-      "TOTAL FEE": "78330",
+      "TOTAL FEE": "61470",
       "TOTAL PAID": "35000",
-      "BALANCE": "43330"
+      "BALANCE": "26470"
     }
   },
   "ADEENI1010": {
     "name": "ADEBOYE ENIOLA ESTHER",
     "class": "SENIOR SECONDARY SCHOOL 1",
-    "total_fee": 97250.0,
+    "total_fee": 71670.0,
     "total_paid": 35000.0,
-    "balance": 62250.0,
+    "balance": 36670.0,
     "discount_rate": 0.25,
     "discount_amount": 10000.0,
     "details": {
@@ -343,20 +343,20 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "1500.0",
       "PRACTICAL": "6000.0",
-      "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "TEXTBOOKS": "0",
+      "NB & STAT": "8630",
       "UNIFORM": "20000",
       "HOODY": "0",
       "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "8000",
+      " AFTERSCHOOL": "0",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "540",
-      "TOTAL FEE": "97250",
+      "TOTAL FEE": "71670",
       "TOTAL PAID": "35000",
-      "BALANCE": "62250"
+      "BALANCE": "36670"
     }
   },
   "ADEADE1011": {
@@ -543,8 +543,8 @@
     "name": "ADEDOJA FAITH MORAYOOLUWA",
     "class": "PLAYGROUP 2",
     "total_fee": 48930.0,
-    "total_paid": 42930.0,
-    "balance": 6000.0,
+    "total_paid": 51695.0,
+    "balance": -2765.0,
     "discount_rate": 0.3,
     "discount_amount": 7800.0,
     "details": {
@@ -565,8 +565,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "48930",
-      "TOTAL PAID": "42930",
-      "BALANCE": "6000"
+      "TOTAL PAID": "51695",
+      "BALANCE": "-2765"
     }
   },
   "ADEMOJ1017": {
@@ -603,8 +603,8 @@
     "name": "ADEDOJA PRAISE",
     "class": "PRIMARY 5",
     "total_fee": 76770.0,
-    "total_paid": 85535.0,
-    "balance": -8765.0,
+    "total_paid": 76770.0,
+    "balance": 0.0,
     "discount_rate": 0.25,
     "discount_amount": 7000.0,
     "details": {
@@ -625,16 +625,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "76770",
-      "TOTAL PAID": "85535",
-      "BALANCE": "-8765"
+      "TOTAL PAID": "76770",
+      "BALANCE": "0"
     }
   },
   "ADEMUM1019": {
     "name": "ADEKUNLE MUMINAT ADEBOLA",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 62230.0,
+    "total_fee": 64530.0,
     "total_paid": 20000.0,
-    "balance": 42230.0,
+    "balance": 44530.0,
     "discount_rate": 0.5,
     "discount_amount": 16500.0,
     "details": {
@@ -644,19 +644,19 @@
       " REPORT_CARD": "1000.0",
       "PRACTICAL": "3000.0",
       "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "0",
+      " AFTERSCHOOL": "8000",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "62230",
+      "TOTAL FEE": "64530",
       "TOTAL PAID": "20000",
-      "BALANCE": "42230"
+      "BALANCE": "44530"
     }
   },
   "ADEPRO1020": {
@@ -902,9 +902,9 @@
   "ADEADE1028": {
     "name": "ADEYEMI ADETOLA PRINCESS",
     "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 81210.0,
+    "total_fee": 75510.0,
     "total_paid": 40000.0,
-    "balance": 41210.0,
+    "balance": 35510.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -914,7 +914,7 @@
       " REPORT_CARD": "2000.0",
       "PRACTICAL": "8000.0",
       "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -924,9 +924,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "81210",
+      "TOTAL FEE": "75510",
       "TOTAL PAID": "40000",
-      "BALANCE": "41210"
+      "BALANCE": "35510"
     }
   },
   "ADIAHN1029": {
@@ -962,9 +962,9 @@
   "AGUCHR1127": {
     "name": "AGUNBIADE CHRISTIANAH OLUWAKEMI",
     "class": "JUNIOR SECONDARY SCHOOL 1",
-    "total_fee": 112510.0,
+    "total_fee": 109350.0,
     "total_paid": 60000.0,
-    "balance": 52510.0,
+    "balance": 49350.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -973,20 +973,20 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "2000.0",
       "PRACTICAL": "6000.0",
-      "TEXTBOOKS": "19320",
+      "TEXTBOOKS": "8160",
       "NB & STAT": "16190",
       "UNIFORM": "12000",
       "HOODY": "8000",
       "SPORTSWEAR": "8000",
-      " AFTERSCHOOL": "0",
+      " AFTERSCHOOL": "8000",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "112510",
+      "TOTAL FEE": "109350",
       "TOTAL PAID": "60000",
-      "BALANCE": "52510"
+      "BALANCE": "49350"
     }
   },
   "AKAMIC1031": {
@@ -1262,9 +1262,9 @@
   "ALIBOL1038": {
     "name": "ALIDU BOLANLE AZEEZAT",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 70200.0,
+    "total_fee": 45340.0,
     "total_paid": 25000.0,
-    "balance": 45200.0,
+    "balance": 20340.0,
     "discount_rate": 0.5,
     "discount_amount": 16500.0,
     "details": {
@@ -1273,28 +1273,28 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "1000.0",
       "PRACTICAL": "3000.0",
-      "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
+      "TEXTBOOKS": "11240",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "8000",
+      " AFTERSCHOOL": "0",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "-30",
-      "TOTAL FEE": "70200",
+      "TOTAL FEE": "45340",
       "TOTAL PAID": "25000",
-      "BALANCE": "45200"
+      "BALANCE": "20340"
     }
   },
   "AWOJOS1039": {
     "name": "AWODOLA JOSHUA AYOMIDE",
     "class": "JUNIOR SECONDARY SCHOOL 3",
     "total_fee": 73760.0,
-    "total_paid": 0.0,
-    "balance": 73760.0,
+    "total_paid": 30000.0,
+    "balance": 43760.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -1315,16 +1315,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "-8970",
       "TOTAL FEE": "73760",
-      "TOTAL PAID": "0",
-      "BALANCE": "73760"
+      "TOTAL PAID": "30000",
+      "BALANCE": "43760"
     }
   },
   "AYOSAN1041": {
     "name": "AYODELE SANDRA OLUWATOBILOBA",
     "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 81330.0,
+    "total_fee": 75630.0,
     "total_paid": 50000.0,
-    "balance": 31330.0,
+    "balance": 25630.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -1334,7 +1334,7 @@
       " REPORT_CARD": "2000.0",
       "PRACTICAL": "8000.0",
       "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -1344,47 +1344,17 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "120",
-      "TOTAL FEE": "81330",
+      "TOTAL FEE": "75630",
       "TOTAL PAID": "50000",
-      "BALANCE": "31330"
-    }
-  },
-  "BABBRI1042": {
-    "name": "BABALOLA BRIDGET OLADOYIN",
-    "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 62710.0,
-    "total_paid": 0.0,
-    "balance": 62710.0,
-    "discount_rate": 0.5,
-    "discount_amount": 16500.0,
-    "details": {
-      " AD_FORM": "0",
-      "TUITION": "16500.0",
-      " PTA&EXAM": "5000",
-      " REPORT_CARD": "1000.0",
-      "PRACTICAL": "3000.0",
-      "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
-      "UNIFORM": "0",
-      "HOODY": "0",
-      "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "0",
-      "EXCURSION": "0",
-      "EXTERNAL EXAMINATION": "0",
-      "GRADUATION/ SPORTS/PARTY": "0",
-      "HOLIDAY LESSON": "0",
-      "OUTSTANDING": "480",
-      "TOTAL FEE": "62710",
-      "TOTAL PAID": "0",
-      "BALANCE": "62710"
+      "BALANCE": "25630"
     }
   },
   "BAKBEA1043": {
     "name": "BAKARE BEAUTY OLABISI",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 72480.0,
+    "total_fee": 61080.0,
     "total_paid": 0.0,
-    "balance": 72480.0,
+    "balance": 61080.0,
     "discount_rate": 0.25,
     "discount_amount": 8250.0,
     "details": {
@@ -1394,7 +1364,7 @@
       " REPORT_CARD": "1500.0",
       "PRACTICAL": "4500.0",
       "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
+      "NB & STAT": "2930",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -1404,17 +1374,17 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "72480",
+      "TOTAL FEE": "61080",
       "TOTAL PAID": "0",
-      "BALANCE": "72480"
+      "BALANCE": "61080"
     }
   },
   "BAKPRI1044": {
     "name": "BAKARE PRINCESS BEWAJI",
     "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 68710.0,
+    "total_fee": 57310.0,
     "total_paid": 0.0,
-    "balance": 68710.0,
+    "balance": 57310.0,
     "discount_rate": 0.25,
     "discount_amount": 10000.0,
     "details": {
@@ -1424,7 +1394,7 @@
       " REPORT_CARD": "1500.0",
       "PRACTICAL": "6000.0",
       "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "NB & STAT": "2930",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -1434,9 +1404,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "68710",
+      "TOTAL FEE": "57310",
       "TOTAL PAID": "0",
-      "BALANCE": "68710"
+      "BALANCE": "57310"
     }
   },
   "BENGRA1045": {
@@ -1619,36 +1589,6 @@
       "BALANCE": "18890"
     }
   },
-  "EMMRUT1049": {
-    "name": "EMMANUEL RUTH OLADIPUPO",
-    "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 62730.0,
-    "total_paid": 0.0,
-    "balance": 62730.0,
-    "discount_rate": 0.5,
-    "discount_amount": 16500.0,
-    "details": {
-      " AD_FORM": "0",
-      "TUITION": "16500.0",
-      " PTA&EXAM": "5000",
-      " REPORT_CARD": "1000.0",
-      "PRACTICAL": "3000.0",
-      "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
-      "UNIFORM": "0",
-      "HOODY": "0",
-      "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "0",
-      "EXCURSION": "0",
-      "EXTERNAL EXAMINATION": "0",
-      "GRADUATION/ SPORTS/PARTY": "0",
-      "HOLIDAY LESSON": "0",
-      "OUTSTANDING": "500",
-      "TOTAL FEE": "62730",
-      "TOTAL PAID": "0",
-      "BALANCE": "62730"
-    }
-  },
   "EMOJUL1050": {
     "name": "EMORDI JULIAN KOLADE",
     "class": "PRIMARY 2",
@@ -1772,9 +1712,9 @@
   "FASABD1131": {
     "name": "FASASI ABDULSAMAD",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 114130.0,
+    "total_fee": 108970.0,
     "total_paid": 100000.0,
-    "balance": 14130.0,
+    "balance": 8970.0,
     "discount_rate": 0.25,
     "discount_amount": 8250.0,
     "details": {
@@ -1783,7 +1723,7 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "1500.0",
       "PRACTICAL": "4500.0",
-      "TEXTBOOKS": "22400",
+      "TEXTBOOKS": "17240",
       "NB & STAT": "25730",
       "UNIFORM": "12000",
       "HOODY": "8000",
@@ -1794,9 +1734,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "114130",
+      "TOTAL FEE": "108970",
       "TOTAL PAID": "100000",
-      "BALANCE": "14130"
+      "BALANCE": "8970"
     }
   },
   "FASABD1132": {
@@ -2132,9 +2072,9 @@
   "ISSIMO1062": {
     "name": "ISSAH IMOLE",
     "class": "JUNIOR SECONDARY SCHOOL 2",
-    "total_fee": 79830.0,
+    "total_fee": 68430.0,
     "total_paid": 40000.0,
-    "balance": 39830.0,
+    "balance": 28430.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -2144,7 +2084,7 @@
       " REPORT_CARD": "2000.0",
       "PRACTICAL": "6000.0",
       "TEXTBOOKS": "19500",
-      "NB & STAT": "14330",
+      "NB & STAT": "2930",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -2154,9 +2094,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "79830",
+      "TOTAL FEE": "68430",
       "TOTAL PAID": "40000",
-      "BALANCE": "39830"
+      "BALANCE": "28430"
     }
   },
   "JAMFAI1063": {
@@ -2582,9 +2522,9 @@
   "MUTIBR1075": {
     "name": "MUTAIRU IBRAHIM GBOLAHAN",
     "class": "JUNIOR SECONDARY SCHOOL 2",
-    "total_fee": 67530.0,
-    "total_paid": 30000.0,
-    "balance": 37530.0,
+    "total_fee": 50670.0,
+    "total_paid": 35700.0,
+    "balance": 14970.0,
     "discount_rate": 0.3,
     "discount_amount": 9900.0,
     "details": {
@@ -2593,8 +2533,8 @@
       " PTA&EXAM": "5000",
       " REPORT_CARD": "1400.0",
       "PRACTICAL": "4200.0",
-      "TEXTBOOKS": "19500",
-      "NB & STAT": "14330",
+      "TEXTBOOKS": "8340",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -2604,9 +2544,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "67530",
-      "TOTAL PAID": "30000",
-      "BALANCE": "37530"
+      "TOTAL FEE": "50670",
+      "TOTAL PAID": "35700",
+      "BALANCE": "14970"
     }
   },
   "MUTISM1076": {
@@ -2642,8 +2582,8 @@
   "MUTMAR1077": {
     "name": "MUTAIRU MARIAM OMOSHALEWA",
     "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 31210.0,
-    "total_paid": 31210.0,
+    "total_fee": 25510.0,
+    "total_paid": 25510.0,
     "balance": 0.0,
     "discount_rate": 1.0,
     "discount_amount": 40000.0,
@@ -2654,7 +2594,7 @@
       " REPORT_CARD": "0.0",
       "PRACTICAL": "0.0",
       "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -2664,8 +2604,8 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "31210",
-      "TOTAL PAID": "31210",
+      "TOTAL FEE": "25510",
+      "TOTAL PAID": "25510",
       "BALANCE": "0"
     }
   },
@@ -2702,9 +2642,9 @@
   "NURABU1142": {
     "name": "NURUDEEN ABU-BAKIR",
     "class": "JUNIOR SECONDARY SCHOOL 1",
-    "total_fee": 112510.0,
+    "total_fee": 120510.0,
     "total_paid": 90000.0,
-    "balance": 22510.0,
+    "balance": 30510.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -2718,15 +2658,15 @@
       "UNIFORM": "12000",
       "HOODY": "8000",
       "SPORTSWEAR": "8000",
-      " AFTERSCHOOL": "0",
+      " AFTERSCHOOL": "8000",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "112510",
+      "TOTAL FEE": "120510",
       "TOTAL PAID": "90000",
-      "BALANCE": "22510"
+      "BALANCE": "30510"
     }
   },
   "OBETAI1079": {
@@ -2823,8 +2763,8 @@
     "name": "OGUNSANYA OPETOSIMI GRACE",
     "class": "NURSERY 2",
     "total_fee": 92410.0,
-    "total_paid": 13670.0,
-    "balance": 78740.0,
+    "total_paid": 26110.0,
+    "balance": 66300.0,
     "discount_rate": 0.25,
     "discount_amount": 6500.0,
     "details": {
@@ -2845,16 +2785,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "92410",
-      "TOTAL PAID": "13670",
-      "BALANCE": "78740"
+      "TOTAL PAID": "26110",
+      "BALANCE": "66300"
     }
   },
   "OGUOLU1124": {
     "name": "OGUNSANYA OLUWAFERANMI BLESSED",
     "class": "PLAYGROUP 1",
     "total_fee": 68890.0,
-    "total_paid": 81330.0,
-    "balance": -12440.0,
+    "total_paid": 68890.0,
+    "balance": 0.0,
     "discount_rate": 0.25,
     "discount_amount": 6500.0,
     "details": {
@@ -2875,46 +2815,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "68890",
-      "TOTAL PAID": "81330",
-      "BALANCE": "-12440"
-    }
-  },
-  "OKEJUM1081": {
-    "name": "OKERINDE JUMAIN BOLUWATIFE",
-    "class": "SENIOR SECONDARY SCHOOL 3",
-    "total_fee": 87040.0,
-    "total_paid": 0.0,
-    "balance": 87040.0,
-    "discount_rate": 0.0,
-    "discount_amount": 0,
-    "details": {
-      " AD_FORM": "0",
-      "TUITION": "40000.0",
-      " PTA&EXAM": "5000",
-      " REPORT_CARD": "2000.0",
-      "PRACTICAL": "8000.0",
-      "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
-      "UNIFORM": "0",
-      "HOODY": "0",
-      "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "0",
-      "EXCURSION": "0",
-      "EXTERNAL EXAMINATION": "0",
-      "GRADUATION/ SPORTS/PARTY": "0",
-      "HOLIDAY LESSON": "0",
-      "OUTSTANDING": "5830",
-      "TOTAL FEE": "87040",
-      "TOTAL PAID": "0",
-      "BALANCE": "87040"
+      "TOTAL PAID": "68890",
+      "BALANCE": "0"
     }
   },
   "OLATIA1143": {
     "name": "OLABIYI TIARAOLUWA ESTHER",
     "class": "CRECHE",
     "total_fee": 33050.0,
-    "total_paid": 0.0,
-    "balance": 33050.0,
+    "total_paid": 49050.0,
+    "balance": -16000.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -2935,8 +2845,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "33050",
-      "TOTAL PAID": "0",
-      "BALANCE": "33050"
+      "TOTAL PAID": "49050",
+      "BALANCE": "-16000"
     }
   },
   "OLAJEM1083": {
@@ -3033,8 +2943,8 @@
     "name": "OLADOSU ABDULLAHI OLUWASEYI",
     "class": "NURSERY 1",
     "total_fee": 90930.0,
-    "total_paid": 40000.0,
-    "balance": 50930.0,
+    "total_paid": 82000.0,
+    "balance": 8930.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -3055,8 +2965,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "90930",
-      "TOTAL PAID": "40000",
-      "BALANCE": "50930"
+      "TOTAL PAID": "82000",
+      "BALANCE": "8930"
     }
   },
   "OLAADE1086": {
@@ -3332,9 +3242,9 @@
   "OLUEMM1095": {
     "name": "OLUWASEGUN EMMANUEL OLUWAKOREDE",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 70430.0,
+    "total_fee": 59030.0,
     "total_paid": 0.0,
-    "balance": 70430.0,
+    "balance": 59030.0,
     "discount_rate": 0.3,
     "discount_amount": 9900.0,
     "details": {
@@ -3344,7 +3254,7 @@
       " REPORT_CARD": "1400.0",
       "PRACTICAL": "4200.0",
       "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
+      "NB & STAT": "2930",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -3354,9 +3264,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "70430",
+      "TOTAL FEE": "59030",
       "TOTAL PAID": "0",
-      "BALANCE": "70430"
+      "BALANCE": "59030"
     }
   },
   "OLUISR1096": {
@@ -3482,9 +3392,9 @@
   "ONOMIR1099": {
     "name": "ONOJA MIRACLE",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 67085.0,
+    "total_fee": 59085.0,
     "total_paid": 30000.0,
-    "balance": 37085.0,
+    "balance": 29085.0,
     "discount_rate": 0.5,
     "discount_amount": 16500.0,
     "details": {
@@ -3498,15 +3408,15 @@
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "8000",
+      " AFTERSCHOOL": "0",
       "EXCURSION": "0",
       "EXTERNAL EXAMINATION": "0",
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "-3145",
-      "TOTAL FEE": "67085",
+      "TOTAL FEE": "59085",
       "TOTAL PAID": "30000",
-      "BALANCE": "37085"
+      "BALANCE": "29085"
     }
   },
   "OSIUGO1100": {
@@ -3842,9 +3752,9 @@
   "SAHFAR1110": {
     "name": "SAHEED FARIDAT ABISOLA",
     "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 79370.0,
+    "total_fee": 73670.0,
     "total_paid": 35000.0,
-    "balance": 44370.0,
+    "balance": 38670.0,
     "discount_rate": 0.25,
     "discount_amount": 10000.0,
     "details": {
@@ -3854,7 +3764,7 @@
       " REPORT_CARD": "1500.0",
       "PRACTICAL": "6000.0",
       "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -3864,9 +3774,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "2660",
-      "TOTAL FEE": "79370",
+      "TOTAL FEE": "73670",
       "TOTAL PAID": "35000",
-      "BALANCE": "44370"
+      "BALANCE": "38670"
     }
   },
   "SANJOS1111": {
@@ -3992,49 +3902,19 @@
   "TEMOLU1115": {
     "name": "TEMITOPE OLUWATIMILEYIN GODWIN",
     "class": "JUNIOR SECONDARY SCHOOL 3",
-    "total_fee": 78430.0,
+    "total_fee": 65870.0,
     "total_paid": 0.0,
-    "balance": 78430.0,
-    "discount_rate": 0.3,
-    "discount_amount": 9900.0,
+    "balance": 65870.0,
+    "discount_rate": 0.0,
+    "discount_amount": 0,
     "details": {
       " AD_FORM": "0",
-      "TUITION": "23100.0",
+      "TUITION": "33000.0",
       " PTA&EXAM": "5000",
-      " REPORT_CARD": "1400.0",
-      "PRACTICAL": "4200.0",
-      "TEXTBOOKS": "22400",
-      "NB & STAT": "14330",
-      "UNIFORM": "0",
-      "HOODY": "0",
-      "SPORTSWEAR": "0",
-      " AFTERSCHOOL": "8000",
-      "EXCURSION": "0",
-      "EXTERNAL EXAMINATION": "0",
-      "GRADUATION/ SPORTS/PARTY": "0",
-      "HOLIDAY LESSON": "0",
-      "OUTSTANDING": "0",
-      "TOTAL FEE": "78430",
-      "TOTAL PAID": "0",
-      "BALANCE": "78430"
-    }
-  },
-  "TEMEMM1116": {
-    "name": "TEMITOPE EMMANUEL OLUWASEMILORE",
-    "class": "SENIOR SECONDARY SCHOOL 2",
-    "total_fee": 68710.0,
-    "total_paid": 0.0,
-    "balance": 68710.0,
-    "discount_rate": 0.25,
-    "discount_amount": 10000.0,
-    "details": {
-      " AD_FORM": "0",
-      "TUITION": "30000.0",
-      " PTA&EXAM": "5000",
-      " REPORT_CARD": "1500.0",
+      " REPORT_CARD": "2000.0",
       "PRACTICAL": "6000.0",
-      "TEXTBOOKS": "11880",
-      "NB & STAT": "14330",
+      "TEXTBOOKS": "11240",
+      "NB & STAT": "8630",
       "UNIFORM": "0",
       "HOODY": "0",
       "SPORTSWEAR": "0",
@@ -4044,9 +3924,9 @@
       "GRADUATION/ SPORTS/PARTY": "0",
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
-      "TOTAL FEE": "68710",
+      "TOTAL FEE": "65870",
       "TOTAL PAID": "0",
-      "BALANCE": "68710"
+      "BALANCE": "65870"
     }
   },
   "TIAAIS1117": {
