@@ -3,8 +3,8 @@
     "name": "ABDULAZEEZ ABDULLAH",
     "class": "NURSERY 1",
     "total_fee": 51180.0,
-    "total_paid": 30000.0,
-    "balance": 21180.0,
+    "total_paid": 51180.0,
+    "balance": 0.0,
     "discount_rate": 0.25,
     "discount_amount": 6500.0,
     "details": {
@@ -25,8 +25,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "750",
       "TOTAL FEE": "51180",
-      "TOTAL PAID": "30000",
-      "BALANCE": "21180"
+      "TOTAL PAID": "51180",
+      "BALANCE": "0"
     }
   },
   "ABDFIR1001": {
@@ -363,8 +363,8 @@
     "name": "ADEBUNMI ADEYEMI",
     "class": "NURSERY 2",
     "total_fee": 52660.0,
-    "total_paid": 0.0,
-    "balance": 52660.0,
+    "total_paid": 52660.0,
+    "balance": 0.0,
     "discount_rate": 0.5,
     "discount_amount": 13000.0,
     "details": {
@@ -385,16 +385,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "52660",
-      "TOTAL PAID": "0",
-      "BALANCE": "52660"
+      "TOTAL PAID": "52660",
+      "BALANCE": "0"
     }
   },
   "ADEADE1012": {
     "name": "ADEBUNMI ADEOLUWA",
     "class": "PRIMARY 3",
     "total_fee": 60510.0,
-    "total_paid": 0.0,
-    "balance": 60510.0,
+    "total_paid": 61090.0,
+    "balance": -580.0,
     "discount_rate": 0.5,
     "discount_amount": 14000.0,
     "details": {
@@ -415,8 +415,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "-530",
       "TOTAL FEE": "60510",
-      "TOTAL PAID": "0",
-      "BALANCE": "60510"
+      "TOTAL PAID": "61090",
+      "BALANCE": "-580"
     }
   },
   "ADEIRE1013": {
@@ -1143,8 +1143,8 @@
     "name": "AKINYEMI DANIEL",
     "class": "NURSERY 1",
     "total_fee": 56930.0,
-    "total_paid": 0.0,
-    "balance": 56930.0,
+    "total_paid": 56930.0,
+    "balance": 0.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -1165,8 +1165,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "56930",
-      "TOTAL PAID": "0",
-      "BALANCE": "56930"
+      "TOTAL PAID": "56930",
+      "BALANCE": "0"
     }
   },
   "AKPFRA1138": {
@@ -1503,8 +1503,8 @@
     "name": "EDEM ZENITH AYOKUNNUMI",
     "class": "PRIMARY 1",
     "total_fee": 82800.0,
-    "total_paid": 82350.0,
-    "balance": 450.0,
+    "total_paid": 82800.0,
+    "balance": 0.0,
     "discount_rate": 0.0,
     "discount_amount": 0,
     "details": {
@@ -1525,8 +1525,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "82800",
-      "TOTAL PAID": "82350",
-      "BALANCE": "450"
+      "TOTAL PAID": "82800",
+      "BALANCE": "0"
     }
   },
   "EMIOBA1129": {
@@ -3543,8 +3543,8 @@
     "name": "OYETUNJI IMOLEAYO MARY",
     "class": "CRECHE",
     "total_fee": 24550.0,
-    "total_paid": 0.0,
-    "balance": 24550.0,
+    "total_paid": 24550.0,
+    "balance": 0.0,
     "discount_rate": 0.25,
     "discount_amount": 6500.0,
     "details": {
@@ -3565,16 +3565,16 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "24550",
-      "TOTAL PAID": "0",
-      "BALANCE": "24550"
+      "TOTAL PAID": "24550",
+      "BALANCE": "0"
     }
   },
   "OYEISA1104": {
     "name": "OYETUNJI ISAAC ORINAYO",
     "class": "NURSERY 2",
     "total_fee": 81160.0,
-    "total_paid": 0.0,
-    "balance": 81160.0,
+    "total_paid": 25450.0,
+    "balance": 55710.0,
     "discount_rate": 0.25,
     "discount_amount": 6500.0,
     "details": {
@@ -3595,8 +3595,8 @@
       "HOLIDAY LESSON": "0",
       "OUTSTANDING": "0",
       "TOTAL FEE": "81160",
-      "TOTAL PAID": "0",
-      "BALANCE": "81160"
+      "TOTAL PAID": "25450",
+      "BALANCE": "55710"
     }
   },
   "OYIIBU1136": {
