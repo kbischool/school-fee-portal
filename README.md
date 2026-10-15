@@ -55,7 +55,7 @@ legacy/             the old Python scripts and data (kept for reference only)
 
 ## Developing
 
-Requires Node 20+. Nothing is needed to *run* the site beyond a static file server.
+Requires Node 22+. Nothing is needed to *run* the site beyond a static file server.
 
 ```bash
 npm install
