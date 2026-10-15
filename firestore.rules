@@ -1,99 +1,95 @@
 rules_version = '2';
 
+// KBIS Portal — Firestore security rules.
+// Deny by default: anything not listed below is closed to everybody.
+//
+// Roles (decided by which document exists for the signed-in account):
+//   owner   owners/{uid}   created BY HAND in the Firebase console (no client can write it)
+//   admin   admins/{uid}   created at sign-up with a valid, unused admin code
+//   parent  parents/{uid}  created at sign-up with a valid, unused parent code
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    function isSignedIn() {
-      return request.auth != null;
-    }
-
-    // Any administrator (owner OR staff).
-    function isAdmin() {
-      return isSignedIn() &&
-        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
-    }
-
-    // The owner: the ONLY account that sees money, codes and the full dashboard.
-    // owners/{uid} can only be created by hand in the Firebase console (no client
-    // write is allowed below), so nobody can promote themselves.
-    function isOwner() {
-      return isSignedIn() &&
-        exists(/databases/$(database)/documents/owners/$(request.auth.uid));
-    }
-
+    function signedIn() { return request.auth != null; }
+    function uid() { return request.auth.uid; }
+    function isOwner() { return signedIn() && exists(/databases/$(database)/documents/owners/$(uid())); }
+    function isAdmin() { return signedIn() && exists(/databases/$(database)/documents/admins/$(uid())); }
+    function isStaff() { return isOwner() || isAdmin(); }
     function isLinkedParent(studentId) {
-      return isSignedIn() &&
-        exists(/databases/$(database)/documents/parents/$(request.auth.uid)) &&
-        studentId in get(/databases/$(database)/documents/parents/$(request.auth.uid)).data.linkedStudents;
+      return signedIn() &&
+        exists(/databases/$(database)/documents/parents/$(uid())) &&
+        studentId in get(/databases/$(database)/documents/parents/$(uid())).data.linkedStudents;
+    }
+    // A code is being used (unclaimed -> claimed by me) and nothing else changes.
+    function claimingCode() {
+      return signedIn() &&
+        resource.data.claimed == false &&
+        request.resource.data.claimed == true &&
+        request.resource.data.claimedByUid == uid() &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['claimed', 'claimedByUid', 'claimedAt']);
     }
 
-    // owners/{uid} — you can read only your own marker; nobody can write from the client.
-    match /owners/{uid} {
-      allow get: if isSignedIn() && request.auth.uid == uid;
+    // ---- who is who ----
+    match /owners/{id} {
+      allow get: if signedIn() && uid() == id;
       allow list, write: if false;
     }
-
-    // students/{id} — the full fee records (amounts, itemised charges).
-    // Owner and the linked parent only. Staff admins can NOT read this.
-    match /students/{studentId} {
-      allow read: if isOwner() || isLinkedParent(studentId);
-      allow write: if isOwner();
-    }
-
-    // studentStatus/{id} — name, class and a paid / part / unpaid label per term.
-    // NO amounts. Any admin can read it; only the owner can write.
-    match /studentStatus/{studentId} {
-      allow read: if isAdmin();
-      allow write: if isOwner();
-    }
-
-    // parents/{uid} — a parent's own profile + which students they are linked to.
-    match /parents/{uid} {
-      allow read: if isOwner() || (isSignedIn() && request.auth.uid == uid);
-      allow create: if isSignedIn() && request.auth.uid == uid;
-      allow update: if isOwner() || (isSignedIn() && request.auth.uid == uid &&
-        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['linkedStudents']));
-    }
-
-    // admins/{uid} — admin profiles.
-    // Creating one now REQUIRES a real, still-unclaimed admin code (claimedFrom),
-    // so a parent (or anyone signed in) can no longer make themselves an admin.
-    match /admins/{uid} {
-      allow get: if isSignedIn() && request.auth.uid == uid;
+    match /admins/{id} {
+      allow get: if signedIn() && uid() == id || isOwner();
       allow list: if isOwner();
-      allow create: if isSignedIn() && request.auth.uid == uid &&
+      allow create: if signedIn() && uid() == id &&
         request.resource.data.claimedFrom is string &&
         exists(/databases/$(database)/documents/adminCodes/$(request.resource.data.claimedFrom)) &&
         get(/databases/$(database)/documents/adminCodes/$(request.resource.data.claimedFrom)).data.claimed == false;
       allow update, delete: if isOwner();
     }
+    match /parents/{id} {
+      allow get: if signedIn() && uid() == id || isOwner();
+      allow list: if isOwner();
+      allow create: if signedIn() && uid() == id && request.resource.data.role == 'parent';
+      allow update: if isOwner() || (signedIn() && uid() == id &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['linkedStudents']));
+      allow delete: if isOwner();
+    }
 
-    // schoolCodes/{code} — parent first-login codes. Only the owner can browse/create/delete.
+    // ---- sign-up codes ----
+    // Parent codes can be looked up one at a time by anyone (that is how a parent signs up),
+    // never listed. They are unchanged from the previous version of the portal.
     match /schoolCodes/{code} {
       allow get: if true;
-      allow list: if isOwner();
-      allow create: if isOwner();
-      allow update: if isOwner() || (
-        isSignedIn() &&
-        resource.data.claimed == false &&
-        request.resource.data.claimed == true &&
-        request.resource.data.claimedByUid == request.auth.uid
-      );
-      allow delete: if isOwner();
+      allow list, create, delete: if isOwner();
+      allow update: if isOwner() || claimingCode();
+    }
+    // Staff codes need a signed-in account to look up.
+    match /adminCodes/{code} {
+      allow get: if signedIn();
+      allow list, create, delete: if isOwner();
+      allow update: if isOwner() || claimingCode();
     }
 
-    // adminCodes/{code} — administrator onboarding codes. Only the owner issues them.
-    match /adminCodes/{code} {
-      allow get: if true;
-      allow list: if isOwner();
-      allow create: if isOwner();
-      allow update: if isOwner() || (
-        isSignedIn() &&
-        resource.data.claimed == false &&
-        request.resource.data.claimed == true &&
-        request.resource.data.claimedByUid == request.auth.uid
-      );
-      allow delete: if isOwner();
+    // ---- students: owner, admins, and the linked parent ----
+    match /students/{studentId} {
+      allow read: if isStaff() || isLinkedParent(studentId);
+      allow write: if isOwner();
+      match /records/{rid}  { allow read: if isStaff() || isLinkedParent(studentId); allow write: if isOwner(); }
+      match /payments/{pid} { allow read: if isStaff() || isLinkedParent(studentId); allow write: if isOwner(); }
     }
+
+    // ---- school-wide documents ----
+    match /ledgers/{id}        { allow read: if isStaff(); allow write: if isOwner(); }  // per-term fee tables
+    match /invoices/{id}       { allow read: if isStaff(); allow write: if isOwner(); }  // new-student invoice
+    match /stock/{id}          { allow read: if isStaff(); allow write: if isOwner(); }  // quantities, no costs
+    match /parentCatalog/{id}  { allow read: if signedIn(); allow write: if isOwner(); } // textbook / stationery lists per class
+    match /config/{id}         { allow read: if signedIn(); allow write: if isOwner(); }
+
+    // ---- owner only ----
+    match /stockCosts/{id}   { allow read, write: if isOwner(); }
+    match /salaries/{id}     { allow read, write: if isOwner(); }
+    match /ownerSheets/{id}  { allow read, write: if isOwner(); }
+    match /payments/{id}     { allow read, write: if isOwner(); }  // bank log incl. narrations
+    match /imports/{id}      { allow read, write: if isOwner(); }
+
+    // Everything else: closed.
+    match /{document=**} { allow read, write: if false; }
   }
 }

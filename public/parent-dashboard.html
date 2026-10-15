@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My child’s fees · KBIS Portal</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f4f7fb">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<script src="js/theme-boot.js"></script>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+  .p-top { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .p-top > div { max-width: 860px; margin: 0 auto; display: flex; align-items: center; gap: 12px; padding: 10px 16px; }
+  .p-top img { width: 36px; height: 38px; object-fit: contain; }
+  .p-top .t { flex: 1; min-width: 0; } .p-top .t b { display: block; font: 700 1rem var(--font-display); } .p-top .t span { font-size: .78rem; color: var(--muted); }
+  .p-main { max-width: 860px; margin: 0 auto; padding: 20px 16px 48px; }
+  .hello h1 { font-size: 1.5rem; } .hello p { color: var(--muted); margin: 4px 0 16px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="p-top no-print"><div>
+  <img src="assets/logo.png" alt="" width="36" height="38">
+  <div class="t"><b>KBIS Fee Portal</b><span id="who">Parent</span></div>
+  <button class="btn btn-sm btn-icon" id="theme" aria-label="Switch colour theme"></button>
+  <button class="btn btn-sm" id="out">Log out</button>
+</div></header>
+<main id="main" class="p-main" tabindex="-1">
+  <div class="hello no-print"><h1 id="hi">Hello</h1><p>Your child’s fees, payments and what to collect.</p></div>
+  <div id="app" aria-live="polite"></div>
+</main>
+<script type="module">
+import { watchAuthState, getUserRole, logout, HOME } from './js/auth.js';
+import { parentView } from './js/views/parent.js';
+import { icon, esc, skeleton, empty, $ } from './js/ui.js';
+import { clearCache } from './js/data.js';
+
+const themeBtn = $('#theme');
+const dark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+const paint = () => { themeBtn.innerHTML = icon(dark() ? 'sun' : 'moon'); };
+paint();
+themeBtn.onclick = () => { const t = dark() ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', t); try { localStorage.setItem('kbis-theme', t); } catch (e) {} paint(); };
+$('#out').onclick = async () => { await logout(); location.replace('index.html'); };
+
+const app = $('#app');
+app.innerHTML = skeleton(3);
+watchAuthState(async (user) => {
+  if (!user) { location.replace('index.html'); return; }
+  let r;
+  try { r = await getUserRole(user.uid); } catch (e) { app.innerHTML = `<div class="card">${empty('We could not check your account', 'Check your internet connection and refresh.', 'alert')}</div>`; return; }
+  if (!r.role) { await logout(); location.replace('index.html'); return; }
+  if (r.role !== 'parent') { location.replace(HOME[r.role]); return; }
+  const first = (r.data.displayName || '').split(' ')[0];
+  $('#hi').textContent = first ? `Hello, ${first}` : 'Hello';
+  $('#who').textContent = r.data.email || 'Parent';
+  const show = async (reload) => {
+    if (reload) { clearCache(); const again = await getUserRole(user.uid); r = again; }
+    app.innerHTML = skeleton(3);
+    try { await parentView({ el: app, parent: { ...r.data, uid: user.uid }, onAddChild: (reload) => show(reload === true) }); }
+    catch (err) { console.error(err); app.innerHTML = `<div class="card">${empty('Something went wrong', 'Check your internet connection and refresh the page.', 'alert')}</div>`; }
+  };
+  show();
+});
+</script>
+<script type="module" src="js/pwa.js"></script>
+</body>
+</html>
