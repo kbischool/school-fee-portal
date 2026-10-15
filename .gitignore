@@ -10,3 +10,10 @@ serviceAccountKey.json
 node_modules/
 .firebase/
 firebase-debug.log
+*.log
+.env
+.env.*
+*-firebase-adminsdk-*.json
+test-results/
+playwright-report/
+.firebase/
