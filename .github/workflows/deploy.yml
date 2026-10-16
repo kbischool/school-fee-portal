@@ -37,10 +37,22 @@ jobs:
       - run: npm ci
       - name: Deploy hosting and Firestore rules
         env:
-          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
-          if [ -z "$GOOGLE_APPLICATION_CREDENTIALS_JSON" ]; then echo "FIREBASE_SERVICE_ACCOUNT secret is missing - see docs/DEPLOYMENT.md"; exit 1; fi
-          printf '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > "$RUNNER_TEMP/sa.json"
+          fail() { echo "::error title=Deploy failed::$1"; exit 1; }
+          [ -n "$FIREBASE_SA" ] || fail "The FIREBASE_SERVICE_ACCOUNT secret is missing. Add it in Settings > Secrets and variables > Actions (see docs/DEPLOYMENT.md)."
+          printf '%s' "$FIREBASE_SA" > "$RUNNER_TEMP/sa.json"
+          node -e '
+            const j = JSON.parse(require("fs").readFileSync(process.env.RUNNER_TEMP + "/sa.json", "utf8"));
+            if (j.type !== "service_account" || !j.private_key || !j.client_email) throw new Error("not a service-account key");
+            console.log("::notice title=Deploy account::" + j.client_email + " (project " + j.project_id + ")");
+          ' || fail "The FIREBASE_SERVICE_ACCOUNT secret is not a complete service-account key file. Paste the whole .json file again."
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          npx firebase-tools@13 deploy --only hosting,firestore:rules,firestore:indexes --project school-fee-portal-4f0e6 --non-interactive
+          set +e
+          npx firebase deploy --only hosting,firestore:rules --project school-fee-portal-4f0e6 --non-interactive 2>&1 | tee "$RUNNER_TEMP/deploy.log"
+          code=${PIPESTATUS[0]}
           rm -f "$RUNNER_TEMP/sa.json"
+          if [ "$code" != "0" ]; then
+            msg=$(grep -iE "error|denied|permission|forbidden|not found|403|404|billing|enable" "$RUNNER_TEMP/deploy.log" | grep -v "^$" | head -8 | tr '\n' ' ' | cut -c1-900)
+            fail "firebase deploy exited with $code. ${msg}"
+          fi
