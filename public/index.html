@@ -17,8 +17,8 @@
 <main class="auth-page" id="main">
 <div class="auth-card">
   <div class="crest"><img src="assets/logo.png" alt="" width="52" height="55"><div><div class="eyebrow">Knowledge Base International Schools</div><h1 style="font-size:1.5rem">Fee portal</h1></div></div>
-  <div class="seg" id="roleTabs" role="tablist" aria-label="I am a"><button role="tab" data-role="parent" aria-selected="true">Parent</button><button role="tab" data-role="admin" aria-selected="false">School staff</button></div>
-  <div class="seg" id="modeTabs" role="tablist" aria-label="Action"><button role="tab" data-mode="login" aria-selected="true">Log in</button><button role="tab" data-mode="claim" aria-selected="false">First time · I have a code</button></div>
+  <div class="seg" id="modeTabs" role="tablist" aria-label="Log in or first time"><button role="tab" data-mode="claim" aria-selected="false">First time? Start here</button><button role="tab" data-mode="login" aria-selected="true">Log in</button></div>
+  <p class="muted small" id="modeHint" style="margin:0 0 16px"></p>
   <div id="msgBox" role="alert" aria-live="assertive"></div>
 
   <form id="loginForm" novalidate>
@@ -35,7 +35,7 @@
   </form>
 
   <form id="claimForm" hidden>
-    <div class="field"><label for="claimCode" id="claimCodeLabel">School code</label><input type="text" id="claimCode" required autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. ABCDEF1000" style="text-transform:uppercase"><span class="muted small">The code the school gave you. You only need it once.</span></div>
+    <div class="field"><label for="claimCode">Your code</label><input type="text" id="claimCode" required autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABCDEF1000" style="text-transform:uppercase"><span class="muted small">Parents: the code the school gave for your child. Staff: the staff code from the school owner.</span></div>
     <div class="field"><label for="claimName">Your name</label><input type="text" id="claimName" required autocomplete="name"></div>
     <div class="field"><label for="claimEmail">Email</label><input type="email" id="claimEmail" required autocomplete="username" inputmode="email"></div>
     <div class="field"><label for="claimPassword">Choose a password</label><div class="pw"><input type="password" id="claimPassword" required autocomplete="new-password" minlength="6"><button type="button" class="btn btn-icon pwt" data-for="claimPassword" aria-label="Show password" aria-pressed="false"></button></div></div>

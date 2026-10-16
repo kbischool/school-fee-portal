@@ -62,8 +62,9 @@ console.log('\nLogin page');
   const { ctx, page, errors } = await open({});
   await page.goto(BASE + '/index.html'); await settle(page);
   ok((await text(page)).includes('Fee portal'), 'login page renders');
+  ok(await page.isVisible('#claimForm') && !(await page.$('#roleTabs')), 'first-time visitors land on the First time form; no parent/staff switch');
   await shot(page, 'login-desktop');
-  await page.fill('#loginEmail', 'parent@test.dev'); await page.fill('#loginPassword', 'wrong'); await page.click('#loginForm [type=submit]');
+  await page.click('[data-mode=login]'); await page.fill('#loginEmail', 'parent@test.dev'); await page.fill('#loginPassword', 'wrong'); await page.click('#loginForm [type=submit]');
   await page.waitForSelector('.msg.error'); ok(/did not match/.test(await text(page)), 'wrong password shows a friendly message');
   await page.fill('#loginPassword', 'pw'); await page.click('#loginForm [type=submit]');
   await page.waitForURL('**/parent-dashboard.html'); ok(true, 'parent login lands on parent portal');
@@ -72,7 +73,7 @@ console.log('\nLogin page');
 }
 for (const [uid, dest] of [['u-owner', 'owner-dashboard.html'], ['u-admin', 'admin-dashboard.html']]) {
   const { ctx, page } = await open({});
-  await page.goto(BASE + '/index.html'); await page.click('[data-role=admin]');
+  await page.goto(BASE + '/index.html'); await page.click('[data-mode=login]');
   await page.fill('#loginEmail', fx.accounts[uid].email); await page.fill('#loginPassword', 'pw'); await page.click('#loginForm [type=submit]');
   await page.waitForURL('**/' + dest); ok(true, `${uid} login lands on ${dest}`); await ctx.close();
 }
