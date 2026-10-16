@@ -1,20 +1,26 @@
+import { db, doc, getDoc } from '../firebase.js';
 import { getUserRole, claimParentCode, claimAdminCode, loginEmail, loginGoogle, linkGoogleUserWithCode, watchAuthState, resetPassword, HOME } from '../auth.js';
 import { icon, esc, openModal, withLoading } from '../ui.js';
 const $ = (s) => document.querySelector(s);
-const roleTabs = $('#roleTabs'), modeTabs = $('#modeTabs'), loginForm = $('#loginForm'), claimForm = $('#claimForm'), forgotForm = $('#forgotForm'), msgBox = $('#msgBox');
-let role = 'parent', mode = 'login';
+const modeTabs = $('#modeTabs'), loginForm = $('#loginForm'), claimForm = $('#claimForm'), forgotForm = $('#forgotForm'), msgBox = $('#msgBox');
+let mode = 'login';
+// Parent codes can be looked up by anyone; anything else is treated as a staff code.
+const isParentCode = async (code) => { try { return (await getDoc(doc(db, 'schoolCodes', String(code).trim().toUpperCase()))).exists(); } catch (e) { return false; } };
+const seenBefore = () => { try { return localStorage.getItem('kbis-seen') === '1'; } catch (e) { return true; } };
+const markSeen = () => { try { localStorage.setItem('kbis-seen', '1'); } catch (e) { /* private mode */ } };
 const msg = (t, type = 'error') => { msgBox.innerHTML = `<div class="msg ${type}">${t}</div>`; };
 const clear = () => { msgBox.innerHTML = ''; };
-const go = (r) => { location.href = HOME[r] || HOME.parent; };
+const go = (r) => {
+  markSeen(); location.href = HOME[r] || HOME.parent; };
 
 document.querySelectorAll('.pwt').forEach((b) => { b.innerHTML = icon('eye'); b.addEventListener('click', () => {
   const i = document.getElementById(b.dataset.for), show = i.type === 'password'; i.type = show ? 'text' : 'password';
   b.innerHTML = icon(show ? 'eyeoff' : 'eye'); b.setAttribute('aria-label', show ? 'Hide password' : 'Show password'); b.setAttribute('aria-pressed', String(show)); }); });
 
-function setRole(r) { role = r; [...roleTabs.children].forEach((b) => b.setAttribute('aria-selected', String(b.dataset.role === r))); $('#claimCodeLabel').textContent = r === 'admin' ? 'Staff code' : 'School code'; }
-function setMode(m) { mode = m; [...modeTabs.children].forEach((b) => b.setAttribute('aria-selected', String(b.dataset.mode === m))); loginForm.hidden = m !== 'login'; claimForm.hidden = m !== 'claim'; forgotForm.hidden = true; clear(); }
-roleTabs.addEventListener('click', (e) => { const b = e.target.closest('[data-role]'); if (b) setRole(b.dataset.role); });
+const HINTS = { claim: 'New here? Enter the code the school gave you and choose your own email and password. You only do this once.', login: 'Already set up? Log in with your email and password.' };
+function setMode(m) { mode = m; $('#modeHint').textContent = HINTS[m]; [...modeTabs.children].forEach((b) => b.setAttribute('aria-selected', String(b.dataset.mode === m))); loginForm.hidden = m !== 'login'; claimForm.hidden = m !== 'claim'; forgotForm.hidden = true; clear(); }
 modeTabs.addEventListener('click', (e) => { const b = e.target.closest('[data-mode]'); if (b) setMode(b.dataset.mode); });
+setMode(seenBefore() ? 'login' : 'claim');
 $('#forgotLink').onclick = () => { clear(); loginForm.hidden = true; claimForm.hidden = true; forgotForm.hidden = false; $('#forgotEmail').value = $('#loginEmail').value; $('#forgotEmail').focus(); };
 $('#backLink').onclick = () => setMode('login');
 
@@ -46,8 +52,8 @@ claimForm.addEventListener('submit', async (e) => {
   await withLoading(claimForm.querySelector('[type=submit]'), async () => {
     try {
       const a = [$('#claimCode').value, $('#claimEmail').value.trim(), $('#claimPassword').value, $('#claimName').value.trim()];
-      if (role === 'admin') { await claimAdminCode(a[0], a[1], a[2], a[3]); go('admin'); }
-      else { await claimParentCode(a[0], a[1], a[2], a[3]); go('parent'); }
+      if (await isParentCode(a[0])) { await claimParentCode(a[0], a[1], a[2], a[3]); go('parent'); }
+      else { await claimAdminCode(a[0], a[1], a[2], a[3]); go('admin'); }
     } catch (err) { msg(friendly(err)); }
   });
 });
@@ -69,12 +75,12 @@ $('#googleBtn').addEventListener('click', async () => {
       const user = await loginGoogle();
       const r = await getUserRole(user.uid);
       if (r.role) { go(r.role); return; }
-      const m = openModal({ title: 'Almost there', subtitle: 'First time with Google — enter your code to finish setting up.', body: `<form id="gf" class="stack"><div class="field"><label for="gc">${role === 'admin' ? 'Staff code' : 'School code'}</label><input id="gc" required autocomplete="off" autocapitalize="characters" style="text-transform:uppercase"></div><div id="ge" role="alert"></div><button class="btn btn-primary" type="submit">Finish setup</button></form>` });
+      const m = openModal({ title: 'Almost there', subtitle: 'First time with Google — enter your code to finish setting up.', body: `<form id="gf" class="stack"><div class="field"><label for="gc">Your code</label><input id="gc" required autocomplete="off" autocapitalize="characters" style="text-transform:uppercase"></div><div id="ge" role="alert"></div><button class="btn btn-primary" type="submit">Finish setup</button></form>` });
       m.el.querySelector('#gc').focus();
       m.el.querySelector('#gf').addEventListener('submit', async (ev) => {
         ev.preventDefault();
         await withLoading(ev.target.querySelector('button'), async () => {
-          try { await linkGoogleUserWithCode(user.uid, user.email, user.displayName || user.email, ev.target.gc.value, role === 'admin'); go(role === 'admin' ? 'admin' : 'parent'); }
+          try { await linkGoogleUserWithCode(user.uid, user.email, user.displayName || user.email, ev.target.gc.value, !(await isParentCode(ev.target.gc.value))); go((await getUserRole(user.uid)).role || 'parent'); }
           catch (err) { m.el.querySelector('#ge').innerHTML = `<div class="msg error">${friendly(err)}</div>`; }
         });
       });

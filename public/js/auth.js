@@ -85,8 +85,8 @@ async function linkAdminCode(uid, email, displayName, code) {
   const c = normalise(code);
   const codeRef = doc(db, "adminCodes", c);
   let snap;
-  try { snap = await getDoc(codeRef); } catch (e) { throw new Error("That admin code wasn't recognized."); }
-  if (!snap.exists()) throw new Error("That admin code wasn't recognized.");
+  try { snap = await getDoc(codeRef); } catch (e) { throw new Error("That code wasn't recognized. Double-check it and try again."); }
+  if (!snap.exists()) throw new Error("That code wasn't recognized. Double-check it and try again.");
   if (snap.data().claimed) throw new Error("This admin code has already been used. Try logging in instead.");
   const batch = writeBatch(db);
   batch.set(doc(db, "admins", uid), { email, displayName, role: "admin", claimedFrom: c, label: snap.data().label || "", createdAt: nowIso() });
