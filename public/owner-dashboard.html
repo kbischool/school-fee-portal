@@ -16,44 +16,7 @@
 <body>
 <div id="app" aria-live="polite"></div>
 <noscript><p style="padding:24px">This portal needs JavaScript. Please turn it on in your browser.</p></noscript>
-<script type="module">
-import { startPortal } from './js/shell.js';
-import { overviewView } from './js/views/overview.js';
-import { studentsView } from './js/views/students.js';
-import { studentDetailView } from './js/views/student-detail.js';
-import { historyView } from './js/views/history.js';
-import { paymentsView } from './js/views/payments.js';
-import { stockView } from './js/views/stock.js';
-import { invoicesView } from './js/views/invoices.js';
-import { payrollView } from './js/views/payroll.js';
-import { accountsView } from './js/views/accounts.js';
-import { importView } from './js/views/import.js';
-startPortal({
-  role: 'owner', search: true,
-  nav: [
-    { key: 'overview', label: 'Overview', short: 'Overview', icon: 'chart', section: 'School' },
-    { key: 'students', label: 'Students', icon: 'users' },
-    { key: 'history', label: 'Past sessions', short: 'Sessions', icon: 'clock' },
-    { key: 'payments', label: 'Payments', icon: 'wallet' },
-    { key: 'stock', label: 'Stock', icon: 'box', section: 'Operations' },
-    { key: 'invoices', label: 'New-student invoice', short: 'Invoice', icon: 'doc' },
-    { key: 'payroll', label: 'Staff & payroll', short: 'Payroll', icon: 'briefcase', section: 'Owner only' },
-    { key: 'accounts', label: 'Accounts & codes', short: 'Accounts', icon: 'key' },
-    { key: 'import', label: 'Import data', short: 'Import', icon: 'upload' }
-  ],
-  routes: {
-    overview: overviewView,
-    students: (c) => c.params[0] ? studentDetailView({ ...c, role: 'owner' }) : studentsView({ ...c, showTotals: true }),
-    history: (c) => historyView({ ...c, showTotals: true }),
-    payments: paymentsView,
-    stock: (c) => stockView({ ...c, showCosts: true }),
-    invoices: invoicesView,
-    payroll: payrollView,
-    accounts: accountsView,
-    import: importView
-  }
-});
-</script>
+<script type="module" src="js/pages/owner.js"></script>
 <script type="module" src="js/pwa.js"></script>
 </body>
 </html>
