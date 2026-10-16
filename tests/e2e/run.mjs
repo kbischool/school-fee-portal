@@ -9,12 +9,14 @@ import { buildFixture } from './fixture.mjs';
 const ROOT = path.resolve('public');
 const OUT = path.resolve('test-results/screens');
 fs.mkdirSync(OUT, { recursive: true });
+// Serve pages with the same Content-Security-Policy as production, so anything it would block fails here too.
+const CSP = (JSON.parse(fs.readFileSync('firebase.json', 'utf8')).hosting.headers.find((h) => h.source === '**').headers.find((h) => h.key === 'Content-Security-Policy') || {}).value;
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.woff2': 'font/woff2', '.txt': 'text/plain' };
 const server = http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]); if (p === '/') p = '/index.html';
   const f = path.join(ROOT, p);
   if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404, { 'content-type': 'text/html' }); res.end(fs.readFileSync(path.join(ROOT, '404.html'))); return; }
-  res.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); res.end(fs.readFileSync(f));
+  res.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream', ...(CSP ? { 'content-security-policy': CSP } : {}) }); res.end(fs.readFileSync(f));
 });
 await new Promise((r) => server.listen(0, r));
 const BASE = `http://localhost:${server.address().port}`;

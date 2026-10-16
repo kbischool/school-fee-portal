@@ -16,32 +16,7 @@
 <body>
 <div id="app" aria-live="polite"></div>
 <noscript><p style="padding:24px">This portal needs JavaScript. Please turn it on in your browser.</p></noscript>
-<script type="module">
-import { startPortal } from './js/shell.js';
-import { adminHomeView } from './js/views/admin-home.js';
-import { studentsView } from './js/views/students.js';
-import { studentDetailView } from './js/views/student-detail.js';
-import { historyView } from './js/views/history.js';
-import { stockView } from './js/views/stock.js';
-import { invoicesView } from './js/views/invoices.js';
-startPortal({
-  role: 'admin', search: true,
-  nav: [
-    { key: 'home', label: 'Home', icon: 'home' },
-    { key: 'students', label: 'Students', icon: 'users' },
-    { key: 'history', label: 'Past sessions', short: 'Sessions', icon: 'clock' },
-    { key: 'invoices', label: 'New-student invoice', short: 'Invoice', icon: 'doc' },
-    { key: 'stock', label: 'Stock', icon: 'box' }
-  ],
-  routes: {
-    home: adminHomeView,
-    students: (c) => c.params[0] ? studentDetailView({ ...c, role: 'admin' }) : studentsView({ ...c, showTotals: false }),
-    history: (c) => historyView({ ...c, showTotals: false }),
-    invoices: invoicesView,
-    stock: (c) => stockView({ ...c, showCosts: false })
-  }
-});
-</script>
+<script type="module" src="js/pages/admin.js"></script>
 <script type="module" src="js/pwa.js"></script>
 </body>
 </html>
